@@ -41,9 +41,10 @@ public class FormNoCloseBase : FormBase
             // 
             // FormNoCloseBase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.ClientSize = new System.Drawing.Size(1344, 712);
             this.ControlBox = false;
+            this.Margin = new System.Windows.Forms.Padding(19, 37, 19, 37);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormNoCloseBase";

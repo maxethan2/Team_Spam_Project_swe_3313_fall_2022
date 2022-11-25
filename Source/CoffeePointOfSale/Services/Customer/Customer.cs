@@ -19,6 +19,9 @@ public class Customer
             _phone = value.Trim(); //trim to remove leading or trailing spaces that might mess up the lookup function
         }
     }
+    public string FirstName
+    {
+        get; set; }
 
     public virtual int RewardPoints
 

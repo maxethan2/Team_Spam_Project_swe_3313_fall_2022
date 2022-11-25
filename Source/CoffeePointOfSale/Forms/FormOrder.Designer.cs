@@ -1,6 +1,6 @@
 ﻿namespace CoffeePointOfSale.Forms
 {
-    partial class FormManagement
+    partial class FormOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -28,30 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtDeleteThis = new System.Windows.Forms.TextBox();
-            this.lblRemoveThis = new System.Windows.Forms.Label();
             this.CancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // txtDeleteThis
-            // 
-            this.txtDeleteThis.AcceptsReturn = true;
-            this.txtDeleteThis.Location = new System.Drawing.Point(234, 137);
-            this.txtDeleteThis.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtDeleteThis.Multiline = true;
-            this.txtDeleteThis.Name = "txtDeleteThis";
-            this.txtDeleteThis.Size = new System.Drawing.Size(687, 124);
-            this.txtDeleteThis.TabIndex = 1;
-            // 
-            // lblRemoveThis
-            // 
-            this.lblRemoveThis.AutoSize = true;
-            this.lblRemoveThis.Location = new System.Drawing.Point(234, 108);
-            this.lblRemoveThis.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblRemoveThis.Name = "lblRemoveThis";
-            this.lblRemoveThis.Size = new System.Drawing.Size(212, 25);
-            this.lblRemoveThis.TabIndex = 2;
-            this.lblRemoveThis.Text = "Demo - Remove This Box";
             // 
             // CancelButton
             // 
@@ -61,32 +39,27 @@
             this.CancelButton.Location = new System.Drawing.Point(1123, 658);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(192, 50);
-            this.CancelButton.TabIndex = 3;
+            this.CancelButton.TabIndex = 2;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = false;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.CancelButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // FormManagement
+            // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1344, 712);
             this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.lblRemoveThis);
-            this.Controls.Add(this.txtDeleteThis);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "FormManagement";
-            this.Text = "FormManagement";
-            this.Load += new System.EventHandler(this.OnLoadFormManagement);
+            this.Margin = new System.Windows.Forms.Padding(13, 22, 13, 22);
+            this.Name = "FormOrder";
+            this.Text = "FormOrder";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private TextBox txtDeleteThis;
-        private Label lblRemoveThis;
+
         private Button CancelButton;
     }
 }

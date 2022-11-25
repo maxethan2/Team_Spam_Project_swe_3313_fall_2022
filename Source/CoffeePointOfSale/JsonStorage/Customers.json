@@ -1,12 +1,127 @@
 {
   "Customers": {
     "anonymous": {
-      "Phone": "anonymous",
+      "CustomerId": "Anonymous",
+      "FirstName": "Anonymous",
+      "LastName": "Anonymous",
+      "Phone": "000-000-0000",
       "RewardPoints": 0
     },
     "404-444-5555": {
+      "CustomerId": "2e40d30e48904391b4598ec1959ccd21",
+      "FirstName": "John",
+      "LastName": "Doe",
       "Phone": "404-444-5555",
-      "RewardPoints": 95
+      "RewardPoints": 95,
+      "Orders": [
+        {}
+      ]
+    },
+    "770-555-9999": {
+      "CustomerId": "b7f704a156734d45b66961f7babeab81",
+      "FirstName": "Paul",
+      "LastName": "Blart",
+      "Phone": "770-555-9999",
+      "RewardPoints": 3,
+      "Orders": [
+        {
+          "CustomerId": "b7f704a156734d45b66961f7babeab81",
+          "Date": "10/29/2022",
+          "Tax": 0.89,
+          "Subtotal": 14.75,
+          "Total": 15.64,
+          "PaymentMethod": "Credit",
+          "OrderedItems": [
+            {
+              "DrinkName": "Latte",
+              "Quantity": 1,
+              "Customizations": [
+                "Size C",
+                "No Foam",
+                "Creamer E",
+                "Espresso",
+                "Sweetener A"
+              ]
+            },
+            {
+              "DrinkName": "Matcha",
+              "Quantity": 1,
+              "Customizations": [
+                "Size A",
+                "Creamer B",
+                "Matcha",
+                "Sweetener A"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "678-555-0000": {
+      "CustomerId": "9746f7d099bd473ca0674a92b4e84c43",
+      "FirstName": "James",
+      "LastName": "Smith",
+      "Phone": "678-555-0000",
+      "RewardPoints": 15,
+      "Orders": [
+        {
+          "CustomerId": "9746f7d099bd473ca0674a92b4e84c43",
+          "Date": "10/29/2022",
+          "Tax": 0.53,
+          "Subtotal": 8.75,
+          "Total": 9.28,
+          "PaymentMethod": "RewardPoints",
+          "OrderedItems": [
+            {
+              "DrinkName": "Coffee",
+              "Quantity": 1,
+              "Customizations": [
+                "Size C",
+                "No Foam",
+                "Creamer E",
+                "Espresso",
+                "Sweetener A"
+              ]
+            },
+            {
+              "DrinkName": "Coffee",
+              "Quantity": 1,
+              "Customizations": [
+                "Size B",
+                "Creamer C",
+                "Sweetener A"
+              ]
+            }
+          ]
+        },
+        {
+          "CustomerId": "9746f7d099bd473ca0674a92b4e84c43",
+          "Date": "10/29/2022",
+          "Tax": 0.53,
+          "Subtotal": 8.75,
+          "Total": 9.28,
+          "PaymentMethod": "Credit",
+          "OrderedItems": [
+            {
+              "DrinkName": "Espresso",
+              "Quantity": 1,
+              "Customizations": [
+                "Espresso"
+              ]
+            },
+            {
+              "DrinkName": "Matcha",
+              "Quantity": 1,
+              "Customizations": [
+                "Size A",
+                "Creamer E",
+                "Sweentener A",
+                "Ice A"
+              ]
+            }
+          ]
+        }
+      ]
     }
   }
 }

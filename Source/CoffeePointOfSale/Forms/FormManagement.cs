@@ -40,4 +40,10 @@ public partial class FormManagement : FormNoCloseBase
     {
         DemonstrateGettingCustomerList();
     }
+
+    private void CancelButton_Click(object sender, EventArgs e)
+    {
+        Close(); //closes this form
+        FormFactory.Get<FormMain>().Show();
+    }
 }
