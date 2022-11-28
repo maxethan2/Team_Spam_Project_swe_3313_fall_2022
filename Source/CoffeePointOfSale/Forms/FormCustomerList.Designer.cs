@@ -30,6 +30,9 @@
         {
             this.CancelButton = new System.Windows.Forms.Button();
             this.AddCustomerButton = new System.Windows.Forms.Button();
+            this.CustomerListTable = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerListTable)).BeginInit();
             this.SuspendLayout();
             // 
             // CancelButton
@@ -58,17 +61,47 @@
             this.AddCustomerButton.UseVisualStyleBackColor = false;
             this.AddCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
             // 
+            // CustomerListTable
+            // 
+            this.CustomerListTable.AllowUserToAddRows = false;
+            this.CustomerListTable.AllowUserToDeleteRows = false;
+            this.CustomerListTable.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.CustomerListTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CustomerListTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.CustomerListTable.Location = new System.Drawing.Point(120, 79);
+            this.CustomerListTable.MultiSelect = false;
+            this.CustomerListTable.Name = "CustomerListTable";
+            this.CustomerListTable.ReadOnly = true;
+            this.CustomerListTable.RowHeadersWidth = 62;
+            this.CustomerListTable.RowTemplate.Height = 33;
+            this.CustomerListTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.CustomerListTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.CustomerListTable.Size = new System.Drawing.Size(1184, 501);
+            this.CustomerListTable.TabIndex = 3;
+            this.CustomerListTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // FormCustomerList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1344, 712);
+            this.Controls.Add(this.CustomerListTable);
             this.Controls.Add(this.AddCustomerButton);
             this.Controls.Add(this.CancelButton);
             this.Margin = new System.Windows.Forms.Padding(13, 22, 13, 22);
             this.Name = "FormCustomerList";
             this.Text = "FormCustomerList";
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerListTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -77,5 +110,7 @@
 
         private Button CancelButton;
         private Button AddCustomerButton;
+        private DataGridView CustomerListTable;
+        private DataGridViewTextBoxColumn Column1;
     }
 }

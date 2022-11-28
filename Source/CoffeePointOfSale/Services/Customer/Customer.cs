@@ -9,6 +9,8 @@ public class Customer
 
     private string _phone = ""; //backing field for Phone property. only needed because the setter has logic to handle nulls and trimming spaces.
     private int _rewardPoints;
+    private string _firstName;
+    private string _lastName;
 
     public virtual string Phone
     {
@@ -21,7 +23,22 @@ public class Customer
     }
     public string FirstName
     {
-        get; set; }
+        get => _firstName;
+        set
+        {
+            if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("First Name cannot be empty or null");
+            _firstName = value.Trim(); //trim to remove leading or trailing spaces that might mess up the lookup function
+        }
+    }
+    public string LastName
+    {
+        get => _lastName;
+        set
+        {
+            if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Last Name cannot be empty or null");
+            _lastName = value.Trim(); //trim to remove leading or trailing spaces that might mess up the lookup function
+        }
+    }
 
     public virtual int RewardPoints
 
@@ -41,6 +58,6 @@ public class Customer
     {
         return IsAnonymous  
             ? "Anonymous Customer - No Reward Points"
-            : $"{Phone}, Reward Points: {RewardPoints}";
+            : $"{LastName}, {FirstName}, {Phone}, Reward Points: {RewardPoints}";
     }
 }

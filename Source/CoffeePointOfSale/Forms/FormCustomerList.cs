@@ -25,6 +25,7 @@ namespace CoffeePointOfSale.Forms
             _customerService = customerService;
             _appSettings = appSettings;
             InitializeComponent();
+            DemonstrateGettingCustomerList();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -37,6 +38,25 @@ namespace CoffeePointOfSale.Forms
         {
             Close(); //closes this form
             FormFactory.Get<FormAddCustomer>().Show(); //re-opens the main form
+        }
+        //TABLE
+     
+
+        private void DemonstrateGettingCustomerList()
+        {            
+            for (var customerIdx = 0; customerIdx < _customerService.Customers.List.Count; customerIdx++)
+            {
+               Customer customers = _customerService.Customers.List[customerIdx];   
+               CustomerListTable.Rows.Add(customers);
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (CustomerListTable.CurrentRow != null)
+            {
+
+            }
         }
     }
 }
