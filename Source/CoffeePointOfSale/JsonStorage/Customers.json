@@ -12,7 +12,7 @@
       "FirstName": "John",
       "LastName": "Doe",
       "Phone": "404-444-5555",
-      "RewardPoints": 95,
+      "RewardPoints": 10000,
       "Orders": [
         {}
       ]

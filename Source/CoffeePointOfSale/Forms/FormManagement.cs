@@ -30,12 +30,24 @@ public partial class FormManagement : FormNoCloseBase
     private void DemonstrateGettingCustomerList()
     {
         var customerList = _customerService.Customers.List;
+
+
         for (var customerIdx = 0; customerIdx < customerList.Count; customerIdx++)
         {
             var customer = customerList[customerIdx];
             txtDeleteThis.AppendText($"{customerIdx + 1}. {customer}{Environment.NewLine}");
         }
-        CsvExtractTest.ExtractToCsv("This is a test :)");
+
+        // testing adding a list of customer names
+        List<string> pleaseWorkList = new List<string>();
+
+        for (var customerIdx = 0; customerIdx < customerList.Count; customerIdx++)
+        {
+            pleaseWorkList.Add(customerList[customerIdx].FirstName);
+        }
+        CsvExtractTest.ExtractToCsv(pleaseWorkList);
+
+        //////////
     }
 
     private void OnLoadFormManagement(object sender, EventArgs e)

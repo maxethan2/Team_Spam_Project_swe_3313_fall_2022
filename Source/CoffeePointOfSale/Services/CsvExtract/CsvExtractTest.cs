@@ -48,6 +48,28 @@ namespace CoffeePointOfSale.Services.CsvExtract
         }
 
 
+        public static void ExtractToCsv(List<string> test)
+        {
+
+
+            var csvPath = $"C:\\Users\\me03h\\Desktop\\Team_Spam_Project_swe_3313_fall_2022\\Source\\CoffeePointOfSale\\Services\\CsvExtract\\TestCsvData\\TestCsv-{DateTime.Now:yyyy-MM-dd-HH-mm-s}.csv";
+
+            string printThis = "";
+
+            foreach (string k in test){
+                printThis += k;
+            }
+
+            using (var streamWriter = new StreamWriter(csvPath))
+            {
+                using (var csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture))
+                {
+                    csvWriter.WriteRecords(printThis);
+                }
+            }
+
+        }
+
 
     }
 }
