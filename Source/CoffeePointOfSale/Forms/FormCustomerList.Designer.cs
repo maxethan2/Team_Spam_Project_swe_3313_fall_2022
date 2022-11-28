@@ -79,7 +79,7 @@
             this.CustomerListTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CustomerListTable.Size = new System.Drawing.Size(1184, 501);
             this.CustomerListTable.TabIndex = 3;
-            this.CustomerListTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.CustomerListTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CustomerListTable_CellContentClick);
             // 
             // Column1
             // 
