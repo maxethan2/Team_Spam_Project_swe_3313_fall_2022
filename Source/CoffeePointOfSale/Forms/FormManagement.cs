@@ -1,5 +1,6 @@
 ﻿using CoffeePointOfSale.Configuration;
 using CoffeePointOfSale.Forms.Base;
+using CoffeePointOfSale.Services.CsvExtract;
 using CoffeePointOfSale.Services.Customer;
 using CoffeePointOfSale.Services.FormFactory;
 
@@ -34,6 +35,7 @@ public partial class FormManagement : FormNoCloseBase
             var customer = customerList[customerIdx];
             txtDeleteThis.AppendText($"{customerIdx + 1}. {customer}{Environment.NewLine}");
         }
+        CsvExtractTest.ExtractToCsv("This is a test :)");
     }
 
     private void OnLoadFormManagement(object sender, EventArgs e)
