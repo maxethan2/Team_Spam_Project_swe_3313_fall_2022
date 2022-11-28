@@ -18,6 +18,7 @@ namespace CoffeePointOfSale.Forms
 {
     public partial class FormCustomerList : FormNoCloseBase
     {
+        public Customer selectedCustomer;
         private readonly ICustomerService _customerService;
         private IAppSettings _appSettings;
         public FormCustomerList(IAppSettings appSettings, ICustomerService customerService) : base(appSettings)
@@ -39,23 +40,25 @@ namespace CoffeePointOfSale.Forms
             Close(); //closes this form
             FormFactory.Get<FormAddCustomer>().Show(); //re-opens the main form
         }
-        //TABLE
-     
-
         private void DemonstrateGettingCustomerList()
         {            
             for (var customerIdx = 0; customerIdx < _customerService.Customers.List.Count; customerIdx++)
             {
-               Customer customers = _customerService.Customers.List[customerIdx];   
+               var customers = _customerService.Customers.List[customerIdx];   
                CustomerListTable.Rows.Add(customers);
+             
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void CustomerListTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (CustomerListTable.CurrentRow != null)
             {
-
+                int selectedrowindex = CustomerListTable.SelectedCells[0].RowIndex;
+                var selectedCustomer = _customerService.Customers.List[selectedrowindex];
+                Close(); //closes this form
+                FormFactory.Get<FormOrder>().Show();
+                //_customerService.Customers.List[selectedrowindex];
             }
         }
     }
