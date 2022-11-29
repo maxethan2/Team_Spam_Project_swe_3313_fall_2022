@@ -37,10 +37,10 @@
             this.CancelButton.BackColor = System.Drawing.Color.Red;
             this.CancelButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CancelButton.ForeColor = System.Drawing.Color.Snow;
-            this.CancelButton.Location = new System.Drawing.Point(786, 395);
+            this.CancelButton.Location = new System.Drawing.Point(1123, 658);
             this.CancelButton.Margin = new System.Windows.Forms.Padding(2);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(134, 30);
+            this.CancelButton.Size = new System.Drawing.Size(192, 50);
             this.CancelButton.TabIndex = 3;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = false;
@@ -64,7 +64,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.ClientSize = new System.Drawing.Size(941, 427);
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.CancelButton);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

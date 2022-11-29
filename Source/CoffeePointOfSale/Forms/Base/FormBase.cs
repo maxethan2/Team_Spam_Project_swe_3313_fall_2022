@@ -29,18 +29,17 @@ public class FormBase : Form
     private void InitializeComponent()
     {
             this.SuspendLayout();
-            // 
-            // FormBase
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 712);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "FormBase";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormBase";
-            this.Load += new System.EventHandler(this.OnLoadFormBase);
-            this.ResumeLayout(false);
+        // 
+        // FormBase
+        // 
+        this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        this.ClientSize = new System.Drawing.Size(1348, 721);
+        this.Name = "FormBase";
+        this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+        this.Text = "FormBase";
+        this.Load += new System.EventHandler(this.OnLoadFormBase);
+        this.ResumeLayout(false);
 
     }
 

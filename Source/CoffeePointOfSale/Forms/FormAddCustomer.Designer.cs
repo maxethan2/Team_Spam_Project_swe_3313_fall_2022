@@ -116,10 +116,9 @@
             // 
             // FormAddCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.ClientSize = new System.Drawing.Size(1344, 712);
             this.Controls.Add(this.AddCustomerConfirmButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

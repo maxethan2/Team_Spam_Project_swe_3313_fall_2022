@@ -127,10 +127,8 @@
             // 
             // FormPayment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.ClientSize = new System.Drawing.Size(1344, 712);
             this.Controls.Add(this.RewardPointsNeededLabel);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.TotalRewardPointsLabel);
