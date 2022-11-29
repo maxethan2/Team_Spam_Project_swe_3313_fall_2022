@@ -14,6 +14,11 @@ using System.Windows.Forms;
 
 namespace CoffeePointOfSale.Forms
 {
+    /*
+     * Current Customer is tracked through variable selectedCustomer located in FormNoCloseBase
+     * this variable acts as an indexer for the customer list
+     * if there is a better method to track which customer is being used feel free to change it 
+     */
     public partial class FormOrder : FormNoCloseBase
     {
         private readonly ICustomerService _customerService;
@@ -27,19 +32,24 @@ namespace CoffeePointOfSale.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            selectedCustomer = 0; // sets the customer back to anonymous
             Close(); //closes this form
             FormFactory.Get<FormMain>().Show(); 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
         }
 
         private void FormOrder_Load(object sender, EventArgs e)
         {
 
-            this.label1.Text = base.selectedCustomer.ToString();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            this.label1.Text = base.selectedCustomer.ToString();
+
         }
     }
 }

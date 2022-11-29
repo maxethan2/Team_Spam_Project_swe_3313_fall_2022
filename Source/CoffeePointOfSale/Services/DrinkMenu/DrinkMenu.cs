@@ -8,5 +8,6 @@ namespace CoffeePointOfSale.Services.DrinkMenu
 {
     internal class DrinkMenu
     {
+
     }
 }

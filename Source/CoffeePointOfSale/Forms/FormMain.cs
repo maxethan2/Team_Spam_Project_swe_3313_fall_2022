@@ -6,6 +6,7 @@ namespace CoffeePointOfSale.Forms;
 
 public partial class FormMain : FormBase
 {
+   
     public FormMain(IAppSettings appSettings) : base(appSettings) 
     {
         InitializeComponent();

@@ -31,9 +31,9 @@
             this.CancelButton = new System.Windows.Forms.Button();
             this.AddCustomerButton = new System.Windows.Forms.Button();
             this.CustomerListTable = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.OrderSelectedCustomerButton = new System.Windows.Forms.Button();
+            this.CustomerList = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerListTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,8 +70,8 @@
             this.CustomerListTable.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.CustomerListTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CustomerListTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            this.CustomerListTable.Location = new System.Drawing.Point(120, 79);
+            this.CustomerList});
+            this.CustomerListTable.Location = new System.Drawing.Point(77, 73);
             this.CustomerListTable.MultiSelect = false;
             this.CustomerListTable.Name = "CustomerListTable";
             this.CustomerListTable.ReadOnly = true;
@@ -83,19 +83,11 @@
             this.CustomerListTable.TabIndex = 3;
             this.CustomerListTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CustomerListTable_CellContentClick);
             // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(381, 27);
+            this.label1.Location = new System.Drawing.Point(555, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(219, 25);
             this.label1.TabIndex = 4;
@@ -106,13 +98,21 @@
             this.OrderSelectedCustomerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.OrderSelectedCustomerButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OrderSelectedCustomerButton.ForeColor = System.Drawing.Color.Snow;
-            this.OrderSelectedCustomerButton.Location = new System.Drawing.Point(609, 605);
+            this.OrderSelectedCustomerButton.Location = new System.Drawing.Point(537, 597);
             this.OrderSelectedCustomerButton.Name = "OrderSelectedCustomerButton";
             this.OrderSelectedCustomerButton.Size = new System.Drawing.Size(263, 103);
             this.OrderSelectedCustomerButton.TabIndex = 5;
             this.OrderSelectedCustomerButton.Text = "Use this Customer";
             this.OrderSelectedCustomerButton.UseVisualStyleBackColor = false;
             this.OrderSelectedCustomerButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // CustomerList
+            // 
+            this.CustomerList.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CustomerList.HeaderText = "";
+            this.CustomerList.MinimumWidth = 8;
+            this.CustomerList.Name = "CustomerList";
+            this.CustomerList.ReadOnly = true;
             // 
             // FormCustomerList
             // 
@@ -139,8 +139,8 @@
         private Button CancelButton;
         private Button AddCustomerButton;
         private DataGridView CustomerListTable;
-        private DataGridViewTextBoxColumn Column1;
         private Label label1;
         private Button OrderSelectedCustomerButton;
+        private DataGridViewButtonColumn CustomerList;
     }
 }

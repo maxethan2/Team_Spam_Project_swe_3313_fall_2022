@@ -18,7 +18,7 @@ namespace CoffeePointOfSale.Forms
 {
     public partial class FormCustomerList : FormNoCloseBase
     {
-        int index;
+        public int index;
         private readonly ICustomerService _customerService;
         private IAppSettings _appSettings;
         public FormCustomerList(IAppSettings appSettings, ICustomerService customerService) : base(appSettings)
@@ -52,15 +52,15 @@ namespace CoffeePointOfSale.Forms
         private void CustomerListTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
-                index = this.CustomerListTable.SelectedRows[0].Cells[0].RowIndex;
-                label1.Text = index.ToString();
-                selectedCustomer = index; // tracks customer 
-                 //closes this form
+            index = this.CustomerListTable.SelectedRows[0].Cells[0].RowIndex;
+            label1.Text = index.ToString();
+            selectedCustomer = index; // tracks customer 
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            Close();//closes this form
             FormFactory.Get<FormOrder>().Show();
         }
     }
