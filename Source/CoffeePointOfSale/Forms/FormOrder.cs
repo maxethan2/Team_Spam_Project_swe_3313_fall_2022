@@ -30,5 +30,16 @@ namespace CoffeePointOfSale.Forms
             Close(); //closes this form
             FormFactory.Get<FormMain>().Show(); 
         }
+
+        private void FormOrder_Load(object sender, EventArgs e)
+        {
+
+            this.label1.Text = base.selectedCustomer.ToString();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.label1.Text = base.selectedCustomer.ToString();
+        }
     }
 }

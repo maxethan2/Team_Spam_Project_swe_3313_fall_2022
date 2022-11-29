@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.CancelButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CancelButton
@@ -44,22 +45,36 @@
             this.CancelButton.UseVisualStyleBackColor = false;
             this.CancelButton.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(299, 193);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(166, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "TEST REMOVE THIS";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1344, 712);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.CancelButton);
             this.Margin = new System.Windows.Forms.Padding(13, 22, 13, 22);
             this.Name = "FormOrder";
             this.Text = "FormOrder";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private Button CancelButton;
+        private Label label1;
     }
 }
