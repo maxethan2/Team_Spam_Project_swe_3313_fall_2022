@@ -39,6 +39,10 @@ public class Customer
             _lastName = value.Trim(); //trim to remove leading or trailing spaces that might mess up the lookup function
         }
     }
+    public string CustomerId
+    {
+        get; set;
+    }
 
     public virtual int RewardPoints
 
@@ -50,6 +54,12 @@ public class Customer
             _rewardPoints = value;
         }
     }
+
+    public List<Order> Orders
+    {
+        get; set;
+    } = new();
+
 
     [JsonIgnore]
     public virtual bool IsAnonymous => Phone == AnonymousCustomerId;
