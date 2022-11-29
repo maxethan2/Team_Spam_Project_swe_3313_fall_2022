@@ -64,8 +64,10 @@ public partial class FormManagement : FormNoCloseBase
 
         // creates a flat list of orders and order details
         var flatList = new List<CsvExtractLine>();
+        // loop through customers
         foreach (var customer in _customerService.Customers.List)
         {
+            // loop through customer orders
             foreach (var order in customer.Orders)
             {
                 var flatEntry = new CsvExtractLine();
@@ -75,6 +77,12 @@ public partial class FormManagement : FormNoCloseBase
                 flatEntry.CustomerFirstName = customer.FirstName;
                 flatEntry.CustomerLastName = customer.LastName;
                 flatEntry.CustomerRewardsPoints = customer.RewardPoints;
+
+                flatEntry.OrderDate = order.Date;
+                flatEntry.OrderTotal = order.Total;
+                flatEntry.OrderSubtotal = order.Subtotal;
+                flatEntry.OrderTax = order.Tax;
+
                 
 
 
@@ -82,7 +90,9 @@ public partial class FormManagement : FormNoCloseBase
                 var details = "";
                 foreach(var drink in order.OrderedItems)
                 {
-                    details += drink.DrinkName + ": ";
+                    details += drink.DrinkName + ", ";
+
+                    details += "Quantity: " + drink.Quantity + " :";
                     foreach(var customization in drink.Customizations)
                     {
                         details += customization + ", ";

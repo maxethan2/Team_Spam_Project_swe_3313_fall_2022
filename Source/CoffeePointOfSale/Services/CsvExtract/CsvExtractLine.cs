@@ -17,6 +17,16 @@ namespace CoffeePointOfSale.Services.CsvExtract
 
         public int? CustomerRewardsPoints { get; set; }
 
+        public string? OrderDate { get; set; }
+
+        public decimal? OrderTotal { get; set; }
+
+        public decimal? OrderSubtotal { get; set; }
+
+        public decimal? OrderTax { get; set; }
+
+
+
         public string? OrderDetail { get; set; }
     }
 }
