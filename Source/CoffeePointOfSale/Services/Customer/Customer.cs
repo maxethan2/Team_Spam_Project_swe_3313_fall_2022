@@ -23,6 +23,15 @@ public class Customer
     {
         get; set; }
 
+    public string LastName
+    {
+        get; set;
+    }
+
+    public string CustomerId
+    {
+        get; set;
+    }
     public virtual int RewardPoints
 
     {
@@ -33,6 +42,11 @@ public class Customer
             _rewardPoints = value;
         }
     }
+
+    public List<Order> Orders
+    {
+        get; set;
+    } = new();
 
     [JsonIgnore]
     public virtual bool IsAnonymous => Phone == AnonymousCustomerId;

@@ -3,6 +3,8 @@ using CoffeePointOfSale.Forms.Base;
 using CoffeePointOfSale.Services.CsvExtract;
 using CoffeePointOfSale.Services.Customer;
 using CoffeePointOfSale.Services.FormFactory;
+using CsvHelper;
+using System.Globalization;
 
 namespace CoffeePointOfSale.Forms;
 
@@ -39,15 +41,71 @@ public partial class FormManagement : FormNoCloseBase
         }
 
         // testing adding a list of customer names
-        List<string> pleaseWorkList = new List<string>();
+        /* List<string> pleaseWorkList = new List<string>();
 
-        for (var customerIdx = 0; customerIdx < customerList.Count; customerIdx++)
+          for (var customerIdx = 0; customerIdx < customerList.Count; customerIdx++)
+          {
+              pleaseWorkList.Add(customerList[customerIdx].);
+          }
+        */
+
+        ///CsvExtractTest.ExtractToCsv("test");
+        ///
+
+
+        //var records = new List<Customer>();
+
+        //foreach (var customer in customerList)
+        //{
+        //    new Customer { CustomerId = customer.CustomerId, FirstName = customer.FirstName, LastName = customer.LastName };
+        //};
+
+
+
+        // creates a flat list of orders and order details
+        var flatList = new List<CsvExtractLine>();
+        foreach (var customer in _customerService.Customers.List)
         {
-            pleaseWorkList.Add(customerList[customerIdx].FirstName);
-        }
-        CsvExtractTest.ExtractToCsv(pleaseWorkList);
+            foreach (var order in customer.Orders)
+            {
+                var flatEntry = new CsvExtractLine();
+                // set data from customer
+                flatEntry.CustomerId = customer.CustomerId;
+                flatEntry.CustomerPhoneNumber = customer.Phone;
+                flatEntry.CustomerFirstName = customer.FirstName;
+                flatEntry.CustomerLastName = customer.LastName;
+                flatEntry.CustomerRewardsPoints = customer.RewardPoints;
+                
 
-        //////////
+
+
+                var details = "";
+                foreach(var drink in order.OrderedItems)
+                {
+                    details += drink.DrinkName + ": ";
+                    foreach(var customization in drink.Customizations)
+                    {
+                        details += customization + ", ";
+                    }
+                }
+
+                flatEntry.OrderDetail = details;
+
+                flatList.Add(flatEntry);
+            }
+        }
+
+        using (var writer = new StreamWriter($"C:\\Users\\me03h\\Desktop\\Team_Spam_Project_swe_3313_fall_2022\\Source\\CoffeePointOfSale\\Services\\CsvExtract\\TestCsvData\\TestCsv-{DateTime.Now:yyyy-MM-dd-HH-mm-s}.csv"))
+        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+        {
+            csv.WriteRecords(flatList);
+        }
+
+
+
+
+
+
     }
 
     private void OnLoadFormManagement(object sender, EventArgs e)

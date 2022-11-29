@@ -32,8 +32,18 @@ namespace CoffeePointOfSale.Services.CsvExtract
         }
         */
 
+
+        //Creates a csv file with a string given
         public static void ExtractToCsv(String test)
         {
+            List<string> testList = new List<string>();
+            testList.Add("This");
+            testList.Add("Is");
+            testList.Add("A test");
+
+            string[] arrayTest = new string[2];
+            arrayTest[0] = "This is a";
+            arrayTest[1] = "Test";
 
 
             var csvPath = $"C:\\Users\\me03h\\Desktop\\Team_Spam_Project_swe_3313_fall_2022\\Source\\CoffeePointOfSale\\Services\\CsvExtract\\TestCsvData\\TestCsv-{DateTime.Now:yyyy-MM-dd-HH-mm-s}.csv";
@@ -41,13 +51,17 @@ namespace CoffeePointOfSale.Services.CsvExtract
             {
                 using (var csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture))
                 {
-                    csvWriter.WriteRecords(test.ToString());
+                    //csvWriter.WriteRecords(new { data = "This a test" }));
+
+                    //csvWriter.WriteRecords(testList);
+
+                    csvWriter.WriteRecords(arrayTest);
                 }
             }
 
         }
 
-
+        // takes a list of strings and appends to a string to add toa csv file
         public static void ExtractToCsv(List<string> test)
         {
 
