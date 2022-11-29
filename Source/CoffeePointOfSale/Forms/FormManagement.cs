@@ -86,7 +86,10 @@ public partial class FormManagement : FormNoCloseBase
             }
         }
 
-        var csvPath = $"C:\\Users\\me03h\\Desktop\\Team_Spam_Project_swe_3313_fall_2022\\Source\\CoffeePointOfSale\\Services\\CsvExtract\\TestCsvData\\TestCsv-{DateTime.Now:yyyy-MM-dd-HH-mm-s}.csv";
+        // var csvPath = $"C:\\Users\\me03h\\Desktop\\Team_Spam_Project_swe_3313_fall_2022\\Source\\CoffeePointOfSale\\Services\\CsvExtract\\TestCsvData\\TestCsv-{DateTime.Now:yyyy-MM-dd-HH-mm-s}.csv";
+        var dir = Path.GetTempPath();
+        var fn = $"TestCsv -{DateTime.Now:yyyy - MM - dd - HH - mm - s}.csv";
+        var csvPath = Path.Join(dir, fn);
         using (var writer = new StreamWriter(csvPath))
         using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
         {
@@ -96,8 +99,8 @@ public partial class FormManagement : FormNoCloseBase
 
 
         //open the csv file automatically
-        var dir = $"C:\\Users\\me03h\\Desktop\\Team_Spam_Project_swe_3313_fall_2022\\Source\\CoffeePointsOfSale\\Services\\CsvExtract\\TestCsvData";
-        var fn = "TestCsv -{ DateTime.Now:yyyy - MM - dd - HH - mm - s}.csv";
+        //var dir = @"C:\Users\me03h\\Desktop\Team_Spam_Project_swe_3313_fall_2022\Source\CoffeePointsOfSale\Services\CsvExtract\TestCsvData";
+        
 
         try
         {

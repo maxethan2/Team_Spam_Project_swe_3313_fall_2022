@@ -27,7 +27,7 @@ public class Customer
     {
         get; set;
     }
-
+    //add
     public string CustomerId
     {
         get; set;
@@ -42,7 +42,7 @@ public class Customer
             _rewardPoints = value;
         }
     }
-
+    //add
     public List<Order> Orders
     {
         get; set;
