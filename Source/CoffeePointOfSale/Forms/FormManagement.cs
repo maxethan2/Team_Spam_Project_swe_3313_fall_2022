@@ -41,28 +41,6 @@ public partial class FormManagement : FormNoCloseBase
             txtDeleteThis.AppendText($"{customerIdx + 1}. {customer}{Environment.NewLine}");
         }
 
-        // testing adding a list of customer names
-        /* List<string> pleaseWorkList = new List<string>();
-
-          for (var customerIdx = 0; customerIdx < customerList.Count; customerIdx++)
-          {
-              pleaseWorkList.Add(customerList[customerIdx].);
-          }
-        */
-
-        ///CsvExtractTest.ExtractToCsv("test");
-        ///
-
-
-        //var records = new List<Customer>();
-
-        //foreach (var customer in customerList)
-        //{
-        //    new Customer { CustomerId = customer.CustomerId, FirstName = customer.FirstName, LastName = customer.LastName };
-        //};
-
-
-
         // creates a flat list of orders and order details
         var flatList = new List<CsvExtractLine>();
         // loop through customers
@@ -107,6 +85,7 @@ public partial class FormManagement : FormNoCloseBase
                 flatList.Add(flatEntry);
             }
         }
+
         var csvPath = $"C:\\Users\\me03h\\Desktop\\Team_Spam_Project_swe_3313_fall_2022\\Source\\CoffeePointOfSale\\Services\\CsvExtract\\TestCsvData\\TestCsv-{DateTime.Now:yyyy-MM-dd-HH-mm-s}.csv";
         using (var writer = new StreamWriter(csvPath))
         using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
@@ -116,7 +95,7 @@ public partial class FormManagement : FormNoCloseBase
 
 
 
-        //open the csv file
+        //open the csv file automatically
         var dir = $"C:\\Users\\me03h\\Desktop\\Team_Spam_Project_swe_3313_fall_2022\\Source\\CoffeePointsOfSale\\Services\\CsvExtract\\TestCsvData";
         var fn = "TestCsv -{ DateTime.Now:yyyy - MM - dd - HH - mm - s}.csv";
 
