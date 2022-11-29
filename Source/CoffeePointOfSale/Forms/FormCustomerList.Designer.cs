@@ -32,6 +32,8 @@
             this.AddCustomerButton = new System.Windows.Forms.Button();
             this.CustomerListTable = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.OrderSelectedCustomerButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerListTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,12 +91,37 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Snow;
+            this.label1.Location = new System.Drawing.Point(381, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(219, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "TEST LABEL REMOVE THIS";
+            // 
+            // OrderSelectedCustomerButton
+            // 
+            this.OrderSelectedCustomerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.OrderSelectedCustomerButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.OrderSelectedCustomerButton.ForeColor = System.Drawing.Color.Snow;
+            this.OrderSelectedCustomerButton.Location = new System.Drawing.Point(609, 605);
+            this.OrderSelectedCustomerButton.Name = "OrderSelectedCustomerButton";
+            this.OrderSelectedCustomerButton.Size = new System.Drawing.Size(263, 103);
+            this.OrderSelectedCustomerButton.TabIndex = 5;
+            this.OrderSelectedCustomerButton.Text = "Use this Customer";
+            this.OrderSelectedCustomerButton.UseVisualStyleBackColor = false;
+            this.OrderSelectedCustomerButton.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormCustomerList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1344, 712);
+            this.Controls.Add(this.OrderSelectedCustomerButton);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.CustomerListTable);
             this.Controls.Add(this.AddCustomerButton);
             this.Controls.Add(this.CancelButton);
@@ -103,6 +130,7 @@
             this.Text = "FormCustomerList";
             ((System.ComponentModel.ISupportInitialize)(this.CustomerListTable)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -112,5 +140,7 @@
         private Button AddCustomerButton;
         private DataGridView CustomerListTable;
         private DataGridViewTextBoxColumn Column1;
+        private Label label1;
+        private Button OrderSelectedCustomerButton;
     }
 }
