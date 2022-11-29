@@ -30,8 +30,9 @@ public partial class FormManagement : FormNoCloseBase
     /// <summary>
     /// Remove this from your project... here to show you how to get the customer list
     /// </summary>
-    private void DemonstrateGettingCustomerList()
+    private void ExtractCsv()
     {
+        /*
         var customerList = _customerService.Customers.List;
 
 
@@ -40,6 +41,8 @@ public partial class FormManagement : FormNoCloseBase
             var customer = customerList[customerIdx];
             txtDeleteThis.AppendText($"{customerIdx + 1}. {customer}{Environment.NewLine}");
         }
+        */
+
 
         // creates a flat list of orders and order details
         var flatList = new List<CsvExtractLine>();
@@ -86,7 +89,7 @@ public partial class FormManagement : FormNoCloseBase
             }
         }
 
-        // var csvPath = $"C:\\Users\\me03h\\Desktop\\Team_Spam_Project_swe_3313_fall_2022\\Source\\CoffeePointOfSale\\Services\\CsvExtract\\TestCsvData\\TestCsv-{DateTime.Now:yyyy-MM-dd-HH-mm-s}.csv";
+     
         var dir = Path.GetTempPath();
         var fn = $"TestCsv -{DateTime.Now:yyyy - MM - dd - HH - mm - s}.csv";
         var csvPath = Path.Join(dir, fn);
@@ -96,11 +99,6 @@ public partial class FormManagement : FormNoCloseBase
             csv.WriteRecords(flatList);
         }
 
-
-
-        //open the csv file automatically
-        //var dir = @"C:\Users\me03h\\Desktop\Team_Spam_Project_swe_3313_fall_2022\Source\CoffeePointsOfSale\Services\CsvExtract\TestCsvData";
-        
 
         try
         {
@@ -123,12 +121,17 @@ public partial class FormManagement : FormNoCloseBase
 
     private void OnLoadFormManagement(object sender, EventArgs e)
     {
-        DemonstrateGettingCustomerList();
+        //DemonstrateGettingCustomerList();
     }
 
     private void CancelButton_Click(object sender, EventArgs e)
     {
         Close(); //closes this form
         FormFactory.Get<FormMain>().Show();
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        ExtractCsv();
     }
 }
