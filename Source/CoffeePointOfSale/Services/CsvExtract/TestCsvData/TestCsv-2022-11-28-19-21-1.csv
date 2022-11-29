@@ -1,5 +1,0 @@
-CustomerId,CustomerPhoneNumber,CustomerFirstName,CustomerLastName,OrderDetail
-2e40d30e48904391b4598ec1959ccd21,404-444-5555,John,Doe,
-b7f704a156734d45b66961f7babeab81,770-555-9999,Paul,Blart,
-9746f7d099bd473ca0674a92b4e84c43,678-555-0000,James,Smith,"Coffee: Size C, No Foam, Creamer E, Espresso, Sweetener A, Coffee: Size B, Creamer C, Sweetener A, "
-9746f7d099bd473ca0674a92b4e84c43,678-555-0000,James,Smith,"Espresso: Espresso, Matcha: Size A, Creamer E, Sweentener A, Ice A, "

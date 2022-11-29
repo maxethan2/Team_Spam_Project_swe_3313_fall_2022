@@ -1,5 +1,0 @@
-CustomerId,CustomerPhoneNumber,CustomerFirstName,CustomerLastName,CustomerRewardsPoints,OrderDate,OrderTotal,OrderSubtotal,OrderTax,OrderDetail
-2e40d30e48904391b4598ec1959ccd21,404-444-5555,John,Doe,10000,,0,0,0,
-b7f704a156734d45b66961f7babeab81,770-555-9999,Paul,Blart,3,10/29/2022,15.64,14.75,0.89,"Latte, Quantity: 1 :Size C, No Foam, Creamer E, Espresso, Sweetener A, Matcha, Quantity: 1 :Size A, Creamer B, Matcha, Sweetener A, "
-9746f7d099bd473ca0674a92b4e84c43,678-555-0000,James,Smith,15,10/29/2022,9.28,8.75,0.53,"Coffee, Quantity: 1 :Size C, No Foam, Creamer E, Espresso, Sweetener A, Coffee, Quantity: 1 :Size B, Creamer C, Sweetener A, "
-9746f7d099bd473ca0674a92b4e84c43,678-555-0000,James,Smith,15,10/29/2022,9.28,8.75,0.53,"Espresso, Quantity: 1 :Espresso, Matcha, Quantity: 1 :Size A, Creamer E, Sweentener A, Ice A, "

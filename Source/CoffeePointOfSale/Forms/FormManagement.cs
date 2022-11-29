@@ -4,6 +4,7 @@ using CoffeePointOfSale.Services.CsvExtract;
 using CoffeePointOfSale.Services.Customer;
 using CoffeePointOfSale.Services.FormFactory;
 using CsvHelper;
+using System.Diagnostics;
 using System.Globalization;
 
 namespace CoffeePointOfSale.Forms;
@@ -92,11 +93,13 @@ public partial class FormManagement : FormNoCloseBase
                 {
                     details += drink.DrinkName + ", ";
 
-                    details += "Quantity: " + drink.Quantity + " :";
+                    details += "Quantity: " + drink.Quantity + ": ";
                     foreach(var customization in drink.Customizations)
                     {
                         details += customization + ", ";
                     }
+                    //make a space between multiple drinks 
+                    details += "     ";
                 }
 
                 flatEntry.OrderDetail = details;
@@ -104,13 +107,31 @@ public partial class FormManagement : FormNoCloseBase
                 flatList.Add(flatEntry);
             }
         }
-
-        using (var writer = new StreamWriter($"C:\\Users\\me03h\\Desktop\\Team_Spam_Project_swe_3313_fall_2022\\Source\\CoffeePointOfSale\\Services\\CsvExtract\\TestCsvData\\TestCsv-{DateTime.Now:yyyy-MM-dd-HH-mm-s}.csv"))
+        var csvPath = $"C:\\Users\\me03h\\Desktop\\Team_Spam_Project_swe_3313_fall_2022\\Source\\CoffeePointOfSale\\Services\\CsvExtract\\TestCsvData\\TestCsv-{DateTime.Now:yyyy-MM-dd-HH-mm-s}.csv";
+        using (var writer = new StreamWriter(csvPath))
         using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
         {
             csv.WriteRecords(flatList);
         }
 
+
+
+        //open the csv file
+        var dir = $"C:\\Users\\me03h\\Desktop\\Team_Spam_Project_swe_3313_fall_2022\\Source\\CoffeePointsOfSale\\Services\\CsvExtract\\TestCsvData";
+        var fn = "TestCsv -{ DateTime.Now:yyyy - MM - dd - HH - mm - s}.csv";
+
+        try
+        {
+            var processStartInfo = new ProcessStartInfo(csvPath);
+            processStartInfo.WorkingDirectory = dir;
+            processStartInfo.UseShellExecute = true;
+            Process.Start(processStartInfo);
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Failed to open: {ex.Message}");
+        }
 
 
 
