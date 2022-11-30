@@ -1,6 +1,7 @@
 ﻿using CoffeePointOfSale.Configuration;
 using CoffeePointOfSale.Forms.Base;
 using CoffeePointOfSale.Services.Customer;
+using CoffeePointOfSale.Services.DrinkMenu;
 using CoffeePointOfSale.Services.FormFactory;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,12 @@ namespace CoffeePointOfSale.Forms
     {
         private readonly ICustomerService _customerService;
         private IAppSettings _appSettings;
+        private Order order = new Order();
+
+        string drinkName;
+        int quantity;
+        List<string> customizations = new List<string>(); //list of customizations (should this be of type Custimization?)
+
         public FormOrder(IAppSettings appSettings, ICustomerService customerService) : base(appSettings)
         {
             _customerService = customerService;
@@ -33,6 +40,8 @@ namespace CoffeePointOfSale.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             selectedCustomer = 0; // sets the customer back to anonymous
+            order.OrderedItems.Clear(); //clears order history
+            listBox1.Items.Clear(); //clears list view
             Close(); //closes this form
             FormFactory.Get<FormMain>().Show(); 
         }
@@ -50,6 +59,18 @@ namespace CoffeePointOfSale.Forms
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            OrderedItem item = new OrderedItem();
+
+            item.DrinkName = drinkName;
+            item.Quantity = quantity;
+            item.Customizations = customizations;
+
+            order.OrderedItems.Add(item);
+            listBox1.Items.Add(item.ToString());
         }
     }
 }
