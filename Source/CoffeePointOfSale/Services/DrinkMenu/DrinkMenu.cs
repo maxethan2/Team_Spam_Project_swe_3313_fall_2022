@@ -9,7 +9,7 @@ namespace CoffeePointOfSale.Services.DrinkMenu
     internal class DrinkMenu
     {
         private string _name;
-        private List<string> _baseDescription;
+        private string _baseDescription;
         private string _picture;
         private decimal _basePrice;
         
@@ -20,7 +20,7 @@ namespace CoffeePointOfSale.Services.DrinkMenu
             get => _name; set => _name = value;
         }
 
-        public virtual List<string> BaseDescription
+        public virtual string BaseDescription
         {
             get => _baseDescription; set => _baseDescription = value;
         }
@@ -35,6 +35,7 @@ namespace CoffeePointOfSale.Services.DrinkMenu
             get => _basePrice; set => _basePrice = value; 
         }
 
+        public List<Customization> Customizations { get; set; }
 
 
     }
