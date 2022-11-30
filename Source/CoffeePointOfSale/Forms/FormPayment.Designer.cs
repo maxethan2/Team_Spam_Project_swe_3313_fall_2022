@@ -43,6 +43,7 @@
             this.FakeAccentButton = new System.Windows.Forms.Button();
             this.TotalPrice = new System.Windows.Forms.Label();
             this.ErrorLabel = new System.Windows.Forms.Label();
+            this.ErrorLabel2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // FinalizeTransactionLabel
@@ -184,6 +185,7 @@
             this.PayRewardsButton.TabIndex = 12;
             this.PayRewardsButton.Text = "Pay";
             this.PayRewardsButton.UseVisualStyleBackColor = false;
+            this.PayRewardsButton.Click += new System.EventHandler(this.PayRewardsButton_Click);
             // 
             // FakeAccentButton
             // 
@@ -217,6 +219,18 @@
             this.ErrorLabel.Size = new System.Drawing.Size(202, 21);
             this.ErrorLabel.TabIndex = 15;
             this.ErrorLabel.Text = "Error Messages will go here";
+            //this.ErrorLabel.Click += new System.EventHandler(this.ErrorLabel_Click);
+            // 
+            // ErrorLabel2
+            // 
+            this.ErrorLabel2.AutoSize = true;
+            this.ErrorLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ErrorLabel2.ForeColor = System.Drawing.Color.Snow;
+            this.ErrorLabel2.Location = new System.Drawing.Point(938, 547);
+            this.ErrorLabel2.Name = "ErrorLabel2";
+            this.ErrorLabel2.Size = new System.Drawing.Size(202, 21);
+            this.ErrorLabel2.TabIndex = 16;
+            this.ErrorLabel2.Text = "Error Messages will go here";
             // 
             // FormPayment
             // 
@@ -224,6 +238,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1348, 694);
+            this.Controls.Add(this.ErrorLabel2);
             this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.TotalPrice);
             this.Controls.Add(this.FakeAccentButton);
@@ -263,5 +278,6 @@
         private Button FakeAccentButton;
         private Label TotalPrice;
         private Label ErrorLabel;
+        private Label ErrorLabel2;
     }
 }
