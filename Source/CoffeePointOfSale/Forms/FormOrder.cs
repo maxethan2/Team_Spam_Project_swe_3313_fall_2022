@@ -48,7 +48,6 @@ namespace CoffeePointOfSale.Forms
                 switch (index)
                 {
                     case 0:
-
                         OrderTotal += 2;
                         OrderedItems += " Size C ";
                         break;
@@ -148,7 +147,10 @@ namespace CoffeePointOfSale.Forms
 
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 42c75855bbffd09ef74bda893950b8b506264440
 
 
         private void button5_Click(object sender, EventArgs e) //Coffee Button

@@ -33,6 +33,7 @@ namespace CoffeePointOfSale.Forms
                 PayRewardsButton.Enabled = false;
             }
             ErrorLabel.Text = "";
+            ErrorLabel2.Text = "";
             //TotalPrice.Text = 
             //RewardPointsNeededLabel.Text =
         }
@@ -78,6 +79,22 @@ namespace CoffeePointOfSale.Forms
         private void FinalizeTransactionLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PayRewardsButton_Click(object sender, EventArgs e)
+        {
+            // check to see if customer has enough rewards points
+            if (_customerService.Customers.List[selectedCustomer].RewardPoints >= 0)
+            {
+                //subtract rewards points
+                _customerService.Customers.List[selectedCustomer].RewardPoints -= 100;
+                Close();
+                FormFactory.Get<FormReceipt>().Show();
+            }
+            else
+            {
+                ErrorLabel2.Text = "Not enough rewards points";
+            }
         }
     }
 }

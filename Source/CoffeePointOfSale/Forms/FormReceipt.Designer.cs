@@ -60,6 +60,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(448, 554);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // TitleLabel
             // 
@@ -121,6 +122,7 @@
             this.CostDetailsLabel.Size = new System.Drawing.Size(116, 15);
             this.CostDetailsLabel.TabIndex = 7;
             this.CostDetailsLabel.Text = "This will list out cost ";
+            this.CostDetailsLabel.Click += new System.EventHandler(this.CostDetailsLabel_Click);
             // 
             // PaymentDetailsLabel
             // 
