@@ -67,6 +67,7 @@
             this.TitleLabel.BackColor = System.Drawing.Color.Snow;
             this.TitleLabel.Enabled = false;
             this.TitleLabel.Font = new System.Drawing.Font("Segoe UI", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TitleLabel.ForeColor = System.Drawing.Color.Black;
             this.TitleLabel.Location = new System.Drawing.Point(532, 89);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(135, 45);

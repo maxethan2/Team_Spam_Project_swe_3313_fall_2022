@@ -74,6 +74,11 @@ namespace CoffeePointOfSale.Forms
             }
             catch (Exception ex) { }
         }
+
+        private void FinalizeTransactionLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

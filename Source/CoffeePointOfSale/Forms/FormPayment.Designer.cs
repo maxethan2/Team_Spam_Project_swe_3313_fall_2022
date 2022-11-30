@@ -51,11 +51,12 @@
             this.FinalizeTransactionLabel.Enabled = false;
             this.FinalizeTransactionLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FinalizeTransactionLabel.ForeColor = System.Drawing.Color.Snow;
-            this.FinalizeTransactionLabel.Location = new System.Drawing.Point(556, 25);
+            this.FinalizeTransactionLabel.Location = new System.Drawing.Point(552, 25);
             this.FinalizeTransactionLabel.Name = "FinalizeTransactionLabel";
             this.FinalizeTransactionLabel.Size = new System.Drawing.Size(247, 37);
             this.FinalizeTransactionLabel.TabIndex = 0;
             this.FinalizeTransactionLabel.Text = "Finalize Transaction";
+            this.FinalizeTransactionLabel.Click += new System.EventHandler(this.FinalizeTransactionLabel_Click);
             // 
             // PayCardLabel
             // 

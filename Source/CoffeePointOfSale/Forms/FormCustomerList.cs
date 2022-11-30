@@ -53,7 +53,6 @@ namespace CoffeePointOfSale.Forms
         {
            
             index = this.CustomerListTable.SelectedRows[0].Cells[0].RowIndex;
-            label1.Text = index.ToString();
             selectedCustomer = index; // tracks customer 
 
         }
