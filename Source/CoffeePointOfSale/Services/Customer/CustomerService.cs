@@ -27,6 +27,10 @@ public class CustomerService : ICustomerService
     }
 
     public Customers Customers { get; init; }
-
+    public void CreateCustomer(Customer customer)
+    {
+        Customers.Add(customer);
+        Write();
+    }
     public void Write() => _storageService.Write(Customers);
 }
