@@ -11,7 +11,7 @@ public class Customer
     private int _rewardPoints;
     private string _firstName;
     private string _lastName;
-
+    private string _customerId;
     public virtual string Phone
     {
         get => _phone;
@@ -39,13 +39,14 @@ public class Customer
             _lastName = value.Trim(); //trim to remove leading or trailing spaces that might mess up the lookup function
         }
     }
+    
     public string CustomerId
     {
-        get; set;
+        get => _customerId;
+        init { Guid CustomerId = Guid.NewGuid(); }
     }
 
     public virtual int RewardPoints
-
     {
         get => _rewardPoints;
         set
@@ -59,9 +60,9 @@ public class Customer
     {
         get; set;
     } = new();
-
-
     [JsonIgnore]
+
+
     public virtual bool IsAnonymous => Phone == AnonymousCustomerId;
 
     public override string ToString()
