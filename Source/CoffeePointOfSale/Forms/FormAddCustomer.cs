@@ -32,6 +32,7 @@ namespace CoffeePointOfSale.Forms
             _customerService = customerService;
             _appSettings = appSettings;
             InitializeComponent();
+            ErrorLabel.Text = "";
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -64,7 +65,7 @@ namespace CoffeePointOfSale.Forms
             Regex regex = new Regex(@"[a-zA-Z]+,[a-zA-Z]"); //checks for comma
             if (regex.IsMatch(names) == false)
             {
-                NameTextBox.Text += " Please Enter in correct format";
+                ErrorLabel.Text =  " Please Enter in correct format (LastName, FirstName)";
                 return false;
             }
             return true;
@@ -75,7 +76,7 @@ namespace CoffeePointOfSale.Forms
             {
                 return true;
             }
-            NameTextBox.Text += " Phone Number Text is wrong";
+            ErrorLabel.Text =  " Phone Number is Invalid";
             return false;
         }
 
@@ -111,7 +112,7 @@ namespace CoffeePointOfSale.Forms
                     FormFactory.Get<FormOrder>().Show();
                 }
             }
-            catch (Exception ex) { NameTextBox.Text = nameTextBoxInput + " Please Enter in correct format"; }
+            catch (Exception ex) { ErrorLabel.Text = " Name field is Invalid. "; }
         }
    
     }

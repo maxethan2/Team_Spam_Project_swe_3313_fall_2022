@@ -35,6 +35,7 @@
             this.AddCustomerConfirmButton = new System.Windows.Forms.Button();
             this.PhoneNumberTextBox = new System.Windows.Forms.MaskedTextBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.ErrorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CancelButton
@@ -112,7 +113,17 @@
             this.NameTextBox.Size = new System.Drawing.Size(610, 34);
             this.NameTextBox.TabIndex = 1;
             this.NameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
- 
+            // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ErrorLabel.ForeColor = System.Drawing.Color.Snow;
+            this.ErrorLabel.Location = new System.Drawing.Point(369, 137);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(206, 21);
+            this.ErrorLabel.TabIndex = 7;
+            this.ErrorLabel.Text = "Errors will be displayed here";
             // 
             // FormAddCustomer
             // 
@@ -120,6 +131,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.PhoneNumberTextBox);
             this.Controls.Add(this.AddCustomerConfirmButton);
             this.Controls.Add(this.label3);
@@ -145,5 +157,6 @@
         private Button AddCustomerConfirmButton;
         private MaskedTextBox PhoneNumberTextBox;
         private TextBox NameTextBox;
+        private Label ErrorLabel;
     }
 }
