@@ -51,9 +51,9 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Snow;
-            this.button1.Location = new System.Drawing.Point(339, 69);
+            this.button1.Location = new System.Drawing.Point(367, 157);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(273, 182);
+            this.button1.Size = new System.Drawing.Size(534, 357);
             this.button1.TabIndex = 4;
             this.button1.Text = "Extract CSV";
             this.button1.UseVisualStyleBackColor = false;
