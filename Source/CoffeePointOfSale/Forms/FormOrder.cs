@@ -39,7 +39,8 @@ namespace CoffeePointOfSale.Forms
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            Close();
+            FormFactory.Get<FormPayment>().Show();
         }
 
         private void FormOrder_Load(object sender, EventArgs e)

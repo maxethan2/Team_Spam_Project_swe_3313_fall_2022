@@ -36,6 +36,8 @@
             this.CancelButton = new System.Windows.Forms.Button();
             this.RewardPointsNeededLabel = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // FinalizeTransactionLabel
@@ -82,6 +84,7 @@
             this.TotalRewardPointsLabel.Size = new System.Drawing.Size(174, 25);
             this.TotalRewardPointsLabel.TabIndex = 5;
             this.TotalRewardPointsLabel.Text = "Total Reward Points: ";
+            this.TotalRewardPointsLabel.Click += new System.EventHandler(this.TotalRewardPointsLabel_Click);
             // 
             // RewardPayLabel
             // 
@@ -127,12 +130,38 @@
             this.maskedTextBox1.TabIndex = 8;
             this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Snow;
+            this.label1.Location = new System.Drawing.Point(1025, 279);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 25);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Snow;
+            this.label2.Location = new System.Drawing.Point(1050, 348);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 25);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "label2";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // FormPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.ClientSize = new System.Drawing.Size(1348, 694);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.RewardPointsNeededLabel);
             this.Controls.Add(this.CancelButton);
@@ -158,5 +187,7 @@
         private Button CancelButton;
         private Label RewardPointsNeededLabel;
         private MaskedTextBox maskedTextBox1;
+        private Label label1;
+        private Label label2;
     }
 }
