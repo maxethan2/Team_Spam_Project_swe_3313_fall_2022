@@ -135,23 +135,6 @@ namespace CoffeePointOfSale.Forms
             //    var customizations = _drinkMenuService;
             //    dataGridView1.Rows.Add();
             //}
-            dataGridView1.Rows.Add("Foam A | No Foam");
-            dataGridView1.Rows.Add("Foam B | Lots of Foam");
-            dataGridView1.Rows.Add("Size A | Small");
-            dataGridView1.Rows.Add("Size B | Large");
-            dataGridView1.Rows.Add("Size C | Mega");
-            dataGridView1.Rows.Add("Creamer A | Room for Cream");
-            dataGridView1.Rows.Add("Creamer B | Non-Fat Milk");
-            dataGridView1.Rows.Add("Creamer C | Whole Milk");
-            dataGridView1.Rows.Add("Creamer D | Oat Milk");
-            dataGridView1.Rows.Add("Creamer E | Soy Milk");
-            dataGridView1.Rows.Add("Espresso | 1 Extra Shot");
-            dataGridView1.Rows.Add("Caffeine | Decaffeinated");
-            dataGridView1.Rows.Add("Sweetener A | 1 Sugar");
-            dataGridView1.Rows.Add("Sweetener B | 1 Stevia");
-            dataGridView1.Rows.Add("Sweetener C | 1 Sweet'N Low");
-            dataGridView1.Rows.Add("Temperature A | Less Hot");
-            dataGridView1.Rows.Add("Temperature B | Very Hot");
 
 
             //Disables all button so user cannot constantly add customizations to list
@@ -165,28 +148,13 @@ namespace CoffeePointOfSale.Forms
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
 
         private void button5_Click(object sender, EventArgs e) //Coffee Button
         {
-            dataGridView1.Rows.Add("Size A | Small");
-            dataGridView1.Rows.Add("Size B | Large");
-            dataGridView1.Rows.Add("Size C | Mega");
-            dataGridView1.Rows.Add("Creamer A | Room for Cream");
-            dataGridView1.Rows.Add("Creamer B | Non-Fat Milk");
-            dataGridView1.Rows.Add("Creamer C | Whole Milk");
-            dataGridView1.Rows.Add("Creamer D | Oat Milk");
-            dataGridView1.Rows.Add("Creamer E | Soy Milk");
-            dataGridView1.Rows.Add("Espresso | 1 Extra Shot");
-            dataGridView1.Rows.Add("Sweetener A | 1 Sugar");
-            dataGridView1.Rows.Add("Sweetener B | 1 Stevia");
-            dataGridView1.Rows.Add("Sweetener C | 1 Sweet'N Low");
-            dataGridView1.Rows.Add("Temperature A | Less Hot");
-            dataGridView1.Rows.Add("Temperature B | Very Hot");
+            isCoffee = true;
+
 
             //Disables all button so user cannot constantly add customizations to list
             button2.Enabled = false;
@@ -200,21 +168,7 @@ namespace CoffeePointOfSale.Forms
 
         private void button3_Click(object sender, EventArgs e) // Iced Latte Button
         {
-            dataGridView1.Rows.Add("Foam A | No Foam");
-            dataGridView1.Rows.Add("Foam B | Lots of Foam");
-            dataGridView1.Rows.Add("Size A | Large");
-            dataGridView1.Rows.Add("Creamer A | Room for Cream");
-            dataGridView1.Rows.Add("Creamer B | Non-Fat Milk");
-            dataGridView1.Rows.Add("Creamer C | Whole Milk");
-            dataGridView1.Rows.Add("Creamer D | Oat Milk");
-            dataGridView1.Rows.Add("Creamer E | Soy Milk");
-            dataGridView1.Rows.Add("Espresso | 1 Extra Shot");
-            dataGridView1.Rows.Add("Caffeine | Decaffeinated");
-            dataGridView1.Rows.Add("Sweetener A | 1 Sugar");
-            dataGridView1.Rows.Add("Sweetener B | 1 Stevia");
-            dataGridView1.Rows.Add("Sweetener C | 1 Sweet'N Low");
-            dataGridView1.Rows.Add("Ice A | Extra Ice");
-            dataGridView1.Rows.Add("Ice B | No Ice");
+
 
             //Disables all button so user cannot constantly add customizations to list
             button2.Enabled = false;
@@ -229,20 +183,7 @@ namespace CoffeePointOfSale.Forms
 
         private void button4_Click(object sender, EventArgs e) // Iced Matcha green Tea Latte Button
         {
-            dataGridView1.Rows.Add("Foam A | No Foam");
-            dataGridView1.Rows.Add("Foam B | Lots of Foam");
-            dataGridView1.Rows.Add("Size A | Large");
-            dataGridView1.Rows.Add("Creamer A | Room for Cream");
-            dataGridView1.Rows.Add("Creamer B | Non-Fat Milk");
-            dataGridView1.Rows.Add("Creamer C | Whole Milk");
-            dataGridView1.Rows.Add("Creamer D | Oat Milk");
-            dataGridView1.Rows.Add("Creamer E | Soy Milk");
-            dataGridView1.Rows.Add("Matcha | 1 Extra Dose");
-            dataGridView1.Rows.Add("Sweetener A | 1 Sugar");
-            dataGridView1.Rows.Add("Sweetener B | 1 Stevia");
-            dataGridView1.Rows.Add("Sweetener C | 1 Sweet'N Low");
-            dataGridView1.Rows.Add("Ice A | Extra Ice");
-            dataGridView1.Rows.Add("Ice B | No Ice");
+
 
             //Disables all button so user cannot constantly add customizations to list
             button2.Enabled = false;
@@ -288,7 +229,12 @@ namespace CoffeePointOfSale.Forms
             button6.Enabled = true;
             button7.Enabled = true;
             button8.Enabled = false;
-            dataGridView1.Rows.Clear();
+            isCoffee = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
