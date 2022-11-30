@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoffeePointOfSale.Services.DrinkMenu
 {
-    internal class DrinkMenu
+    public class DrinkMenu
     {
         private string _name;
         private string _baseDescription;
