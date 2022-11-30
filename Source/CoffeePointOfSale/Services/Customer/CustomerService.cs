@@ -15,7 +15,7 @@ public class CustomerService : ICustomerService
     {
         _storageService = storageService;
         Customers = _storageService.Read<Customers>(); //load customers from JSON file
-        Customers.List.OrderBy(x => x.LastName).ToList();
+        Customers.List.OrderBy(x => x.LastName).ToList();//work in progress
         CreateAnonymousCustomer();
     }
 

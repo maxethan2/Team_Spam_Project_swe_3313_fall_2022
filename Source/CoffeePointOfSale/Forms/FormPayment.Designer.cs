@@ -36,8 +36,12 @@
             this.CancelButton = new System.Windows.Forms.Button();
             this.RewardPointsNeededLabel = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.RewardsTotalLabel = new System.Windows.Forms.Label();
+            this.RewardsNeededLabel = new System.Windows.Forms.Label();
+            this.PayWithCreditButton = new System.Windows.Forms.Button();
+            this.PayRewardsButton = new System.Windows.Forms.Button();
+            this.FakeAccentButton = new System.Windows.Forms.Button();
+            this.TotalPrice = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // FinalizeTransactionLabel
@@ -46,7 +50,7 @@
             this.FinalizeTransactionLabel.Enabled = false;
             this.FinalizeTransactionLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FinalizeTransactionLabel.ForeColor = System.Drawing.Color.Snow;
-            this.FinalizeTransactionLabel.Location = new System.Drawing.Point(474, 13);
+            this.FinalizeTransactionLabel.Location = new System.Drawing.Point(556, 25);
             this.FinalizeTransactionLabel.Name = "FinalizeTransactionLabel";
             this.FinalizeTransactionLabel.Size = new System.Drawing.Size(247, 37);
             this.FinalizeTransactionLabel.TabIndex = 0;
@@ -55,11 +59,11 @@
             // PayCardLabel
             // 
             this.PayCardLabel.AutoSize = true;
-            this.PayCardLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayCardLabel.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PayCardLabel.ForeColor = System.Drawing.Color.Snow;
-            this.PayCardLabel.Location = new System.Drawing.Point(122, 205);
+            this.PayCardLabel.Location = new System.Drawing.Point(170, 187);
             this.PayCardLabel.Name = "PayCardLabel";
-            this.PayCardLabel.Size = new System.Drawing.Size(193, 28);
+            this.PayCardLabel.Size = new System.Drawing.Size(330, 46);
             this.PayCardLabel.TabIndex = 1;
             this.PayCardLabel.Text = "Pay With Credit Card";
             // 
@@ -68,7 +72,7 @@
             this.EnterCardLabel.AutoSize = true;
             this.EnterCardLabel.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EnterCardLabel.ForeColor = System.Drawing.Color.Snow;
-            this.EnterCardLabel.Location = new System.Drawing.Point(70, 279);
+            this.EnterCardLabel.Location = new System.Drawing.Point(208, 279);
             this.EnterCardLabel.Name = "EnterCardLabel";
             this.EnterCardLabel.Size = new System.Drawing.Size(245, 25);
             this.EnterCardLabel.TabIndex = 2;
@@ -79,21 +83,20 @@
             this.TotalRewardPointsLabel.AutoSize = true;
             this.TotalRewardPointsLabel.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TotalRewardPointsLabel.ForeColor = System.Drawing.Color.Snow;
-            this.TotalRewardPointsLabel.Location = new System.Drawing.Point(845, 279);
+            this.TotalRewardPointsLabel.Location = new System.Drawing.Point(869, 279);
             this.TotalRewardPointsLabel.Name = "TotalRewardPointsLabel";
             this.TotalRewardPointsLabel.Size = new System.Drawing.Size(174, 25);
             this.TotalRewardPointsLabel.TabIndex = 5;
             this.TotalRewardPointsLabel.Text = "Total Reward Points: ";
-            this.TotalRewardPointsLabel.Click += new System.EventHandler(this.TotalRewardPointsLabel_Click);
             // 
             // RewardPayLabel
             // 
             this.RewardPayLabel.AutoSize = true;
-            this.RewardPayLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RewardPayLabel.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RewardPayLabel.ForeColor = System.Drawing.Color.Snow;
-            this.RewardPayLabel.Location = new System.Drawing.Point(897, 205);
+            this.RewardPayLabel.Location = new System.Drawing.Point(860, 187);
             this.RewardPayLabel.Name = "RewardPayLabel";
-            this.RewardPayLabel.Size = new System.Drawing.Size(216, 28);
+            this.RewardPayLabel.Size = new System.Drawing.Size(371, 46);
             this.RewardPayLabel.TabIndex = 4;
             this.RewardPayLabel.Text = "Pay With Reward Points";
             // 
@@ -115,7 +118,7 @@
             this.RewardPointsNeededLabel.AutoSize = true;
             this.RewardPointsNeededLabel.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RewardPointsNeededLabel.ForeColor = System.Drawing.Color.Snow;
-            this.RewardPointsNeededLabel.Location = new System.Drawing.Point(845, 348);
+            this.RewardPointsNeededLabel.Location = new System.Drawing.Point(860, 373);
             this.RewardPointsNeededLabel.Name = "RewardPointsNeededLabel";
             this.RewardPointsNeededLabel.Size = new System.Drawing.Size(199, 25);
             this.RewardPointsNeededLabel.TabIndex = 7;
@@ -123,36 +126,82 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(70, 335);
+            this.maskedTextBox1.Location = new System.Drawing.Point(114, 322);
             this.maskedTextBox1.Mask = "0000 0000 0000 0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(245, 23);
+            this.maskedTextBox1.Size = new System.Drawing.Size(431, 23);
             this.maskedTextBox1.TabIndex = 8;
+            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
-            // label1
+            // RewardsTotalLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(1025, 279);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 25);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.RewardsTotalLabel.AutoSize = true;
+            this.RewardsTotalLabel.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RewardsTotalLabel.ForeColor = System.Drawing.Color.Snow;
+            this.RewardsTotalLabel.Location = new System.Drawing.Point(1075, 279);
+            this.RewardsTotalLabel.Name = "RewardsTotalLabel";
+            this.RewardsTotalLabel.Size = new System.Drawing.Size(156, 25);
+            this.RewardsTotalLabel.TabIndex = 9;
+            this.RewardsTotalLabel.Text = "RewardsTotalLabel";
             // 
-            // label2
+            // RewardsNeededLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Snow;
-            this.label2.Location = new System.Drawing.Point(1050, 348);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 25);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "label2";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.RewardsNeededLabel.AutoSize = true;
+            this.RewardsNeededLabel.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RewardsNeededLabel.ForeColor = System.Drawing.Color.Snow;
+            this.RewardsNeededLabel.Location = new System.Drawing.Point(1065, 373);
+            this.RewardsNeededLabel.Name = "RewardsNeededLabel";
+            this.RewardsNeededLabel.Size = new System.Drawing.Size(181, 25);
+            this.RewardsNeededLabel.TabIndex = 10;
+            this.RewardsNeededLabel.Text = "RewardsNeededLabel";
+            // 
+            // PayWithCreditButton
+            // 
+            this.PayWithCreditButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.PayWithCreditButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayWithCreditButton.ForeColor = System.Drawing.Color.Snow;
+            this.PayWithCreditButton.Location = new System.Drawing.Point(204, 461);
+            this.PayWithCreditButton.Name = "PayWithCreditButton";
+            this.PayWithCreditButton.Size = new System.Drawing.Size(249, 68);
+            this.PayWithCreditButton.TabIndex = 11;
+            this.PayWithCreditButton.Text = "Pay";
+            this.PayWithCreditButton.UseVisualStyleBackColor = false;
+            this.PayWithCreditButton.Click += new System.EventHandler(this.PayWithCreditButton_Click);
+            // 
+            // PayRewardsButton
+            // 
+            this.PayRewardsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.PayRewardsButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PayRewardsButton.ForeColor = System.Drawing.Color.Snow;
+            this.PayRewardsButton.Location = new System.Drawing.Point(914, 461);
+            this.PayRewardsButton.Name = "PayRewardsButton";
+            this.PayRewardsButton.Size = new System.Drawing.Size(249, 68);
+            this.PayRewardsButton.TabIndex = 12;
+            this.PayRewardsButton.Text = "Pay";
+            this.PayRewardsButton.UseVisualStyleBackColor = false;
+            // 
+            // FakeAccentButton
+            // 
+            this.FakeAccentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.FakeAccentButton.Location = new System.Drawing.Point(674, 171);
+            this.FakeAccentButton.Name = "FakeAccentButton";
+            this.FakeAccentButton.Size = new System.Drawing.Size(2, 500);
+            this.FakeAccentButton.TabIndex = 13;
+            this.FakeAccentButton.Text = "button2";
+            this.FakeAccentButton.UseVisualStyleBackColor = false;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.AutoSize = true;
+            this.TotalPrice.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TotalPrice.ForeColor = System.Drawing.Color.Snow;
+            this.TotalPrice.Location = new System.Drawing.Point(610, 91);
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.Size = new System.Drawing.Size(124, 28);
+            this.TotalPrice.TabIndex = 14;
+            this.TotalPrice.Text = "Your total is: ";
+            this.TotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormPayment
             // 
@@ -160,8 +209,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1348, 694);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TotalPrice);
+            this.Controls.Add(this.FakeAccentButton);
+            this.Controls.Add(this.PayRewardsButton);
+            this.Controls.Add(this.PayWithCreditButton);
+            this.Controls.Add(this.RewardsNeededLabel);
+            this.Controls.Add(this.RewardsTotalLabel);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.RewardPointsNeededLabel);
             this.Controls.Add(this.CancelButton);
@@ -187,7 +240,11 @@
         private Button CancelButton;
         private Label RewardPointsNeededLabel;
         private MaskedTextBox maskedTextBox1;
-        private Label label1;
-        private Label label2;
+        private Label RewardsTotalLabel;
+        private Label RewardsNeededLabel;
+        private Button PayWithCreditButton;
+        private Button PayRewardsButton;
+        private Button FakeAccentButton;
+        private Label TotalPrice;
     }
 }

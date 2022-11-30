@@ -2,6 +2,7 @@
 using CoffeePointOfSale.Forms.Base;
 using CoffeePointOfSale.Services.Customer;
 using CoffeePointOfSale.Services.FormFactory;
+using CreditCardValidator;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,22 +19,32 @@ namespace CoffeePointOfSale.Forms
     {
         private readonly ICustomerService _customerService;
         private IAppSettings _appSettings;
+        
         public FormPayment(IAppSettings appSettings, ICustomerService customerService) : base(appSettings)
         {
             _customerService = customerService;
             _appSettings = appSettings;
             InitializeComponent();
+            RewardsTotalLabel.Text= _customerService.Customers.List[selectedCustomer].RewardPoints.ToString();
+            if (_customerService.Customers.List[selectedCustomer].RewardPoints == 0)//disables and changes button color when customer is too poor
+            {
+                PayRewardsButton.BackColor = Color.Black;//placeholder color #todo
+                PayRewardsButton.Enabled = false;
+            }
+            //TotalPrice.Text = 
+            //TotalPrice.Text = 
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            selectedCustomer = 0; //resets back to anonymous
             Close(); //closes this form
             FormFactory.Get<FormMain>().Show();
         }
 
         private void CardInfoTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.Text= string.Empty;
+
             
         }
 
@@ -42,24 +53,15 @@ namespace CoffeePointOfSale.Forms
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void PayWithCreditButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void TotalRewardPointsLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-        
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            CreditCardDetector detector = new CreditCardDetector(maskedTextBox1.Text);
+            if (detector.IsValid() ==true)
+            
+                //flow to complete purchase
+                Close(); //closes this form
+                FormFactory.Get<FormReceipt>().Show();
+            }
         }
     }
-}
+
