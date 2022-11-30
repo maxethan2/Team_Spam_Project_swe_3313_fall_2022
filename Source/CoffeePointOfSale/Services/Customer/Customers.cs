@@ -9,7 +9,10 @@ public class Customers
     /// </summary>
     [JsonProperty("Customers")]
     private readonly Dictionary<string, Customer> _customerDict = new();
-
+    [JsonProperty("Orders")]
+    private readonly List<Order> _orders = new();
+    [JsonIgnore]
+    public IReadOnlyList<Order> OrderItems => _orders;
     /// <summary>
     /// Returns a readonly list of all customers.
     /// </summary>
@@ -32,7 +35,7 @@ public class Customers
             return _customerDict.ContainsKey(phone) ? _customerDict[phone] : null;
         }
     }
-
+   
     /// <summary>
     /// Adds a new customer to the customer dictionary.
     /// </summary>

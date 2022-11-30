@@ -15,7 +15,7 @@ public class CustomerService : ICustomerService
     {
         _storageService = storageService;
         Customers = _storageService.Read<Customers>(); //load customers from JSON file
-
+        Customers.List.OrderBy(x => x.LastName).ToList();
         CreateAnonymousCustomer();
     }
 
@@ -31,7 +31,7 @@ public class CustomerService : ICustomerService
         Customers.Add(customer);
         Write();
     }
-
+    
     public Customers Customers { get; init; }
     public void Write() => _storageService.Write(Customers);
 }

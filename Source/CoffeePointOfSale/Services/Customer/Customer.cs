@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using CoffeePointOfSale.Configuration;
+using Newtonsoft.Json;
 
 namespace CoffeePointOfSale.Services.Customer;
 
@@ -9,9 +10,10 @@ public class Customer
 
     private string _phone = ""; //backing field for Phone property. only needed because the setter has logic to handle nulls and trimming spaces.
     private int _rewardPoints;
-    private string _firstName;
-    private string _lastName;
-    private string _customerId;
+    private string _firstName = "";
+    private string _lastName = "";
+    private string _customerId = "";
+    private List<Order> _orders;
     public virtual string Phone
     {
         get => _phone;
@@ -43,7 +45,10 @@ public class Customer
     public string CustomerId
     {
         get => _customerId;
-        init { Guid CustomerId = Guid.NewGuid(); }
+        init {
+            Guid guid = Guid.NewGuid();
+            this._customerId = guid.ToString();
+        }
     }
 
     public virtual int RewardPoints
@@ -61,7 +66,6 @@ public class Customer
         get; set;
     } = new();
     [JsonIgnore]
-
 
     public virtual bool IsAnonymous => Phone == AnonymousCustomerId;
 
