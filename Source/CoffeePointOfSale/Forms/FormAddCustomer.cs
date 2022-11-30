@@ -98,6 +98,14 @@ namespace CoffeePointOfSale.Forms
                 {
                     StorageService storageService = new StorageService();
                     CustomerService customerService = new CustomerService(storageService);
+
+                    // create temp order
+                    tempCust.Orders = new List<Order>();
+                    Order tempOrder = new Order();
+                    tempOrder.OrderedItems = new List<OrderedItem>();
+
+
+                    tempCust.Orders.Add(tempOrder);
                     customerService.CreateCustomer(tempCust);
                     Close(); //closes this form
                     FormFactory.Get<FormOrder>().Show();
