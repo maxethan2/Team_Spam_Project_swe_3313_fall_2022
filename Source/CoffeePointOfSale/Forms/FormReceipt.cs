@@ -22,6 +22,7 @@ namespace CoffeePointOfSale.Forms.Base
             _customerService = customerService;
             _appSettings = appSettings;
             InitializeComponent();
+            CustomerNameLabel.Text = "Order Placed by " + _customerService.Customers.List[selectedCustomer].FirstName;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
