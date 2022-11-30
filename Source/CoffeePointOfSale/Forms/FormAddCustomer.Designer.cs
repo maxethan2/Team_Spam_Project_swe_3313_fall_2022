@@ -55,7 +55,7 @@
             this.NameTextBox.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NameTextBox.Location = new System.Drawing.Point(369, 203);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(610, 47);
+            this.NameTextBox.Size = new System.Drawing.Size(610, 34);
             this.NameTextBox.TabIndex = 1;
             this.NameTextBox.Text = "ENTER NAME";
             this.NameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -68,7 +68,7 @@
             this.label1.ForeColor = System.Drawing.Color.Snow;
             this.label1.Location = new System.Drawing.Point(474, 158);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(412, 33);
+            this.label1.Size = new System.Drawing.Size(284, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Customer Name (Last, First)";
             // 
@@ -84,7 +84,7 @@
             this.PhoneTextBox.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PhoneTextBox.Location = new System.Drawing.Point(369, 312);
             this.PhoneTextBox.Name = "PhoneTextBox";
-            this.PhoneTextBox.Size = new System.Drawing.Size(610, 47);
+            this.PhoneTextBox.Size = new System.Drawing.Size(610, 34);
             this.PhoneTextBox.TabIndex = 3;
             this.PhoneTextBox.Text = "ENTER PHONE NUMBER";
             this.PhoneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -97,7 +97,7 @@
             this.label3.ForeColor = System.Drawing.Color.Snow;
             this.label3.Location = new System.Drawing.Point(474, 276);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(222, 33);
+            this.label3.Size = new System.Drawing.Size(155, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "Phone Number";
             // 
@@ -116,9 +116,10 @@
             // 
             // FormAddCustomer
             // 
-
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.AddCustomerConfirmButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

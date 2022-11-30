@@ -37,6 +37,10 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // CancelButton
@@ -54,13 +58,15 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1123, 593);
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(33, 605);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 38);
+            this.button1.Size = new System.Drawing.Size(191, 45);
             this.button1.TabIndex = 3;
             this.button1.Text = "Continue to Checkout";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
@@ -123,6 +129,7 @@
             this.button7.TabIndex = 9;
             this.button7.Text = "Espresso";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label1
             // 
@@ -130,6 +137,25 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Location = new System.Drawing.Point(1090, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(259, 722);
+            this.panel1.TabIndex = 10;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(16, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 541);
+            this.dataGridView1.TabIndex = 11;
             // 
             // FormOrder
             // 
@@ -144,12 +170,14 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(13, 22, 13, 22);
             this.Name = "FormOrder";
             this.Text = "FormOrder";
             this.Load += new System.EventHandler(this.FormOrder_Load);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -165,5 +193,7 @@
         private Button button6;
         private Button button7;
         private Label label1;
+        private Panel panel1;
+        private DataGridView dataGridView1;
     }
 }

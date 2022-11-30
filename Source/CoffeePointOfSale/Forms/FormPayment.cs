@@ -36,5 +36,16 @@ namespace CoffeePointOfSale.Forms
             this.Text= string.Empty;
             
         }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            maskedTextBox1.Mask = "0000-0000-0000-0000";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+            FormFactory.Get<FormReceipt>().Show();
+        }
     }
 }
