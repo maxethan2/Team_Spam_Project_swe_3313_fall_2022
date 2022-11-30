@@ -22,6 +22,9 @@ namespace CoffeePointOfSale.Forms
 
     public partial class FormAddCustomer : FormNoCloseBase
     {
+        string FullName;
+        string PhoneNumber;
+
         private readonly ICustomerService _customerService;
         private IAppSettings _appSettings;
         public FormAddCustomer(IAppSettings appSettings, ICustomerService customerService) : base(appSettings)
