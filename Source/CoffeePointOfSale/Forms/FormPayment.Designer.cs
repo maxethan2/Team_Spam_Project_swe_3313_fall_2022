@@ -42,6 +42,7 @@
             this.PayRewardsButton = new System.Windows.Forms.Button();
             this.FakeAccentButton = new System.Windows.Forms.Button();
             this.TotalPrice = new System.Windows.Forms.Label();
+            this.ErrorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // FinalizeTransactionLabel
@@ -159,6 +160,7 @@
             // PayWithCreditButton
             // 
             this.PayWithCreditButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.PayWithCreditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PayWithCreditButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PayWithCreditButton.ForeColor = System.Drawing.Color.Snow;
             this.PayWithCreditButton.Location = new System.Drawing.Point(204, 461);
@@ -172,6 +174,7 @@
             // PayRewardsButton
             // 
             this.PayRewardsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.PayRewardsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PayRewardsButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PayRewardsButton.ForeColor = System.Drawing.Color.Snow;
             this.PayRewardsButton.Location = new System.Drawing.Point(914, 461);
@@ -203,12 +206,24 @@
             this.TotalPrice.Text = "Your total is: ";
             this.TotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ErrorLabel.ForeColor = System.Drawing.Color.Snow;
+            this.ErrorLabel.Location = new System.Drawing.Point(227, 357);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(202, 21);
+            this.ErrorLabel.TabIndex = 15;
+            this.ErrorLabel.Text = "Error Messages will go here";
+            // 
             // FormPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1348, 694);
+            this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.TotalPrice);
             this.Controls.Add(this.FakeAccentButton);
             this.Controls.Add(this.PayRewardsButton);
@@ -246,5 +261,6 @@
         private Button PayRewardsButton;
         private Button FakeAccentButton;
         private Label TotalPrice;
+        private Label ErrorLabel;
     }
 }

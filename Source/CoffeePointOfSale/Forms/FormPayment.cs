@@ -32,8 +32,9 @@ namespace CoffeePointOfSale.Forms
                 PayRewardsButton.BackColor = Color.Black;//placeholder color #todo
                 PayRewardsButton.Enabled = false;
             }
+            ErrorLabel.Text = "";
             //TotalPrice.Text = 
-            //TotalPrice.Text = 
+            //RewardPointsNeededLabel.Text =
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -61,9 +62,14 @@ namespace CoffeePointOfSale.Forms
                 CreditCardDetector detector = new CreditCardDetector(maskedTextBox1.Text);
                 if (detector.IsValid() == true)
                 {
-                    //flow to complete purchase
+                    //flow to complete purchase 
+                    
                     Close(); //closes this form
                     FormFactory.Get<FormReceipt>().Show();
+                }
+                else
+                {
+                    ErrorLabel.Text = "Invalid Credit Card";
                 }
             }
             catch (Exception ex) { }
