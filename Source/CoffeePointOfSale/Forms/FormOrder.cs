@@ -23,6 +23,10 @@ namespace CoffeePointOfSale.Forms
      */
     public partial class FormOrder : FormNoCloseBase
     {
+        public string OrderedItems;
+        public decimal OrderTotal;
+        public static int index;
+        bool isCoffee;
         private readonly ICustomerService _customerService;
         private readonly IDrinkMenuService _drinkMenuService;
         private IAppSettings _appSettings;
@@ -35,7 +39,76 @@ namespace CoffeePointOfSale.Forms
             button8.Enabled = false;
         }
 
-       
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            index = this.dataGridView1.SelectedRows[0].Cells[0].RowIndex;
+            if (isCoffee == true)
+            {
+                OrderedItems += " Coffee: ";
+                switch (index)
+                {
+                    case 0:
+
+                        OrderTotal += 2;
+                        OrderedItems += " Size C ";
+                        break;
+                    case 1:
+                        OrderTotal += 1;
+                        OrderedItems += " Size B ";
+                        break;
+                    case 2:
+                        OrderTotal += 0.5M;
+                        OrderedItems += " Size A ";
+                        break;
+                    case 3:
+                        OrderTotal = -0.5M;
+                        OrderedItems += " Creamer F ";
+                        break;
+                    case 4:
+                        OrderTotal += 1.5M;
+                        OrderedItems += " Creamer E ";
+                        break;
+                    case 5:
+                        OrderTotal += 1.5M;
+                        OrderedItems += " Creamer D ";
+                        break;
+                    case 6:
+                        OrderTotal += 1.5M;
+                        OrderedItems += " Creamer C ";
+                        break;
+                    case 7:
+                        OrderedItems += " Creamer B ";
+                        break;
+                    case 8:
+                        OrderedItems += " Creamer A ";
+                        break;
+                    case 9:
+                        OrderedItems += " Room for Cream ";
+                        break;
+                    case 10:
+                        OrderedItems += " Espresso ";
+                        OrderTotal += 1.25M;
+                        break;
+                    case 11:
+                        OrderedItems += " Sweetener C ";
+                        break;
+                    case 12:
+                        OrderedItems += " Sweetener B ";
+                        break;
+                    case 13:
+                        OrderedItems += " Sweetener A ";
+                        break;
+                    case 14:
+                        OrderedItems += " Temperature B ";
+                        break;
+                    case 15:
+                        OrderedItems += " Temperature B ";
+                        break;
+                }
+            }
+        }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
