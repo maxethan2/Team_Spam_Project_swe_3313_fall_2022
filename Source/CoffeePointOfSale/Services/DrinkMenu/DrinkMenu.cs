@@ -8,6 +8,34 @@ namespace CoffeePointOfSale.Services.DrinkMenu
 {
     internal class DrinkMenu
     {
+        private string _name;
+        private string _baseDescription;
+        private string _picture;
+        private decimal _basePrice;
+        
+       
+        
+        public virtual string Name
+        {
+            get => _name; set => _name = value;
+        }
+
+        public virtual string BaseDescription
+        {
+            get => _baseDescription; set => _baseDescription = value;
+        }
+
+        public virtual string Picture
+        {
+            get => _picture; set => _picture = value; 
+        }
+
+        public virtual decimal BasePrice
+        {
+            get => _basePrice; set => _basePrice = value; 
+        }
+
+
 
     }
 }
