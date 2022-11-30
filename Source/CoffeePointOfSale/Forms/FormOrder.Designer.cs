@@ -124,10 +124,19 @@
             this.button7.Text = "Espresso";
             this.button7.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 0;
+            // 
             // FormOrder
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -142,7 +151,6 @@
             this.Text = "FormOrder";
             this.Load += new System.EventHandler(this.FormOrder_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -30,5 +30,11 @@ namespace CoffeePointOfSale.Forms
             Close(); //closes this form
             FormFactory.Get<FormMain>().Show();
         }
+
+        private void CardInfoTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.Text= string.Empty;
+            
+        }
     }
 }

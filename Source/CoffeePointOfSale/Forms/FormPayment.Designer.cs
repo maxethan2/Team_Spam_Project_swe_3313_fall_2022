@@ -46,7 +46,7 @@
             this.FinalizeTransactionLabel.ForeColor = System.Drawing.Color.Snow;
             this.FinalizeTransactionLabel.Location = new System.Drawing.Point(474, 13);
             this.FinalizeTransactionLabel.Name = "FinalizeTransactionLabel";
-            this.FinalizeTransactionLabel.Size = new System.Drawing.Size(366, 54);
+            this.FinalizeTransactionLabel.Size = new System.Drawing.Size(247, 37);
             this.FinalizeTransactionLabel.TabIndex = 0;
             this.FinalizeTransactionLabel.Text = "Finalize Transaction";
             // 
@@ -57,7 +57,7 @@
             this.PayCardLabel.ForeColor = System.Drawing.Color.Snow;
             this.PayCardLabel.Location = new System.Drawing.Point(122, 205);
             this.PayCardLabel.Name = "PayCardLabel";
-            this.PayCardLabel.Size = new System.Drawing.Size(292, 41);
+            this.PayCardLabel.Size = new System.Drawing.Size(193, 28);
             this.PayCardLabel.TabIndex = 1;
             this.PayCardLabel.Text = "Pay With Credit Card";
             // 
@@ -68,7 +68,7 @@
             this.EnterCardLabel.ForeColor = System.Drawing.Color.Snow;
             this.EnterCardLabel.Location = new System.Drawing.Point(70, 279);
             this.EnterCardLabel.Name = "EnterCardLabel";
-            this.EnterCardLabel.Size = new System.Drawing.Size(352, 36);
+            this.EnterCardLabel.Size = new System.Drawing.Size(245, 25);
             this.EnterCardLabel.TabIndex = 2;
             this.EnterCardLabel.Text = "Enter Credit Card Information";
             // 
@@ -76,8 +76,9 @@
             // 
             this.CardInfoTextBox.Location = new System.Drawing.Point(70, 318);
             this.CardInfoTextBox.Name = "CardInfoTextBox";
-            this.CardInfoTextBox.Size = new System.Drawing.Size(431, 31);
+            this.CardInfoTextBox.Size = new System.Drawing.Size(431, 23);
             this.CardInfoTextBox.TabIndex = 3;
+            this.CardInfoTextBox.TextChanged += new System.EventHandler(this.CardInfoTextBox_TextChanged);
             // 
             // TotalRewardPointsLabel
             // 
@@ -86,7 +87,7 @@
             this.TotalRewardPointsLabel.ForeColor = System.Drawing.Color.Snow;
             this.TotalRewardPointsLabel.Location = new System.Drawing.Point(845, 279);
             this.TotalRewardPointsLabel.Name = "TotalRewardPointsLabel";
-            this.TotalRewardPointsLabel.Size = new System.Drawing.Size(251, 36);
+            this.TotalRewardPointsLabel.Size = new System.Drawing.Size(174, 25);
             this.TotalRewardPointsLabel.TabIndex = 5;
             this.TotalRewardPointsLabel.Text = "Total Reward Points: ";
             // 
@@ -97,7 +98,7 @@
             this.RewardPayLabel.ForeColor = System.Drawing.Color.Snow;
             this.RewardPayLabel.Location = new System.Drawing.Point(897, 205);
             this.RewardPayLabel.Name = "RewardPayLabel";
-            this.RewardPayLabel.Size = new System.Drawing.Size(329, 41);
+            this.RewardPayLabel.Size = new System.Drawing.Size(216, 28);
             this.RewardPayLabel.TabIndex = 4;
             this.RewardPayLabel.Text = "Pay With Reward Points";
             // 
@@ -121,14 +122,16 @@
             this.RewardPointsNeededLabel.ForeColor = System.Drawing.Color.Snow;
             this.RewardPointsNeededLabel.Location = new System.Drawing.Point(845, 348);
             this.RewardPointsNeededLabel.Name = "RewardPointsNeededLabel";
-            this.RewardPointsNeededLabel.Size = new System.Drawing.Size(288, 36);
+            this.RewardPointsNeededLabel.Size = new System.Drawing.Size(199, 25);
             this.RewardPointsNeededLabel.TabIndex = 7;
             this.RewardPointsNeededLabel.Text = "Reward Points Needed: ";
             // 
             // FormPayment
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.RewardPointsNeededLabel);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.TotalRewardPointsLabel);
