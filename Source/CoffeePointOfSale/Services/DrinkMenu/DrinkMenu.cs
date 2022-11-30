@@ -12,7 +12,6 @@ namespace CoffeePointOfSale.Services.DrinkMenu
         private string _baseDescription;
         private string _picture;
         private decimal _basePrice;
-        
        
         
         public virtual string Name

@@ -48,7 +48,8 @@ namespace CoffeePointOfSale.Forms
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            Close();
+            FormFactory.Get<FormPayment>().Show();
         }
 
         private void FormOrder_Load(object sender, EventArgs e)
@@ -71,6 +72,11 @@ namespace CoffeePointOfSale.Forms
 
             order.OrderedItems.Add(item);
             listBox1.Items.Add(item.ToString());
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
