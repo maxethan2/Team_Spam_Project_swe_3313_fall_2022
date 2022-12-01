@@ -26,7 +26,7 @@ namespace CoffeePointOfSale.Forms
             _customerService = customerService;
             _appSettings = appSettings;
             InitializeComponent();
-            RewardsTotalLabel.Text = _customerService.Customers.List[selectedCustomer].RewardPoints.ToString();
+            RewardsTotalLabel.Text = _customerService.SelectedCustomer.RewardPoints.ToString();
             if (_customerService.SelectedCustomer.RewardPoints == 0)//disables and changes button color when customer is too poor
             {                                                       //replace 0 with cost amount
                 PayRewardsButton.BackColor = Color.Black;//placeholder color #todo
@@ -84,10 +84,10 @@ namespace CoffeePointOfSale.Forms
         private void PayRewardsButton_Click(object sender, EventArgs e)
         {
             // check to see if customer has enough rewards points
-            if (_customerService.Customers.List[selectedCustomer].RewardPoints >= 0)
+            if (_customerService.SelectedCustomer.RewardPoints >= 0)
             {
                 //subtract rewards points
-                _customerService.Customers.List[selectedCustomer].RewardPoints -= 100;
+                _customerService.SelectedCustomer.RewardPoints -= 100;
                 Close();
                 FormFactory.Get<FormReceipt>().Show();
             }

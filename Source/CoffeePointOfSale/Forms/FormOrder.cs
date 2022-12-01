@@ -18,9 +18,7 @@ using static System.Windows.Forms.LinkLabel;
 namespace CoffeePointOfSale.Forms
 {
     /*
-     * Current Customer is tracked through variable selectedCustomer located in FormNoCloseBase
-     * this variable acts as an indexer for the customer list
-     * if there is a better method to track which customer is being used feel free to change it 
+     * Current Customer is tracked through _customerService.SelectedCustomer
      */
     public partial class FormOrder : FormNoCloseBase
     {
