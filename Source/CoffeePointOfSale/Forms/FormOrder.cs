@@ -30,6 +30,7 @@ namespace CoffeePointOfSale.Forms
         private readonly IDrinkMenuService _drinkMenuService;
         private IAppSettings _appSettings;
 
+        //variables for the customizations
         public string size;
         public string creamer;
         public string sweetner;
@@ -37,8 +38,13 @@ namespace CoffeePointOfSale.Forms
         public string iceOrTemp;
         public string espressoOrMatOrDecaf; //this string is for either espresso, matcha, or decaffeinated
 
+        //base price variable
         public decimal basePrice;
 
+        //prices for the different customizations
+        public decimal sizePrice;
+        public decimal creamerPrice;
+        public decimal espressoOrMatOrDecafPrice; 
 
         public FormOrder(IAppSettings appSettings, ICustomerService customerService, IDrinkMenuService drinkMenuService) : base(appSettings)
         {
@@ -109,6 +115,8 @@ namespace CoffeePointOfSale.Forms
             radioButton10.Enabled = false;
             radioButton17.Enabled = false;
             radioButton18.Enabled = false;
+            radioButton4.Enabled = false;
+            radioButton21.Enabled = false;
 
             //Disables all button so user cannot constantly add customizations to list
             LatteButton.Enabled = false;
@@ -136,6 +144,8 @@ namespace CoffeePointOfSale.Forms
             radioButton8.Enabled= false;
             radioButton16.Enabled= false;
             radioButton19.Enabled= false;
+            radioButton4.Enabled = false;
+            radioButton21.Enabled = false;
 
             //Disables all button so user cannot constantly add customizations to list
             LatteButton.Enabled = false;
@@ -167,6 +177,8 @@ namespace CoffeePointOfSale.Forms
             radioButton19.Enabled= false;
             radioButton11.Enabled= false;
             radioButton9.Enabled= false;
+            radioButton4.Enabled = false;
+            radioButton21.Enabled = false;
 
             //Disables all button so user cannot constantly add customizations to list
             LatteButton.Enabled = false;
@@ -209,6 +221,8 @@ namespace CoffeePointOfSale.Forms
             radioButton18.Enabled = false;
             radioButton19.Enabled = false;
             radioButton20.Enabled = false;
+            radioButton4.Enabled = false;
+            radioButton21.Enabled = false;
 
             //Disables all button so user cannot constantly add customizations to list
             LatteButton.Enabled = false;
@@ -246,6 +260,8 @@ namespace CoffeePointOfSale.Forms
             radioButton18.Enabled = false;
             radioButton19.Enabled = false;
             radioButton20.Enabled = false;
+            radioButton4.Enabled = false;
+            radioButton21.Enabled = false;
 
             //Disables all button so user cannot constantly add customizations to list
             LatteButton.Enabled = false;
@@ -308,32 +324,54 @@ namespace CoffeePointOfSale.Forms
 
         private void radioButton8_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButton8.Checked == true)
+            {
+                creamer = "Room For Cream";
+            }
         }
 
         private void radioButton11_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButton11.Checked == true)
+            {
+                espressoOrMatOrDecaf = "1 Extra Shot of Espresso";
+                espressoOrMatOrDecafPrice = 1.25m;
+            }
         }
 
         private void radioButton10_CheckedChanged(object sender, EventArgs e)
         {
-
+            if(radioButton10.Checked == true)
+            {
+                espressoOrMatOrDecaf = "1 Extra Shot of Matcha";
+                espressoOrMatOrDecafPrice = 2.5m;
+            }
         }
 
         private void radioButton9_CheckedChanged(object sender, EventArgs e)
         {
-
+            if(radioButton9.Checked == true)
+            {
+                espressoOrMatOrDecaf = "Decaffeinated";
+                espressoOrMatOrDecafPrice = 0;
+            }
         }
 
         private void radioButton13_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButton13.Checked == true)
+            {
+                sweetner = "Sweet'N Low";
+            }
         }
 
         private void radioButton20_CheckedChanged(object sender, EventArgs e)
         {
-
+            if(radioButton20.Checked == true)
+            {
+                creamer = "Non-Fat Milk";
+                creamerPrice = 0;
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -394,6 +432,133 @@ namespace CoffeePointOfSale.Forms
         private void label1_Click_1(object sender, EventArgs e)
         {
             label1.Text = size + " " + iceOrTemp;
+        }
+
+        private void radioButton12_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButton12.Checked == true)
+            {
+                size = "Small";
+                sizePrice = -1;
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButton2.Checked == true)
+            {
+                size = "Large";
+                sizePrice = 1;
+            }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButton3.Checked == true)
+            {
+                size = "Mega";
+                sizePrice = 2;
+            }
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButton5.Checked == true)
+            {
+                creamer = "Whole Milk";
+                creamerPrice = 0;
+            }
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton6.Checked == true)
+            {
+                creamer = "Oat Milk";
+                creamerPrice = 1.5m;
+            }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked == true)
+            {
+                creamer = "Almond Milk";
+                creamerPrice = 1.5m;
+            }
+        }
+
+        private void radioButton7_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton7.Checked == true)
+            {
+                creamer = "Soy Milk";
+                creamerPrice = 1.5m;
+            }
+        }
+
+        private void radioButton15_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton15.Checked == true)
+            {
+                sweetner = "Sugar";
+            }
+        }
+
+        private void radioButton14_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton14.Checked == true)
+            {
+                sweetner = "Stevia";
+            }
+        }
+
+        private void radioButton18_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton18.Checked == true)
+            {
+                iceOrTemp = "Extra Ice";
+            }
+        }
+
+        private void radioButton17_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton17.Checked == true)
+            {
+                iceOrTemp = "No Ice";
+            }
+        }
+
+        private void radioButton16_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton16.Checked == true)
+            {
+                iceOrTemp = "Less hot";
+            }
+        }
+
+        private void radioButton19_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton19.Checked == true)
+            {
+                iceOrTemp = "Very Hot";
+            }
+        }
+
+        private void radioButton21_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButton21.Enabled== true)
+            {
+                foam = "Lots of Foam";
+            }
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton4.Enabled == true)
+            {
+                foam = "No Foam";
+            }
         }
     }
 }

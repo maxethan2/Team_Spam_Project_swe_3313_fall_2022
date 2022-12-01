@@ -67,12 +67,16 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.radioButton21 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // CancelButton
@@ -229,6 +233,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Large";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton3
             // 
@@ -241,6 +246,7 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Mega";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -253,6 +259,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Almond Milk";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton5
             // 
@@ -265,6 +272,7 @@
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Whole Milk";
             this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
             // 
             // radioButton6
             // 
@@ -277,6 +285,7 @@
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "Oat Milk";
             this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
             // 
             // radioButton7
             // 
@@ -289,6 +298,7 @@
             this.radioButton7.TabStop = true;
             this.radioButton7.Text = "Soy Milk";
             this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton7.CheckedChanged += new System.EventHandler(this.radioButton7_CheckedChanged);
             // 
             // radioButton8
             // 
@@ -353,6 +363,7 @@
             this.radioButton12.TabStop = true;
             this.radioButton12.Text = "Small";
             this.radioButton12.UseVisualStyleBackColor = true;
+            this.radioButton12.CheckedChanged += new System.EventHandler(this.radioButton12_CheckedChanged);
             // 
             // radioButton13
             // 
@@ -378,6 +389,7 @@
             this.radioButton14.TabStop = true;
             this.radioButton14.Text = "Stevia";
             this.radioButton14.UseVisualStyleBackColor = true;
+            this.radioButton14.CheckedChanged += new System.EventHandler(this.radioButton14_CheckedChanged);
             // 
             // radioButton15
             // 
@@ -390,6 +402,7 @@
             this.radioButton15.TabStop = true;
             this.radioButton15.Text = "Sugar";
             this.radioButton15.UseVisualStyleBackColor = true;
+            this.radioButton15.CheckedChanged += new System.EventHandler(this.radioButton15_CheckedChanged);
             // 
             // radioButton16
             // 
@@ -402,6 +415,7 @@
             this.radioButton16.TabStop = true;
             this.radioButton16.Text = "Less Hot";
             this.radioButton16.UseVisualStyleBackColor = true;
+            this.radioButton16.CheckedChanged += new System.EventHandler(this.radioButton16_CheckedChanged);
             // 
             // radioButton17
             // 
@@ -414,6 +428,7 @@
             this.radioButton17.TabStop = true;
             this.radioButton17.Text = "No Ice";
             this.radioButton17.UseVisualStyleBackColor = true;
+            this.radioButton17.CheckedChanged += new System.EventHandler(this.radioButton17_CheckedChanged);
             // 
             // radioButton18
             // 
@@ -426,6 +441,7 @@
             this.radioButton18.TabStop = true;
             this.radioButton18.Text = "Extra Ice";
             this.radioButton18.UseVisualStyleBackColor = true;
+            this.radioButton18.CheckedChanged += new System.EventHandler(this.radioButton18_CheckedChanged);
             // 
             // radioButton19
             // 
@@ -438,6 +454,7 @@
             this.radioButton19.TabStop = true;
             this.radioButton19.Text = "Very Hot";
             this.radioButton19.UseVisualStyleBackColor = true;
+            this.radioButton19.CheckedChanged += new System.EventHandler(this.radioButton19_CheckedChanged);
             // 
             // panel1
             // 
@@ -527,12 +544,48 @@
             this.label1.Text = "Click to see customizations";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.radioButton21);
+            this.panel5.Controls.Add(this.radioButton4);
+            this.panel5.Location = new System.Drawing.Point(11, 446);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(190, 30);
+            this.panel5.TabIndex = 62;
+            // 
+            // radioButton21
+            // 
+            this.radioButton21.AutoSize = true;
+            this.radioButton21.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.radioButton21.Location = new System.Drawing.Point(84, 3);
+            this.radioButton21.Name = "radioButton21";
+            this.radioButton21.Size = new System.Drawing.Size(94, 19);
+            this.radioButton21.TabIndex = 1;
+            this.radioButton21.TabStop = true;
+            this.radioButton21.Text = "Lots of Foam";
+            this.radioButton21.UseVisualStyleBackColor = true;
+            this.radioButton21.CheckedChanged += new System.EventHandler(this.radioButton21_CheckedChanged);
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.radioButton4.Location = new System.Drawing.Point(4, 3);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(74, 19);
+            this.radioButton4.TabIndex = 0;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "No Foam";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
             // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
@@ -566,6 +619,8 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -612,5 +667,8 @@
         private Panel panel4;
         private Button button1;
         private Label label1;
+        private Panel panel5;
+        private RadioButton radioButton21;
+        private RadioButton radioButton4;
     }
 }
