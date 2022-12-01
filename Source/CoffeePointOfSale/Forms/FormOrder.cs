@@ -41,6 +41,9 @@ namespace CoffeePointOfSale.Forms
         //base price variable
         public decimal basePrice;
 
+        //subtotal
+        public decimal subTotal;
+
         //prices for the different customizations
         public decimal sizePrice;
         public decimal creamerPrice;
