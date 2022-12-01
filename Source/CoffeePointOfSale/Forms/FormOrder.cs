@@ -38,7 +38,6 @@ namespace CoffeePointOfSale.Forms
             _drinkMenuService = drinkMenuService;
             InitializeComponent();
             AddDrinkButton.Enabled = false;
-            radioButton12.Enabled= false;   
         }
       
         private Order _currentOrder = new Order();  //this is a to track ordered items
@@ -65,6 +64,13 @@ namespace CoffeePointOfSale.Forms
 
         private void LatteButton_Click(object sender, EventArgs e) //Latte Button
         {
+
+            //Disables all customizations that do not apply to drink
+            radioButton8.Enabled = false;
+            radioButton10.Enabled = false;
+            radioButton17.Enabled = false;
+            radioButton18.Enabled = false;
+
             //Disables all button so user cannot constantly add customizations to list
             LatteButton.Enabled= false;
             IcedLatteButton.Enabled= false;
@@ -78,8 +84,12 @@ namespace CoffeePointOfSale.Forms
 
         private void CoffeeButton_Click(object sender, EventArgs e) //Coffee Button
         {
-            isCoffee = true;
 
+            //Disables all customizations that do not apply to drink
+            radioButton9.Enabled = false;
+            radioButton10.Enabled = false;
+            radioButton17.Enabled = false;
+            radioButton18.Enabled = false;
 
             //Disables all button so user cannot constantly add customizations to list
             LatteButton.Enabled = false;
@@ -93,7 +103,12 @@ namespace CoffeePointOfSale.Forms
 
         private void IcedLatteButton_Click(object sender, EventArgs e) // Iced Latte Button
         {
-
+            //Disables all customizations that do not apply to drink
+            radioButton3.Enabled = false;
+            radioButton12.Enabled = false;
+            radioButton8.Enabled= false;
+            radioButton16.Enabled= false;
+            radioButton19.Enabled= false;
 
             //Disables all button so user cannot constantly add customizations to list
             LatteButton.Enabled = false;
@@ -108,7 +123,14 @@ namespace CoffeePointOfSale.Forms
 
         private void MatchaButton_Click(object sender, EventArgs e) // Iced Matcha green Tea Latte Button
         {
-
+            //Disables all customizations that do not apply to drink
+            radioButton3.Enabled= false;
+            radioButton12.Enabled= false;
+            radioButton8.Enabled= false; 
+            radioButton16.Enabled= false;
+            radioButton19.Enabled= false;
+            radioButton11.Enabled= false;
+            radioButton9.Enabled= false;
 
             //Disables all button so user cannot constantly add customizations to list
             LatteButton.Enabled = false;
@@ -122,6 +144,27 @@ namespace CoffeePointOfSale.Forms
 
         private void WaterButton_Click(object sender, EventArgs e) // Iced Water Button
         {
+            //Disables all customizations that do not apply to drink
+            radioButton1.Enabled = false;
+            radioButton2.Enabled = false;
+            radioButton3.Enabled = false;
+            radioButton5.Enabled = false;
+            radioButton6.Enabled = false;
+            radioButton7.Enabled = false;
+            radioButton8.Enabled = false;
+            radioButton9.Enabled = false;
+            radioButton10.Enabled = false;
+            radioButton11.Enabled = false;
+            radioButton12.Enabled = false;
+            radioButton13.Enabled = false;
+            radioButton14.Enabled = false;
+            radioButton15.Enabled = false;
+            radioButton16.Enabled = false;
+            radioButton17.Enabled = false;
+            radioButton18.Enabled = false;
+            radioButton19.Enabled = false;
+            radioButton20.Enabled = false;
+
             //Disables all button so user cannot constantly add customizations to list
             LatteButton.Enabled = false;
             IcedLatteButton.Enabled = false;
@@ -134,6 +177,25 @@ namespace CoffeePointOfSale.Forms
 
         private void EspressoButton_Click(object sender, EventArgs e) // Espresso Button
         {
+            //Disables all customizations that do not apply to drink
+            radioButton1.Enabled = false;
+            radioButton2.Enabled = false;
+            radioButton3.Enabled = false;
+            radioButton5.Enabled = false;
+            radioButton6.Enabled = false;
+            radioButton7.Enabled = false;
+            radioButton8.Enabled = false;
+            radioButton9.Enabled = false;
+            radioButton10.Enabled = false;
+            radioButton12.Enabled = false;
+            radioButton13.Enabled = false;
+            radioButton14.Enabled = false;
+            radioButton15.Enabled = false;
+            radioButton16.Enabled = false;
+            radioButton17.Enabled = false;
+            radioButton18.Enabled = false;
+            radioButton19.Enabled = false;
+            radioButton20.Enabled = false;
 
             //Disables all button so user cannot constantly add customizations to list
             LatteButton.Enabled = false;
@@ -154,7 +216,6 @@ namespace CoffeePointOfSale.Forms
             WaterButton.Enabled = true;
             EspressoButton.Enabled = true;
             AddDrinkButton.Enabled = false;
-            isCoffee = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -207,6 +268,69 @@ namespace CoffeePointOfSale.Forms
 
         }
 
-       
+        private void radioButton13_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton20_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //Enables all radio buttons again once drink has been added to order
+            radioButton1.Enabled = true;
+            radioButton2.Enabled = true;
+            radioButton3.Enabled = true;
+            radioButton5.Enabled = true;
+            radioButton6.Enabled = true;
+            radioButton7.Enabled = true;
+            radioButton8.Enabled = true;
+            radioButton9.Enabled = true;
+            radioButton10.Enabled = true;
+            radioButton11.Enabled = true;
+            radioButton12.Enabled = true;
+            radioButton13.Enabled = true;
+            radioButton14.Enabled = true;
+            radioButton15.Enabled = true;
+            radioButton16.Enabled = true;
+            radioButton17.Enabled = true;
+            radioButton18.Enabled = true;
+            radioButton19.Enabled = true;
+            radioButton20.Enabled = true;
+
+            //Deselects all radio buttons
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
+            radioButton5.Checked = false;
+            radioButton6.Checked = false;
+            radioButton7.Checked = false;
+            radioButton8.Checked = false;
+            radioButton9.Checked = false;
+            radioButton10.Checked = false;
+            radioButton11.Checked = false;
+            radioButton12.Checked = false;
+            radioButton13.Checked = false;
+            radioButton14.Checked = false;
+            radioButton15.Checked = false;
+            radioButton16.Checked = false;
+            radioButton17.Checked = false;
+            radioButton18.Checked = false;
+            radioButton19.Checked = false;
+            radioButton20.Checked = false;
+
+
+
+            //Enables all of the drink options once customization is done
+            LatteButton.Enabled = true;
+            IcedLatteButton.Enabled = true;
+            MatchaButton.Enabled = true;
+            CoffeeButton.Enabled = true;
+            WaterButton.Enabled = true;
+            EspressoButton.Enabled = true;
+        }
     }
 }
