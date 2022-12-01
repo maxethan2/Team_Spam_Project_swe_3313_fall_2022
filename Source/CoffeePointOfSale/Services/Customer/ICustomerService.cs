@@ -4,4 +4,6 @@ public interface ICustomerService
 {
     Customers Customers { get; init; }
     void Write();
+    Customer SelectedCustomer { get; set; }
+
 }

@@ -27,8 +27,8 @@ namespace CoffeePointOfSale.Forms
             _appSettings = appSettings;
             InitializeComponent();
             RewardsTotalLabel.Text = _customerService.Customers.List[selectedCustomer].RewardPoints.ToString();
-            if (_customerService.Customers.List[selectedCustomer].RewardPoints == 0)//disables and changes button color when customer is too poor
-            {
+            if (_customerService.SelectedCustomer.RewardPoints == 0)//disables and changes button color when customer is too poor
+            {                                                       //replace 0 with cost amount
                 PayRewardsButton.BackColor = Color.Black;//placeholder color #todo
                 PayRewardsButton.Enabled = false;
             }

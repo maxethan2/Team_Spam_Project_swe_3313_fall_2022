@@ -11,10 +11,7 @@ namespace CoffeePointOfSale.Services.DrinkMenu
         private string _name;
         private string _baseDescription;
         private string _picture;
-        private decimal _basePrice;
-        
-       
-        
+        private decimal _basePrice;    
         public virtual string Name
         {
             get => _name; set => _name = value;
@@ -34,7 +31,6 @@ namespace CoffeePointOfSale.Services.DrinkMenu
         {
             get => _basePrice; set => _basePrice = value; 
         }
-
 
         public List<Customization> Customizations { get; set; }
     }

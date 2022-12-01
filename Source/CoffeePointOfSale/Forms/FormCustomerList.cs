@@ -53,8 +53,8 @@ namespace CoffeePointOfSale.Forms
         {
            
             index = this.CustomerListTable.SelectedRows[0].Cells[0].RowIndex;
-            selectedCustomer = index; // tracks customer 
-
+             // tracks customer 
+            _customerService.SelectedCustomer = _customerService.Customers.List[index];
         }
 
         private void button1_Click(object sender, EventArgs e)

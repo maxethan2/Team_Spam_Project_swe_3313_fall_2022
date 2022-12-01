@@ -1,18 +1,20 @@
 using CoffeePointOfSale.Configuration;
 using CoffeePointOfSale.Forms.Base;
+using CoffeePointOfSale.Services.Customer;
 using CoffeePointOfSale.Services.FormFactory;
 
 namespace CoffeePointOfSale.Forms;
 
 public partial class FormMain : FormBase
 {
-   
-    public FormMain(IAppSettings appSettings) : base(appSettings) 
+    ICustomerService _customerService;
+    public FormMain(ICustomerService customerService, IAppSettings appSettings) : base(appSettings)
     {
+        _customerService = customerService;
         InitializeComponent();
     }
 
- 
+
     private void OnFormMainClosed(object sender, FormClosedEventArgs e)
     {
         Application.Exit();
@@ -20,6 +22,7 @@ public partial class FormMain : FormBase
 
     private void buttonOrder_Click(object sender, EventArgs e)
     {
+        _customerService.SelectedCustomer = _customerService.Customers[Customer.AnonymousCustomerId];
         Hide(); //closes this form
         FormFactory.Get<FormOrder>().Show(); 
     }

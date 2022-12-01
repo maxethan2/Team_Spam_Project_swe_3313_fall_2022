@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.LinkLabel;
 
 namespace CoffeePointOfSale.Forms
 {
@@ -36,87 +37,21 @@ namespace CoffeePointOfSale.Forms
             _appSettings = appSettings;
             _drinkMenuService = drinkMenuService;
             InitializeComponent();
-            button8.Enabled = false;
+            AddDrinkButton.Enabled = false;
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            index = this.dataGridView1.SelectedRows[0].Cells[0].RowIndex;
-            if (isCoffee == true)
-            {
-                OrderedItems += " Coffee: ";
-                switch (index)
-                {
-                    case 0:
-                        OrderTotal += 2;
-                        OrderedItems += " Size C ";
-                        break;
-                    case 1:
-                        OrderTotal += 1;
-                        OrderedItems += " Size B ";
-                        break;
-                    case 2:
-                        OrderTotal += 0.5M;
-                        OrderedItems += " Size A ";
-                        break;
-                    case 3:
-                        OrderTotal = -0.5M;
-                        OrderedItems += " Creamer F ";
-                        break;
-                    case 4:
-                        OrderTotal += 1.5M;
-                        OrderedItems += " Creamer E ";
-                        break;
-                    case 5:
-                        OrderTotal += 1.5M;
-                        OrderedItems += " Creamer D ";
-                        break;
-                    case 6:
-                        OrderTotal += 1.5M;
-                        OrderedItems += " Creamer C ";
-                        break;
-                    case 7:
-                        OrderedItems += " Creamer B ";
-                        break;
-                    case 8:
-                        OrderedItems += " Creamer A ";
-                        break;
-                    case 9:
-                        OrderedItems += " Room for Cream ";
-                        break;
-                    case 10:
-                        OrderedItems += " Espresso ";
-                        OrderTotal += 1.25M;
-                        break;
-                    case 11:
-                        OrderedItems += " Sweetener C ";
-                        break;
-                    case 12:
-                        OrderedItems += " Sweetener B ";
-                        break;
-                    case 13:
-                        OrderedItems += " Sweetener A ";
-                        break;
-                    case 14:
-                        OrderedItems += " Temperature B ";
-                        break;
-                    case 15:
-                        OrderedItems += " Temperature B ";
-                        break;
-                }
-            }
-        }
-
-
+      
+        private Order _currentOrder = new Order();  //this is a to track ordered items
+        private DrinkMenu _currentDrink = new DrinkMenu(); //this is for current drink and store customizations
+   
 
         private void button1_Click(object sender, EventArgs e)
         {
-            selectedCustomer = 0; // sets the customer back to anonymous
+            _customerService.SelectedCustomer = _customerService.Customers[Customer.AnonymousCustomerId];  // sets the customer back to anonymous
             Close(); //closes this form
             FormFactory.Get<FormMain>().Show(); 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void CheckoutButton_Click_1(object sender, EventArgs e)
         {
             Close();
             FormFactory.Get<FormPayment>().Show();
@@ -127,116 +62,108 @@ namespace CoffeePointOfSale.Forms
 
         }
 
-        private void button2_Click(object sender, EventArgs e) //Latte Button
+        private void LatteButton_Click(object sender, EventArgs e) //Latte Button
         {
-            //for (var customizationIdx = 0; customizationIdx < _customerService.Customers.List.Count; customizationIdx++)
-            //{
-            //    var customizations = _drinkMenuService;
-            //    dataGridView1.Rows.Add();
-            //}
-
-
             //Disables all button so user cannot constantly add customizations to list
-            button2.Enabled= false;
-            button3.Enabled= false;
-            button4.Enabled= false;
-            button5.Enabled= false;
-            button6.Enabled= false;
-            button7.Enabled= false;
-            button8.Enabled= true;
+            LatteButton.Enabled= false;
+            IcedLatteButton.Enabled= false;
+            MatchaButton.Enabled= false;
+            CoffeeButton.Enabled= false;
+            WaterButton.Enabled= false;
+            EspressoButton.Enabled= false;
+            AddDrinkButton.Enabled= true;
 
         }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 42c75855bbffd09ef74bda893950b8b506264440
-
-
-        private void button5_Click(object sender, EventArgs e) //Coffee Button
+        private void CoffeeButton_Click(object sender, EventArgs e) //Coffee Button
         {
             isCoffee = true;
 
 
             //Disables all button so user cannot constantly add customizations to list
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = false;
-            button6.Enabled = false;
-            button7.Enabled = false;
-            button8.Enabled = true;
+            LatteButton.Enabled = false;
+            IcedLatteButton.Enabled = false;
+            MatchaButton.Enabled = false;
+            CoffeeButton.Enabled = false;
+            WaterButton.Enabled = false;
+            EspressoButton.Enabled = false;
+            AddDrinkButton.Enabled = true;
         }
 
-        private void button3_Click(object sender, EventArgs e) // Iced Latte Button
+        private void IcedLatteButton_Click(object sender, EventArgs e) // Iced Latte Button
         {
 
 
             //Disables all button so user cannot constantly add customizations to list
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = false;
-            button6.Enabled = false;
-            button7.Enabled = false;
-            button8.Enabled = true;
+            LatteButton.Enabled = false;
+            IcedLatteButton.Enabled = false;
+            MatchaButton.Enabled = false;
+            CoffeeButton.Enabled = false;
+            WaterButton.Enabled = false;
+            EspressoButton.Enabled = false;
+            AddDrinkButton.Enabled = true;
 
         }
 
-        private void button4_Click(object sender, EventArgs e) // Iced Matcha green Tea Latte Button
+        private void MatchaButton_Click(object sender, EventArgs e) // Iced Matcha green Tea Latte Button
         {
 
 
             //Disables all button so user cannot constantly add customizations to list
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = false;
-            button6.Enabled = false;
-            button7.Enabled = false;
-            button8.Enabled = true;
+            LatteButton.Enabled = false;
+            IcedLatteButton.Enabled = false;
+            MatchaButton.Enabled = false;
+            CoffeeButton.Enabled = false;
+            WaterButton.Enabled = false;
+            EspressoButton.Enabled = false;
+            AddDrinkButton.Enabled = true;
         }
 
-        private void button6_Click(object sender, EventArgs e) // Iced Water Button
+        private void WaterButton_Click(object sender, EventArgs e) // Iced Water Button
         {
             //Disables all button so user cannot constantly add customizations to list
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = false;
-            button6.Enabled = false;
-            button7.Enabled = false;
-            button8.Enabled = true;
+            LatteButton.Enabled = false;
+            IcedLatteButton.Enabled = false;
+            MatchaButton.Enabled = false;
+            CoffeeButton.Enabled = false;
+            WaterButton.Enabled = false;
+            EspressoButton.Enabled = false;
+            AddDrinkButton.Enabled = true;
         }
 
-        private void button7_Click(object sender, EventArgs e) // Espresso Button
+        private void EspressoButton_Click(object sender, EventArgs e) // Espresso Button
         {
-            dataGridView1.Rows.Add("Espresso | 1 Extra Shot");
+
             //Disables all button so user cannot constantly add customizations to list
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
-            button5.Enabled = false;
-            button6.Enabled = false;
-            button7.Enabled = false;
-            button8.Enabled = true;
+            LatteButton.Enabled = false;
+            IcedLatteButton.Enabled = false;
+            MatchaButton.Enabled = false;
+            CoffeeButton.Enabled = false;
+            WaterButton.Enabled = false;
+            EspressoButton.Enabled = false;
+            AddDrinkButton.Enabled = true;
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void AddDrinkButton_Click(object sender, EventArgs e)
         {
-            button2.Enabled = true;
-            button3.Enabled = true;
-            button4.Enabled = true;
-            button5.Enabled = true;
-            button6.Enabled = true;
-            button7.Enabled = true;
-            button8.Enabled = false;
+            LatteButton.Enabled = true;
+            IcedLatteButton.Enabled = true;
+            MatchaButton.Enabled = true;
+            CoffeeButton.Enabled = true;
+            WaterButton.Enabled = true;
+            EspressoButton.Enabled = true;
+            AddDrinkButton.Enabled = false;
             isCoffee = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void TestLabel_Click(object sender, EventArgs e) //click this label to see current customer
+        {
+            TestLabel.Text = _customerService.SelectedCustomer.FirstName;
         }
     }
 }
