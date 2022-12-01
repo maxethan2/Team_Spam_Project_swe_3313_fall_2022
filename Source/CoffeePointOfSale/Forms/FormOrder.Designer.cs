@@ -40,7 +40,6 @@
             this.AddCustomizationButton = new System.Windows.Forms.Button();
             this.TestLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -70,6 +69,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.radioButton21 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -212,15 +212,9 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(218, 553);
+            this.dataGridView1.Size = new System.Drawing.Size(218, 479);
             this.dataGridView1.TabIndex = 34;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // radioButton2
             // 
@@ -579,6 +573,13 @@
             this.radioButton4.UseVisualStyleBackColor = true;
             this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -640,7 +641,6 @@
         private Button AddCustomizationButton;
         private Label TestLabel;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
         private RadioButton radioButton2;
         private RadioButton radioButton3;
         private RadioButton radioButton1;
@@ -670,5 +670,6 @@
         private Panel panel5;
         private RadioButton radioButton21;
         private RadioButton radioButton4;
+        private DataGridViewTextBoxColumn Column1;
     }
 }
