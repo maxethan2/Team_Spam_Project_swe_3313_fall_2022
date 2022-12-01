@@ -44,7 +44,12 @@ namespace CoffeePointOfSale.Forms
         //prices for the different customizations
         public decimal sizePrice;
         public decimal creamerPrice;
-        public decimal espressoOrMatOrDecafPrice; 
+        public decimal espressoOrMatOrDecafPrice;
+
+        //Total Price
+        public decimal totalPrice;
+
+
 
         public FormOrder(IAppSettings appSettings, ICustomerService customerService, IDrinkMenuService drinkMenuService) : base(appSettings)
         {
