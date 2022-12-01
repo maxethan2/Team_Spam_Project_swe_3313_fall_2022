@@ -29,6 +29,14 @@ namespace CoffeePointOfSale.Forms
         private readonly ICustomerService _customerService;
         private readonly IDrinkMenuService _drinkMenuService;
         private IAppSettings _appSettings;
+        public string size;
+        public string creamer;
+        public string sweetner;
+        public string foam;
+        public string iceOrTemp;
+        public string espressoOrMatOrDecaf; //this string is for either espresso, matcha, or decaffeinated
+
+
         public FormOrder(IAppSettings appSettings, ICustomerService customerService, IDrinkMenuService drinkMenuService) : base(appSettings)
         {
             _customerService = customerService;
@@ -78,6 +86,13 @@ namespace CoffeePointOfSale.Forms
             EspressoButton.Enabled= false;
             AddDrinkButton.Enabled= true;
 
+            //Adds the base description to the different variables for the customizations
+            size = "Medium";
+            iceOrTemp = "Hot";
+            creamer = "2% Milk";
+            espressoOrMatOrDecaf = "2 shots of espresso";
+            sweetner = "Unsweetened";
+
         }
 
         private void CoffeeButton_Click(object sender, EventArgs e) //Coffee Button
@@ -97,6 +112,11 @@ namespace CoffeePointOfSale.Forms
             WaterButton.Enabled = false;
             EspressoButton.Enabled = false;
             AddDrinkButton.Enabled = true;
+
+            //Adds the base description to the different variables for the customizations
+            size = "Medium";
+            iceOrTemp = "Hot";
+            sweetner = "Unsweetened";
         }
 
         private void IcedLatteButton_Click(object sender, EventArgs e) // Iced Latte Button
@@ -116,6 +136,14 @@ namespace CoffeePointOfSale.Forms
             WaterButton.Enabled = false;
             EspressoButton.Enabled = false;
             AddDrinkButton.Enabled = true;
+
+            //Adds the base description to the different variables for the customizations
+            size = "Medium";
+            iceOrTemp = "Cold";
+            creamer = "2% Milk";
+            espressoOrMatOrDecaf = "2 Shots";
+            sweetner = "Unsweetened";
+
 
         }
 
@@ -138,6 +166,13 @@ namespace CoffeePointOfSale.Forms
             WaterButton.Enabled = false;
             EspressoButton.Enabled = false;
             AddDrinkButton.Enabled = true;
+
+            //Adds the base description to the different variables for the customizations
+            size = "Medium";
+            iceOrTemp = "Hot";
+            creamer = "2% Milk";
+            espressoOrMatOrDecaf = "2 Shots Matcha";
+
         }
 
         private void WaterButton_Click(object sender, EventArgs e) // Iced Water Button
@@ -171,6 +206,9 @@ namespace CoffeePointOfSale.Forms
             WaterButton.Enabled = false;
             EspressoButton.Enabled = false;
             AddDrinkButton.Enabled = true;
+
+            //Iced water does not have any customizations
+
         }
 
         private void EspressoButton_Click(object sender, EventArgs e) // Espresso Button
@@ -203,6 +241,11 @@ namespace CoffeePointOfSale.Forms
             WaterButton.Enabled = false;
             EspressoButton.Enabled = false;
             AddDrinkButton.Enabled = true;
+
+            //Adds the base description to the different variables for the customizations
+            iceOrTemp = "Hot";
+            sweetner = "Unsweetened";
+            espressoOrMatOrDecaf = "1 Shot Espresso";
         }
 
         private void AddDrinkButton_Click(object sender, EventArgs e)
