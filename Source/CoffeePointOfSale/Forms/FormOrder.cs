@@ -18,7 +18,11 @@ using static System.Windows.Forms.LinkLabel;
 namespace CoffeePointOfSale.Forms
 {
     /*
-     * Current Customer is tracked through _customerService.SelectedCustomer
+     * 
+     * 
+     *                                     WELCOME TO THE JUNGLE
+     * 
+     * 
      */
     public partial class FormOrder : FormNoCloseBase
     {
@@ -31,28 +35,28 @@ namespace CoffeePointOfSale.Forms
         private IAppSettings _appSettings;
 
         //variables for the customizations
-        public string size;
-        public string creamer;
-        public string sweetner;
-        public string foam;
-        public string iceOrTemp;
-        public string espressoOrMatOrDecaf; //this string is for either espresso, matcha, or decaffeinated
+        public string size = "";
+        public string creamer = "";
+        public string sweetner = "";
+        public string foam = "";
+        public string iceOrTemp = "";
+        public string espressoOrMatOrDecaf = ""; //this string is for either espresso, matcha, or decaffeinated
 
         //base price variable
-        public decimal basePrice;
+        public decimal basePrice = 0;
 
         //subtotal
-        public decimal subTotal;
+        public decimal subTotal = 0;
 
         //prices for the different customizations
-        public decimal sizePrice;
-        public decimal creamerPrice;
-        public decimal espressoOrMatOrDecafPrice;
+        public decimal sizePrice = 0;
+        public decimal creamerPrice = 0;
+        public decimal espressoOrMatOrDecafPrice = 0;
 
         //Total Price
-        public decimal totalPrice;
+        public decimal totalPrice = 0;
 
-
+      
 
         public FormOrder(IAppSettings appSettings, ICustomerService customerService, IDrinkMenuService drinkMenuService) : base(appSettings)
         {
@@ -61,23 +65,27 @@ namespace CoffeePointOfSale.Forms
             _drinkMenuService = drinkMenuService;
             InitializeComponent();
             AddDrinkButton.Enabled = false;
+           
         }
-      
+
         private Order _currentOrder = new Order();  //this is a to track ordered items
         private DrinkMenu _currentDrink = new DrinkMenu(); //this is for current drink and store customizations
-   
+        private OrderedItem _currentOrderedItem = new OrderedItem();
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             _customerService.SelectedCustomer = _customerService.Customers[Customer.AnonymousCustomerId];  // sets the customer back to anonymous
             Close(); //closes this form
-            FormFactory.Get<FormMain>().Show(); 
+            FormFactory.Get<FormMain>().Show();
+
         }
 
         private void CheckoutButton_Click_1(object sender, EventArgs e)
         {
             Close();
             FormFactory.Get<FormPayment>().Show();
+            _customerService.SelectedCustomer.Orders.Add(_currentOrder);
         }
 
         private void FormOrder_Load(object sender, EventArgs e)
@@ -95,13 +103,13 @@ namespace CoffeePointOfSale.Forms
             radioButton18.Enabled = false;
 
             //Disables all button so user cannot constantly add customizations to list
-            LatteButton.Enabled= false;
-            IcedLatteButton.Enabled= false;
-            MatchaButton.Enabled= false;
-            CoffeeButton.Enabled= false;
-            WaterButton.Enabled= false;
-            EspressoButton.Enabled= false;
-            AddDrinkButton.Enabled= true;
+            LatteButton.Enabled = false;
+            IcedLatteButton.Enabled = false;
+            MatchaButton.Enabled = false;
+            CoffeeButton.Enabled = false;
+            WaterButton.Enabled = false;
+            EspressoButton.Enabled = false;
+            AddDrinkButton.Enabled = true;
 
             //Adds the base description to the different variables for the customizations
             size = "Medium";
@@ -142,6 +150,7 @@ namespace CoffeePointOfSale.Forms
 
             //Adds the base price to the basePrice decimal for the drink
             basePrice = 2.5M;
+            _currentOrderedItem.DrinkName = "Coffee";
         }
 
         private void IcedLatteButton_Click(object sender, EventArgs e) // Iced Latte Button
@@ -149,9 +158,9 @@ namespace CoffeePointOfSale.Forms
             //Disables all customizations that do not apply to drink
             radioButton3.Enabled = false;
             radioButton12.Enabled = false;
-            radioButton8.Enabled= false;
-            radioButton16.Enabled= false;
-            radioButton19.Enabled= false;
+            radioButton8.Enabled = false;
+            radioButton16.Enabled = false;
+            radioButton19.Enabled = false;
             radioButton4.Enabled = false;
             radioButton21.Enabled = false;
 
@@ -173,18 +182,19 @@ namespace CoffeePointOfSale.Forms
 
             //Adds the base price to the basePrice decimal for the drink
             basePrice = 5.25M;
+            _currentOrderedItem.DrinkName = "Iced Latte";
         }
 
         private void MatchaButton_Click(object sender, EventArgs e) // Iced Matcha green Tea Latte Button
         {
             //Disables all customizations that do not apply to drink
-            radioButton3.Enabled= false;
-            radioButton12.Enabled= false;
-            radioButton8.Enabled= false; 
-            radioButton16.Enabled= false;
-            radioButton19.Enabled= false;
-            radioButton11.Enabled= false;
-            radioButton9.Enabled= false;
+            radioButton3.Enabled = false;
+            radioButton12.Enabled = false;
+            radioButton8.Enabled = false;
+            radioButton16.Enabled = false;
+            radioButton19.Enabled = false;
+            radioButton11.Enabled = false;
+            radioButton9.Enabled = false;
             radioButton4.Enabled = false;
             radioButton21.Enabled = false;
 
@@ -205,6 +215,7 @@ namespace CoffeePointOfSale.Forms
 
             //Adds the base price to the basePrice decimal for the drink
             basePrice = 4;
+            _currentOrderedItem.DrinkName = "Matcha";
         }
 
         private void WaterButton_Click(object sender, EventArgs e) // Iced Water Button
@@ -245,6 +256,7 @@ namespace CoffeePointOfSale.Forms
 
             //Adds the base price to the basePrice decimal for the drink
             basePrice = 0;
+            _currentOrderedItem.DrinkName = "Water";
         }
 
         private void EspressoButton_Click(object sender, EventArgs e) // Espresso Button
@@ -287,6 +299,8 @@ namespace CoffeePointOfSale.Forms
 
             //Adds the base price to the basePrice decimal for the drink
             basePrice = 2.5M;
+
+            _currentOrderedItem.DrinkName = "Espresso";
         }
 
         private void AddDrinkButton_Click(object sender, EventArgs e)
@@ -298,6 +312,29 @@ namespace CoffeePointOfSale.Forms
             WaterButton.Enabled = true;
             EspressoButton.Enabled = true;
             AddDrinkButton.Enabled = false;
+
+            _currentOrderedItem.Customizations.Add(iceOrTemp);
+            _currentOrderedItem.Customizations.Add(espressoOrMatOrDecaf);
+            _currentOrderedItem.Customizations.Add(sweetner);
+            _currentOrderedItem.Customizations.Add(creamer);
+            _currentOrderedItem.Customizations.Add(size);
+            _currentOrder.OrderedItems.Add(_currentOrderedItem);
+            dataGridView1.Rows.Add("test");
+            dataGridView1.Rows.Add(_currentOrderedItem.DrinkName);
+            if (!iceOrTemp.Equals(""))
+                dataGridView1.Rows.Add(iceOrTemp);
+            if (!espressoOrMatOrDecaf.Equals(" "))
+                dataGridView1.Rows.Add(espressoOrMatOrDecaf + " " + espressoOrMatOrDecafPrice.ToString());
+            if (!sweetner.Equals(""))
+                dataGridView1.Rows.Add(sweetner);
+            if (!creamer.Equals(""))
+                dataGridView1.Rows.Add(creamer);
+            if (!size.Equals(""))
+                dataGridView1.Rows.Add(size + " " + sizePrice.ToString());
+            //reseting names
+            iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetner = ""; creamer = ""; size = "";
+
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -325,6 +362,8 @@ namespace CoffeePointOfSale.Forms
 
         }
 
+
+        //----------------------------ORDER GRID--------------------------------------------- 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -349,7 +388,7 @@ namespace CoffeePointOfSale.Forms
 
         private void radioButton10_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButton10.Checked == true)
+            if (radioButton10.Checked == true)
             {
                 espressoOrMatOrDecaf = "1 Extra Shot of Matcha";
                 espressoOrMatOrDecafPrice = 2.5m;
@@ -358,7 +397,7 @@ namespace CoffeePointOfSale.Forms
 
         private void radioButton9_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButton9.Checked == true)
+            if (radioButton9.Checked == true)
             {
                 espressoOrMatOrDecaf = "Decaffeinated";
                 espressoOrMatOrDecafPrice = 0;
@@ -375,7 +414,7 @@ namespace CoffeePointOfSale.Forms
 
         private void radioButton20_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButton20.Checked == true)
+            if (radioButton20.Checked == true)
             {
                 creamer = "Non-Fat Milk";
                 creamerPrice = 0;
@@ -435,6 +474,29 @@ namespace CoffeePointOfSale.Forms
             CoffeeButton.Enabled = true;
             WaterButton.Enabled = true;
             EspressoButton.Enabled = true;
+
+
+
+            _currentOrderedItem.Customizations.Add(iceOrTemp);
+            _currentOrderedItem.Customizations.Add(espressoOrMatOrDecaf);
+            _currentOrderedItem.Customizations.Add(sweetner);
+            _currentOrderedItem.Customizations.Add(creamer);
+            _currentOrderedItem.Customizations.Add(size);
+            _currentOrder.OrderedItems.Add(_currentOrderedItem);
+            dataGridView1.Rows.Add("test");
+            dataGridView1.Rows.Add(_currentOrderedItem.DrinkName);
+            if (!iceOrTemp.Equals(""))
+                dataGridView1.Rows.Add(iceOrTemp);
+            if (!espressoOrMatOrDecaf.Equals(" "))
+                dataGridView1.Rows.Add(espressoOrMatOrDecaf + " " + espressoOrMatOrDecafPrice.ToString());
+            if (!sweetner.Equals(""))
+                dataGridView1.Rows.Add(sweetner);
+            if (!creamer.Equals(""))
+                dataGridView1.Rows.Add(creamer);
+            if (!size.Equals(""))
+                dataGridView1.Rows.Add(size + " " + sizePrice.ToString());
+            //reseting names
+            iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetner = ""; creamer = ""; size = "";
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -444,7 +506,7 @@ namespace CoffeePointOfSale.Forms
 
         private void radioButton12_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButton12.Checked == true)
+            if (radioButton12.Checked == true)
             {
                 size = "Small";
                 sizePrice = -1;
@@ -453,7 +515,7 @@ namespace CoffeePointOfSale.Forms
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButton2.Checked == true)
+            if (radioButton2.Checked == true)
             {
                 size = "Large";
                 sizePrice = 1;
@@ -462,7 +524,7 @@ namespace CoffeePointOfSale.Forms
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButton3.Checked == true)
+            if (radioButton3.Checked == true)
             {
                 size = "Mega";
                 sizePrice = 2;
@@ -471,7 +533,7 @@ namespace CoffeePointOfSale.Forms
 
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButton5.Checked == true)
+            if (radioButton5.Checked == true)
             {
                 creamer = "Whole Milk";
                 creamerPrice = 0;
@@ -555,7 +617,7 @@ namespace CoffeePointOfSale.Forms
 
         private void radioButton21_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButton21.Enabled== true)
+            if (radioButton21.Enabled == true)
             {
                 foam = "Lots of Foam";
             }
@@ -570,3 +632,4 @@ namespace CoffeePointOfSale.Forms
         }
     }
 }
+
