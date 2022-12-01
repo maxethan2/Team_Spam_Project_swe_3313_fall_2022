@@ -29,12 +29,15 @@ namespace CoffeePointOfSale.Forms
         private readonly ICustomerService _customerService;
         private readonly IDrinkMenuService _drinkMenuService;
         private IAppSettings _appSettings;
+
         public string size;
         public string creamer;
         public string sweetner;
         public string foam;
         public string iceOrTemp;
         public string espressoOrMatOrDecaf; //this string is for either espresso, matcha, or decaffeinated
+
+        public decimal basePrice;
 
 
         public FormOrder(IAppSettings appSettings, ICustomerService customerService, IDrinkMenuService drinkMenuService) : base(appSettings)
@@ -93,6 +96,9 @@ namespace CoffeePointOfSale.Forms
             espressoOrMatOrDecaf = "2 shots of espresso";
             sweetner = "Unsweetened";
 
+            //Adds the base price to the basePrice decimal for the drink
+            basePrice = 4;
+
         }
 
         private void CoffeeButton_Click(object sender, EventArgs e) //Coffee Button
@@ -117,6 +123,9 @@ namespace CoffeePointOfSale.Forms
             size = "Medium";
             iceOrTemp = "Hot";
             sweetner = "Unsweetened";
+
+            //Adds the base price to the basePrice decimal for the drink
+            basePrice = 2.5M;
         }
 
         private void IcedLatteButton_Click(object sender, EventArgs e) // Iced Latte Button
@@ -144,7 +153,8 @@ namespace CoffeePointOfSale.Forms
             espressoOrMatOrDecaf = "2 Shots";
             sweetner = "Unsweetened";
 
-
+            //Adds the base price to the basePrice decimal for the drink
+            basePrice = 5.25M;
         }
 
         private void MatchaButton_Click(object sender, EventArgs e) // Iced Matcha green Tea Latte Button
@@ -173,6 +183,8 @@ namespace CoffeePointOfSale.Forms
             creamer = "2% Milk";
             espressoOrMatOrDecaf = "2 Shots Matcha";
 
+            //Adds the base price to the basePrice decimal for the drink
+            basePrice = 4;
         }
 
         private void WaterButton_Click(object sender, EventArgs e) // Iced Water Button
@@ -209,6 +221,8 @@ namespace CoffeePointOfSale.Forms
 
             //Iced water does not have any customizations
 
+            //Adds the base price to the basePrice decimal for the drink
+            basePrice = 0;
         }
 
         private void EspressoButton_Click(object sender, EventArgs e) // Espresso Button
@@ -246,6 +260,9 @@ namespace CoffeePointOfSale.Forms
             iceOrTemp = "Hot";
             sweetner = "Unsweetened";
             espressoOrMatOrDecaf = "1 Shot Espresso";
+
+            //Adds the base price to the basePrice decimal for the drink
+            basePrice = 2.5M;
         }
 
         private void AddDrinkButton_Click(object sender, EventArgs e)
@@ -372,6 +389,11 @@ namespace CoffeePointOfSale.Forms
             CoffeeButton.Enabled = true;
             WaterButton.Enabled = true;
             EspressoButton.Enabled = true;
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            label1.Text = size + " " + iceOrTemp;
         }
     }
 }
