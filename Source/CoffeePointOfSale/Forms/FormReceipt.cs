@@ -2,6 +2,7 @@
 using CoffeePointOfSale.Services.CsvExtract;
 using CoffeePointOfSale.Services.Customer;
 using CoffeePointOfSale.Services.FormFactory;
+using CoffeePointOfSale.Services.Storage;
 using System.Globalization;
 using CoffeePointOfSale.Services.Storage;
 using System;
@@ -19,15 +20,27 @@ namespace CoffeePointOfSale.Forms.Base
     public partial class FormReceipt : FormNoCloseBase
     {
         private readonly ICustomerService _customerService;
+
         private IAppSettings _appSettings;
         public FormReceipt(IAppSettings appSettings, ICustomerService customerService) : base(appSettings)
         {
             _customerService = customerService;
             _appSettings = appSettings;
             InitializeComponent();
+<<<<<<< Updated upstream
             CustomerNameLabel.Text = _customerService.SelectedCustomer.FirstName + " " + _customerService.SelectedCustomer.LastName;
+=======
+            CustomerNameLabel.Text = "Order Placed by " + _customerService.SelectedCustomer.FirstName + " " + _customerService.SelectedCustomer.LastName;
+            printOrder();
+>>>>>>> Stashed changes
             printOrderTotal();
             printPaymentDetails();
+
+            StorageService storageService = new StorageService();
+            CustomerService customerService1 = new CustomerService(storageService);
+
+            customerService1.CreateCustomer(_customerService.SelectedCustomer);
+
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
