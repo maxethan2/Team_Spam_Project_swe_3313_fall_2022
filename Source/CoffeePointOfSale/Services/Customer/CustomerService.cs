@@ -32,7 +32,7 @@ public class CustomerService : ICustomerService
     }
   
     public Customer SelectedCustomer { get; set; }
-    public Order CurrentOrder { get; set; } = new Order();
+    public Order _currentOrder { get; set; } = new Order();
     public Customers Customers { get; init; }
     public void Write() => _storageService.Write(Customers);
 }

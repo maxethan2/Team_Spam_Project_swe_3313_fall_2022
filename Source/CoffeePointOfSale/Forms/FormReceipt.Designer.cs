@@ -93,12 +93,12 @@
             this.CustomerNameLabel.BackColor = System.Drawing.Color.Snow;
             this.CustomerNameLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CustomerNameLabel.Location = new System.Drawing.Point(478, 144);
-            this.CustomerNameLabel.MaximumSize = new System.Drawing.Size(500, 0);
+            this.CustomerNameLabel.MaximumSize = new System.Drawing.Size(350, 0);
             this.CustomerNameLabel.Name = "CustomerNameLabel";
             this.CustomerNameLabel.Size = new System.Drawing.Size(257, 25);
             this.CustomerNameLabel.TabIndex = 5;
             this.CustomerNameLabel.Text = "Order Placed by (Name here)";
-            this.CustomerNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CustomerNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ItemsDetailsLabel
             // 
@@ -106,7 +106,7 @@
             this.ItemsDetailsLabel.BackColor = System.Drawing.Color.Snow;
             this.ItemsDetailsLabel.Enabled = false;
             this.ItemsDetailsLabel.Location = new System.Drawing.Point(404, 216);
-            this.ItemsDetailsLabel.MaximumSize = new System.Drawing.Size(448, 300);
+            this.ItemsDetailsLabel.MaximumSize = new System.Drawing.Size(400, 300);
             this.ItemsDetailsLabel.Name = "ItemsDetailsLabel";
             this.ItemsDetailsLabel.Size = new System.Drawing.Size(164, 15);
             this.ItemsDetailsLabel.TabIndex = 6;

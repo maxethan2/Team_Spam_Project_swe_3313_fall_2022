@@ -106,7 +106,7 @@
             this.OrderSelectedCustomerButton.TabIndex = 5;
             this.OrderSelectedCustomerButton.Text = "Use this Customer";
             this.OrderSelectedCustomerButton.UseVisualStyleBackColor = false;
-            this.OrderSelectedCustomerButton.Click += new System.EventHandler(this.button1_Click);
+            this.OrderSelectedCustomerButton.Click += new System.EventHandler(this.OrderSelectedCustomerButton_Click);
             // 
             // FormCustomerList
             // 

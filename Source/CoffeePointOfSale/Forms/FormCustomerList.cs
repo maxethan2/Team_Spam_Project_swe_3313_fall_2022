@@ -57,7 +57,7 @@ namespace CoffeePointOfSale.Forms
             _customerService.SelectedCustomer = _customerService.Customers.List[index];
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void OrderSelectedCustomerButton_Click(object sender, EventArgs e)
         {
             Close();//closes this form
             FormFactory.Get<FormOrder>().Show();

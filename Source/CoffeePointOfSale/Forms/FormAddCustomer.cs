@@ -112,7 +112,7 @@ namespace CoffeePointOfSale.Forms
                     FormFactory.Get<FormOrder>().Show();
                 }
             }
-            catch (Exception ex) { ErrorLabel.Text = " Name field is Invalid. "; }
+            catch (Exception) { ErrorLabel.Text = " Name field is Invalid. "; }
         }
    
     }
