@@ -32,14 +32,16 @@ namespace CoffeePointOfSale.Forms.Base
 
             CustomerNameLabel.Text = "Order Placed by " + _customerService.SelectedCustomer.FirstName + " " + _customerService.SelectedCustomer.LastName;
             printOrder();
-
             printOrderTotal();
             printPaymentDetails();
 
-            StorageService storageService = new StorageService();
-            CustomerService customerService1 = new CustomerService(storageService);
-
-            customerService1.CreateCustomer(_customerService.SelectedCustomer);
+            //if customer is not ananymous write to json
+            if (!customerService.SelectedCustomer.FirstName.Equals("Anonymous"))
+            {
+                StorageService storageService = new StorageService();
+                CustomerService customerService1 = new CustomerService(storageService);
+                customerService1.CreateCustomer(_customerService.SelectedCustomer);
+            }
 
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -109,7 +111,7 @@ namespace CoffeePointOfSale.Forms.Base
             var details = "";
             if (Order.PaymentMethod.Equals("Credit"))
             {
-                details += $"Payed in credit card ending in {CreditcardLastFour}";
+                details += $"Paid in credit card ending in {CreditcardLastFour}";
             }
             else
             {

@@ -32,7 +32,8 @@ namespace CoffeePointOfSale.Forms
      * Fix CSV generation
      * Fix Customer List
      * 
-     * 
+     * Give Up
+     * :)
     */
     #endregion
     public partial class FormOrder : FormNoCloseBase

@@ -83,7 +83,10 @@ namespace CoffeePointOfSale.Forms
                     var OrderIndex = _customerService.SelectedCustomer.Orders.Count - 1;
                     _customerService.SelectedCustomer.Orders[OrderIndex].PaymentMethod = "Credit";
                     //add rewards points to customer
-                    _customerService.SelectedCustomer.RewardPoints += (int)Math.Floor(_customerService.SelectedCustomer.Orders[OrderIndex].Total);
+                    if (!_customerService.SelectedCustomer.FirstName.Equals("Anonymous"))
+                    {
+                        _customerService.SelectedCustomer.RewardPoints += (int)Math.Floor(_customerService.SelectedCustomer.Orders[OrderIndex].Total);
+                    }
                     Close(); //closes this form
                     FormFactory.Get<FormReceipt>().Show();
                 }
