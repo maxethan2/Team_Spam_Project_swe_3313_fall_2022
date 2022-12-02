@@ -86,7 +86,7 @@
             this.TotalRewardPointsLabel.AutoSize = true;
             this.TotalRewardPointsLabel.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TotalRewardPointsLabel.ForeColor = System.Drawing.Color.Snow;
-            this.TotalRewardPointsLabel.Location = new System.Drawing.Point(869, 279);
+            this.TotalRewardPointsLabel.Location = new System.Drawing.Point(859, 279);
             this.TotalRewardPointsLabel.Name = "TotalRewardPointsLabel";
             this.TotalRewardPointsLabel.Size = new System.Drawing.Size(174, 25);
             this.TotalRewardPointsLabel.TabIndex = 5;
@@ -142,7 +142,7 @@
             this.RewardsTotalLabel.AutoSize = true;
             this.RewardsTotalLabel.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RewardsTotalLabel.ForeColor = System.Drawing.Color.Snow;
-            this.RewardsTotalLabel.Location = new System.Drawing.Point(1075, 279);
+            this.RewardsTotalLabel.Location = new System.Drawing.Point(1065, 279);
             this.RewardsTotalLabel.Name = "RewardsTotalLabel";
             this.RewardsTotalLabel.Size = new System.Drawing.Size(156, 25);
             this.RewardsTotalLabel.TabIndex = 9;
@@ -219,7 +219,6 @@
             this.ErrorLabel.Size = new System.Drawing.Size(202, 21);
             this.ErrorLabel.TabIndex = 15;
             this.ErrorLabel.Text = "Error Messages will go here";
-            //this.ErrorLabel.Click += new System.EventHandler(this.ErrorLabel_Click);
             // 
             // ErrorLabel2
             // 

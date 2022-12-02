@@ -25,22 +25,31 @@ namespace CoffeePointOfSale.Forms
         {
             _customerService = customerService;
             _appSettings = appSettings;
+
+
+            var OrderIndex = _customerService.SelectedCustomer.Orders.Count - 1;
+            var RequiredRewardsPoints = Math.Ceiling(_customerService.SelectedCustomer.Orders[OrderIndex].Total);
+            
             InitializeComponent();
             RewardsTotalLabel.Text = _customerService.SelectedCustomer.RewardPoints.ToString();
-            if (_customerService.SelectedCustomer.RewardPoints == 0)//disables and changes button color when customer is too poor
-            {                                                       //replace 0 with cost amount
-                PayRewardsButton.BackColor = Color.Black;//placeholder color #todo
+
+            if (_customerService.SelectedCustomer.RewardPoints <= RequiredRewardsPoints)
+                //disables and changes button color when customer is too poor
+            { 
+                PayRewardsButton.BackColor = Color.FromArgb(36, 39, 42); PayRewardsButton.ForeColor = Color.FromArgb(36, 39, 42);
                 PayRewardsButton.Enabled = false;
             }
+
+
+
+            //TotalPrice.Text = 
+            RewardsNeededLabel.Text = RequiredRewardsPoints.ToString();
             ErrorLabel.Text = "";
             ErrorLabel2.Text = "";
-            //TotalPrice.Text = 
-            //RewardPointsNeededLabel.Text =
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            selectedCustomer = 0; //resets back to anonymous
             Close(); //closes this form
             FormFactory.Get<FormMain>().Show();
         }
@@ -89,9 +98,8 @@ namespace CoffeePointOfSale.Forms
 
         private void PayRewardsButton_Click(object sender, EventArgs e)
         {
-            var OrderIndex = _customerService.SelectedCustomer.Orders.Count-1;
+            var OrderIndex = _customerService.SelectedCustomer.Orders.Count - 1;
             var RequiredRewardsPoints = Math.Ceiling(_customerService.SelectedCustomer.Orders[OrderIndex].Total);
-            
             // check to see if customer has enough rewards points
             if (_customerService.SelectedCustomer.RewardPoints >= RequiredRewardsPoints)
             {
