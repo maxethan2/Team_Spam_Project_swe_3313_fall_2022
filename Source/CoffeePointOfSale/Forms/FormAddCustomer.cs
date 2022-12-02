@@ -33,6 +33,7 @@ namespace CoffeePointOfSale.Forms
             _appSettings = appSettings;
             InitializeComponent();
             ErrorLabel.Text = "";
+            Customer tempCust = new Customer();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -84,7 +85,6 @@ namespace CoffeePointOfSale.Forms
         private void AddCustomer(string nameTextBoxInput, string phoneTextBoxInput)
         {
             bool isPhoneValid = true;
-
             var custlist = _customerService.Customers.List;
             string inputPhoneNumber = phoneTextBoxInput;
             foreach (var Customer in custlist)
@@ -107,7 +107,7 @@ namespace CoffeePointOfSale.Forms
                     Customer tempCust = new Customer();
                     tempCust.FirstName = firstName;
                     tempCust.LastName = lastName;
-
+                    tempCust.Phone = phoneTextBoxInput; 
                         tempCust.CustomerId = "new";
                         // add the customer to the dictionary
                         Customers customers = new Customers();
@@ -129,6 +129,7 @@ namespace CoffeePointOfSale.Forms
                             FormFactory.Get<FormOrder>().Show();
                         }                    
                 }
+                 
                 catch (Exception) { ErrorLabel.Text = " Name field is Invalid. "; }
             }
         }
