@@ -46,6 +46,7 @@ public class Customer
     {
         get => _customerId;
         set{
+            
             Guid guid = Guid.NewGuid();
             this._customerId = guid.ToString();
         }

@@ -184,7 +184,7 @@ namespace CoffeePointOfSale.Forms
                 DeselectAllButtons();
                 CalculateCostsUpdateOrder();
                 UpdateLabels();
-                
+                ButtonColorReset();
                 _currentOrder.OrderedItems.Add(_currentOrderedItem);
                 
                 OrderedItemDisplayGrid.Rows.Add(quantity + "x: " + _currentOrderedItem.DrinkName);
@@ -203,6 +203,9 @@ namespace CoffeePointOfSale.Forms
 
                 if (string.IsNullOrEmpty(size) == false)
                     OrderedItemDisplayGrid.Rows.Add("      " + size);
+
+                if (string.IsNullOrEmpty(foam) == false)
+                    OrderedItemDisplayGrid.Rows.Add("      " + foam);
             }
             QuantityChangeButton.Value = 1;
             ResetOrderCustomizations();
@@ -220,9 +223,10 @@ namespace CoffeePointOfSale.Forms
                 _currentOrderedItem.Customizations.Add(creamer);
             if (size != null)
                 _currentOrderedItem.Customizations.Add(size);
-
+            if (foam != null)
+                _currentOrderedItem.Customizations.Add(foam);
             //calculate
-            quantity = (int)QuantityChangeButton.Value;
+           quantity = (int)QuantityChangeButton.Value;
             subTotal += (basePrice + creamerPrice + sizePrice + espressoOrMatOrDecafPrice) * quantity;
             tax = subTotal * _appSettings.Tax.Rate;
             totalPrice = subTotal + tax;
@@ -232,8 +236,7 @@ namespace CoffeePointOfSale.Forms
             _currentOrder.Total += totalPrice; 
             _currentOrder.Tax = tax;
             _currentOrderedItem.Quantity = quantity;
-            _currentOrderedItem.Customizations.Add(foam + sweetener + size + espressoOrMatOrDecaf);
-
+     
         }
         private void UpdateLabels()
         {
@@ -440,6 +443,7 @@ namespace CoffeePointOfSale.Forms
             VeryHotButton.Checked = false;
             NonFatMilkButton.Checked = false;
             NoFoamButton.Checked= false;
+            LotsFoamButton.Checked = false;
         }
         private void CoffeeCustomizationOnly()
         {
