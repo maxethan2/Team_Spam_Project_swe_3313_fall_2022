@@ -2,6 +2,8 @@
 using CoffeePointOfSale.Services.CsvExtract;
 using CoffeePointOfSale.Services.Customer;
 using CoffeePointOfSale.Services.FormFactory;
+using System.Globalization;
+using CoffeePointOfSale.Services.Storage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,10 +25,18 @@ namespace CoffeePointOfSale.Forms.Base
             _customerService = customerService;
             _appSettings = appSettings;
             InitializeComponent();
+<<<<<<< Updated upstream
             CustomerNameLabel.Text = "Order Placed by " + _customerService.Customers.List[selectedCustomer].FirstName + " " + _customerService.Customers.List[selectedCustomer].LastName;
             //printOrder();
             //printOrderTotal(); 
             //printPaymentDetails();
+=======
+            CustomerNameLabel.Text = "Order Placed by " + _customerService.SelectedCustomer.FirstName + " " + _customerService.SelectedCustomer.LastName;
+            printOrder();
+            printOrderTotal();
+            printPaymentDetails();
+
+>>>>>>> Stashed changes
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -44,16 +54,16 @@ namespace CoffeePointOfSale.Forms.Base
         {
 
         }
-        /*
-        * 
-        */
+
+
         private void printOrder()
         {
-            var customer = _customerService.Customers.List[selectedCustomer];
+            var customer = _customerService.SelectedCustomer;
 
-            var OrderIndex = customer.Orders.Count;
-            //var Order = customer.Orders[OrderIndex - 1];
-            var Order = customer.Orders[0];
+
+            var OrderIndex = customer.Orders.Count-1;
+            var Order = customer.Orders[OrderIndex];
+
             var OrderList = Order.OrderedItems;
             var OrderedItems = "";
             // drink in OrderList
@@ -74,37 +84,35 @@ namespace CoffeePointOfSale.Forms.Base
 
         private void printOrderTotal()
         {
-            var customer = _customerService.Customers.List[selectedCustomer];
+            var customer = _customerService.SelectedCustomer;
 
-            var OrderIndex = customer.Orders.Count;
-            //var Order = customer.Orders[OrderIndex - 1];
-            var Order = customer.Orders[0];
 
-            var details = $"Total: {Order.Total}\nSubTotal: {Order.Subtotal}\nTax: {Order.Tax}";
+            var OrderIndex = customer.Orders.Count - 1;
+            var Order = customer.Orders[OrderIndex];
+            //var Order = customer.Orders[0];
 
+            var details = $"Total: {Order.Total.ToString("C2", CultureInfo.CurrentCulture)}\nSubTotal: {Order.Subtotal.ToString("C2", CultureInfo.CurrentCulture)}\nTax: {Order.Tax.ToString("C2", CultureInfo.CurrentCulture)}";
             CostDetailsLabel.Text = details;
         }
 
         private void printPaymentDetails()
         {
-            var customer = _customerService.Customers.List[selectedCustomer];
+            var customer = _customerService.SelectedCustomer;
 
-            var OrderIndex = customer.Orders.Count;
-            //var Order = customer.Orders[OrderIndex - 1];
-            var Order = customer.Orders[0];
+
+            var OrderIndex = customer.Orders.Count - 1;
+            var Order = customer.Orders[OrderIndex];
 
             var details = "";
-            
             if (Order.PaymentMethod.Equals("Credit"))
             {
                 details += "Payed in credit card ending in ******";
             }
             else
             {
-                details += "Payed with x rewards points";
+                details += $"Payed with {Math.Ceiling(_customerService.SelectedCustomer.Orders[OrderIndex].Total)} rewards points";
             }
             PaymentDetailsLabel.Text = details;
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
