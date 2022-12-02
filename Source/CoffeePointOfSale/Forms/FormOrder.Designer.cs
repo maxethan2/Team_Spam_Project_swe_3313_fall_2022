@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CancelButton = new System.Windows.Forms.Button();
             this.CheckoutButton = new System.Windows.Forms.Button();
             this.LatteButton = new System.Windows.Forms.Button();
@@ -66,6 +67,10 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.SubTotalLabel = new System.Windows.Forms.Label();
+            this.TaxLabel = new System.Windows.Forms.Label();
+            this.TotalLabel = new System.Windows.Forms.Label();
+            this.DecorativeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.OrderedItemDisplayGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -184,10 +189,17 @@
             this.OrderedItemDisplayGrid.Location = new System.Drawing.Point(921, 67);
             this.OrderedItemDisplayGrid.Name = "OrderedItemDisplayGrid";
             this.OrderedItemDisplayGrid.ReadOnly = true;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.OrderedItemDisplayGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.OrderedItemDisplayGrid.RowTemplate.Height = 25;
-            this.OrderedItemDisplayGrid.Size = new System.Drawing.Size(420, 479);
+            this.OrderedItemDisplayGrid.Size = new System.Drawing.Size(420, 383);
             this.OrderedItemDisplayGrid.TabIndex = 34;
-            this.OrderedItemDisplayGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrderDisplayGrid_CellContentClick);
             // 
             // Column1
             // 
@@ -571,12 +583,61 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Sizes";
             // 
+            // SubTotalLabel
+            // 
+            this.SubTotalLabel.AutoSize = true;
+            this.SubTotalLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SubTotalLabel.ForeColor = System.Drawing.Color.Snow;
+            this.SubTotalLabel.Location = new System.Drawing.Point(932, 469);
+            this.SubTotalLabel.Name = "SubTotalLabel";
+            this.SubTotalLabel.Size = new System.Drawing.Size(91, 28);
+            this.SubTotalLabel.TabIndex = 66;
+            this.SubTotalLabel.Text = "Subtotal:";
+            this.SubTotalLabel.Click += new System.EventHandler(this.SubTotalLabel_Click);
+            // 
+            // TaxLabel
+            // 
+            this.TaxLabel.AutoSize = true;
+            this.TaxLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TaxLabel.ForeColor = System.Drawing.Color.Snow;
+            this.TaxLabel.Location = new System.Drawing.Point(932, 518);
+            this.TaxLabel.Name = "TaxLabel";
+            this.TaxLabel.Size = new System.Drawing.Size(43, 28);
+            this.TaxLabel.TabIndex = 67;
+            this.TaxLabel.Text = "Tax:";
+            // 
+            // TotalLabel
+            // 
+            this.TotalLabel.AutoSize = true;
+            this.TotalLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TotalLabel.ForeColor = System.Drawing.Color.Snow;
+            this.TotalLabel.Location = new System.Drawing.Point(932, 580);
+            this.TotalLabel.Name = "TotalLabel";
+            this.TotalLabel.Size = new System.Drawing.Size(58, 28);
+            this.TotalLabel.TabIndex = 68;
+            this.TotalLabel.Text = "Total:";
+            // 
+            // DecorativeLabel
+            // 
+            this.DecorativeLabel.AutoSize = true;
+            this.DecorativeLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DecorativeLabel.ForeColor = System.Drawing.Color.Snow;
+            this.DecorativeLabel.Location = new System.Drawing.Point(932, 546);
+            this.DecorativeLabel.Name = "DecorativeLabel";
+            this.DecorativeLabel.Size = new System.Drawing.Size(316, 28);
+            this.DecorativeLabel.TabIndex = 69;
+            this.DecorativeLabel.Text = "______________________________________";
+            // 
             // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.Controls.Add(this.DecorativeLabel);
+            this.Controls.Add(this.TotalLabel);
+            this.Controls.Add(this.TaxLabel);
+            this.Controls.Add(this.SubTotalLabel);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -608,6 +669,7 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -651,5 +713,9 @@
         private GroupBox groupBox3;
         private GroupBox groupBox4;
         private GroupBox groupBox5;
+        private Label SubTotalLabel;
+        private Label TaxLabel;
+        private Label TotalLabel;
+        private Label DecorativeLabel;
     }
 }
