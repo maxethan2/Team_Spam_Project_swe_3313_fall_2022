@@ -59,7 +59,8 @@ namespace CoffeePointOfSale.Forms
         public decimal totalPrice = 0m;
         public decimal tax;
 
-
+        //quantity variable
+        public int quantity = 1;
         public FormOrder(IAppSettings appSettings, ICustomerService customerService, IDrinkMenuService drinkMenuService) : base(appSettings)
         {
             _customerService = customerService;
@@ -79,14 +80,19 @@ namespace CoffeePointOfSale.Forms
             _customerService.SelectedCustomer = _customerService.Customers[Customer.AnonymousCustomerId];  // sets the customer back to anonymous
             Close(); //closes this form
             FormFactory.Get<FormMain>().Show();
-
+            _currentOrder.Date = DateTime.Now.ToString("yyyy - MM - dd - HH - mm - s");
+            _currentOrder.CustomerId = _customerService.SelectedCustomer.CustomerId;
+            
         }
 
         private void CheckoutButton_Click_1(object sender, EventArgs e)
         {
+            _currentOrder.OrderedItems.Add(_currentOrderedItem);
+            _customerService.SelectedCustomer.Orders.Add(_currentOrder);
+           
             Close();
             FormFactory.Get<FormPayment>().Show();
-            _customerService.SelectedCustomer.Orders.Add(_currentOrder);
+            
         }
 
         private void FormOrder_Load(object sender, EventArgs e)
@@ -241,18 +247,32 @@ namespace CoffeePointOfSale.Forms
 
             if (!size.Equals(""))
                 OrderedItemDisplayGrid.Rows.Add("      " + size);
+            CalculateCostsUpdateOrder();
+            UpdateLabels();
 
-            
-            subTotal += basePrice + creamerPrice + sizePrice + espressoOrMatOrDecafPrice;
-            SubTotalLabel.Text = "Subtotal: "+ subTotal.ToString("C2", CultureInfo.CurrentCulture);
-            tax = subTotal * _appSettings.Tax.Rate;
-            TaxLabel.Text = "Tax: " + tax.ToString("C2", CultureInfo.CurrentCulture);
-            totalPrice = subTotal + tax;
-            TotalLabel.Text = "Total: " + totalPrice.ToString("C2", CultureInfo.CurrentCulture);
-
+           
+         
             iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetener = ""; creamer = ""; size = "";
         }
+        private void CalculateCostsUpdateOrder()
+        {
+            //calculate
+            subTotal += basePrice + creamerPrice + sizePrice + espressoOrMatOrDecafPrice;
+            tax = subTotal * _appSettings.Tax.Rate;
+            totalPrice = subTotal + tax;
 
+            //order changes
+            _currentOrder.Subtotal += subTotal;
+            _currentOrder.Total += totalPrice; 
+            _currentOrder.Tax = tax;
+            _currentOrderedItem.Customizations.Add(foam + sweetener + size + espressoOrMatOrDecaf);
+        }
+        private void UpdateLabels()
+        {
+            TaxLabel.Text = "Tax: " + tax.ToString("C2", CultureInfo.CurrentCulture);
+            TotalLabel.Text = "Total: " + totalPrice.ToString("C2", CultureInfo.CurrentCulture);
+            SubTotalLabel.Text = "Subtotal: " + subTotal.ToString("C2", CultureInfo.CurrentCulture);
+        }
 
         private void SizeSmallButton_CheckedChanged(object sender, EventArgs e)
         {

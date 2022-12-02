@@ -84,7 +84,7 @@
             this.CancelButton.BackColor = System.Drawing.Color.Red;
             this.CancelButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CancelButton.ForeColor = System.Drawing.Color.Snow;
-            this.CancelButton.Location = new System.Drawing.Point(1123, 658);
+            this.CancelButton.Location = new System.Drawing.Point(1123, 648);
             this.CancelButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(218, 67);
