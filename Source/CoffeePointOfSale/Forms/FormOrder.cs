@@ -71,6 +71,7 @@ namespace CoffeePointOfSale.Forms
 
                 //quantity variable
                 public int quantity = 1;
+
                 #endregion
         public FormOrder(IAppSettings appSettings, ICustomerService customerService, IDrinkMenuService drinkMenuService) : base(appSettings)
         {
@@ -81,7 +82,7 @@ namespace CoffeePointOfSale.Forms
             
         }
         public Order CollectedOrder = new Order();
-        public Order _currentOrder = new Order();  //this is a to track ordered items
+        public Order _currentOrder = new Order(); //this is a to track ordered items
         private OrderedItem _currentOrderedItem = new OrderedItem();
 
         #region DrinkSelection
@@ -470,6 +471,8 @@ namespace CoffeePointOfSale.Forms
             ExtraIceButton.Enabled = true;
             VeryHotButton.Enabled = true;
             NonFatMilkButton.Enabled = true;
+            NoFoamButton.Enabled = true;
+            LotsFoamButton.Enabled = true;
         }
         private void AllCustomizationDisabled()
         {

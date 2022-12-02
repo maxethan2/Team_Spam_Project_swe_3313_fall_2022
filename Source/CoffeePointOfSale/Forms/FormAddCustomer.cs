@@ -91,8 +91,7 @@ namespace CoffeePointOfSale.Forms
                 tempCust.FirstName = firstName;
                 tempCust.LastName = lastName;
                 tempCust.Phone = PhoneNumberTextBox.Text;
-
-
+                tempCust.CustomerId = "new";
                 // add the customer to the dictionary
                 Customers customers = new Customers();
                 if (customers.Add(tempCust))
@@ -108,9 +107,11 @@ namespace CoffeePointOfSale.Forms
 
                     tempCust.Orders.Add(tempOrder);
                     customerService.CreateCustomer(tempCust);
+                    _customerService.SelectedCustomer = tempCust;
                     Close(); //closes this form
                     FormFactory.Get<FormOrder>().Show();
                 }
+              
             }
             catch (Exception) { ErrorLabel.Text = " Name field is Invalid. "; }
         }
