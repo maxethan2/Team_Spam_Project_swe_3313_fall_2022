@@ -200,14 +200,14 @@
             // TotalPrice
             // 
             this.TotalPrice.AutoSize = true;
-            this.TotalPrice.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TotalPrice.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TotalPrice.ForeColor = System.Drawing.Color.Snow;
-            this.TotalPrice.Location = new System.Drawing.Point(610, 91);
+            this.TotalPrice.Location = new System.Drawing.Point(506, 122);
             this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.Size = new System.Drawing.Size(124, 28);
+            this.TotalPrice.Size = new System.Drawing.Size(170, 37);
             this.TotalPrice.TabIndex = 14;
             this.TotalPrice.Text = "Your total is: ";
-            this.TotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ErrorLabel
             // 
