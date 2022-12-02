@@ -27,12 +27,12 @@ namespace CoffeePointOfSale.Forms.Base
             _customerService = customerService;
             _appSettings = appSettings;
             InitializeComponent();
-<<<<<<< Updated upstream
+
             CustomerNameLabel.Text = _customerService.SelectedCustomer.FirstName + " " + _customerService.SelectedCustomer.LastName;
-=======
+
             CustomerNameLabel.Text = "Order Placed by " + _customerService.SelectedCustomer.FirstName + " " + _customerService.SelectedCustomer.LastName;
             printOrder();
->>>>>>> Stashed changes
+
             printOrderTotal();
             printPaymentDetails();
 
@@ -61,12 +61,14 @@ namespace CoffeePointOfSale.Forms.Base
 
         private void printOrder()
         {
-            
+            var customer = _customerService.SelectedCustomer;
 
-            var OrderList = _customerService.CollectedOrder.OrderedItems;
 
-          //  ItemsDetailsLabel.Text = _customerService.CollectedOrder.OrderedItems.
-          /*  var OrderedItems = "";
+            var OrderIndex = customer.Orders.Count - 1;
+            var Order = customer.Orders[OrderIndex];
+
+            var OrderList = Order.OrderedItems;
+            var OrderedItems = "";
             // drink in OrderList
             foreach (var Drink in OrderList)
             {
@@ -80,7 +82,7 @@ namespace CoffeePointOfSale.Forms.Base
                 OrderedItems += "\n";
             }
 
-            ItemsDetailsLabel.Text = OrderedItems;*/
+            ItemsDetailsLabel.Text = OrderedItems;
         }
 
         private void printOrderTotal()

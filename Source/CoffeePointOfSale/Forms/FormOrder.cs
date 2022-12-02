@@ -549,7 +549,7 @@ namespace CoffeePointOfSale.Forms
         }
         private void ResetOrderCustomizations()
         {
-            iceOrTemp = null!; espressoOrMatOrDecaf = null!; sweetener = null!; creamer = null!; size = null!;
+            iceOrTemp = null!; espressoOrMatOrDecaf = null!; sweetener = null!; creamer = null!; size = null!; foam = null! ;
         }
         #endregion
         private void SubTotalLabel_Click(object sender, EventArgs e)
