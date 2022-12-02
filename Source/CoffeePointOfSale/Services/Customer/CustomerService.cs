@@ -10,12 +10,13 @@ namespace CoffeePointOfSale.Services.Customer;
 public class CustomerService : ICustomerService
 {
     private readonly IStorageService _storageService;
-
+    public Order CollectedOrder { get; set; }
     public CustomerService(IStorageService storageService)
     {
         _storageService = storageService;
         Customers = _storageService.Read<Customers>(); //load customers from JSON file
         CreateAnonymousCustomer();
+     
     }
 
     private void CreateAnonymousCustomer()

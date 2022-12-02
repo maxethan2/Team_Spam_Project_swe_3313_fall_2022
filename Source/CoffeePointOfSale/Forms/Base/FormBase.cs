@@ -59,4 +59,5 @@ public class FormBase : Form
         ConfigureWindow(); //sets window to proper size and position - all forms should all this at start of OnLoad
         SetTitle();
     }
+    public static string CreditcardLastFour = "";
 }

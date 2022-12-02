@@ -26,6 +26,15 @@ namespace CoffeePointOfSale.Forms
      *                                              ----------------------------
      * 
      */
+    #region TODO LIST
+    /*
+     * Validate Phone is unique
+     * Fix CSV generation
+     * Fix Customer List
+     * 
+     * 
+    */
+    #endregion
     public partial class FormOrder : FormNoCloseBase
     {
         #region variables
@@ -71,7 +80,7 @@ namespace CoffeePointOfSale.Forms
             InitializeComponent();
             
         }
-
+        public Order CollectedOrder = new Order();
         public Order _currentOrder = new Order();  //this is a to track ordered items
         private OrderedItem _currentOrderedItem = new OrderedItem();
 
@@ -81,16 +90,18 @@ namespace CoffeePointOfSale.Forms
             _customerService.SelectedCustomer = _customerService.Customers[Customer.AnonymousCustomerId];  // sets the customer back to anonymous
             Close(); //closes this form
             FormFactory.Get<FormMain>().Show();
-            _currentOrder.Date = DateTime.Now.ToString("yyyy - MM - dd - HH - mm - s");
-            _currentOrder.CustomerId = _customerService.SelectedCustomer.CustomerId;
+         
             
         }
         private void CheckoutButton_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(_currentOrderedItem.DrinkName) == false)
+            if (_currentOrder.OrderedItems.Count > 0)
             {
-                _currentOrder.OrderedItems.Add(_currentOrderedItem);
+                _currentOrder.Date = DateTime.Now.ToString("yyyy - MM - dd - HH - mm - s");
+                _currentOrder.CustomerId = _customerService.SelectedCustomer.CustomerId;
                 _customerService.SelectedCustomer.Orders.Add(_currentOrder);
+                _customerService.CollectedOrder = _currentOrder;
+                _currentOrder = new Order(); // reset
 
                 Close();
                 FormFactory.Get<FormPayment>().Show();
@@ -172,9 +183,10 @@ namespace CoffeePointOfSale.Forms
                 DeselectAllButtons();
                 CalculateCostsUpdateOrder();
                 UpdateLabels();
+                
                 _currentOrder.OrderedItems.Add(_currentOrderedItem);
+                
                 OrderedItemDisplayGrid.Rows.Add(quantity + "x: " + _currentOrderedItem.DrinkName);
-
 
                 if (string.IsNullOrEmpty(iceOrTemp) == false)
                     OrderedItemDisplayGrid.Rows.Add("      " + iceOrTemp);
@@ -191,7 +203,9 @@ namespace CoffeePointOfSale.Forms
                 if (string.IsNullOrEmpty(size) == false)
                     OrderedItemDisplayGrid.Rows.Add("      " + size);
             }
+            QuantityChangeButton.Value = 1;
             ResetOrderCustomizations();
+            _currentOrderedItem = new OrderedItem();
         }
         private void CalculateCostsUpdateOrder()
         {

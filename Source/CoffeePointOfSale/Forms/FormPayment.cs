@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -42,7 +43,7 @@ namespace CoffeePointOfSale.Forms
 
 
 
-            //TotalPrice.Text = 
+            TotalPrice.Text ="Total Price is: " +_customerService.SelectedCustomer.Orders[OrderIndex].Total.ToString("C2", CultureInfo.CurrentCulture);
             RewardsNeededLabel.Text = RequiredRewardsPoints.ToString();
             ErrorLabel.Text = "";
             ErrorLabel2.Text = "";
