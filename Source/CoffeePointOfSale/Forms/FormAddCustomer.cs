@@ -52,7 +52,7 @@ namespace CoffeePointOfSale.Forms
             string phoneTextBoxInput = PhoneNumberTextBox.Text;
             if ((ValidateNameInput(nameTextBoxInput) == true) &&
                 (ValidatePhoneInput(phoneTextBoxInput) == true))
-                    AddCustomer(nameTextBoxInput);
+                AddCustomer(nameTextBoxInput, phoneTextBoxInput);
 
         }
 
@@ -65,9 +65,10 @@ namespace CoffeePointOfSale.Forms
             Regex regex = new Regex(@"[a-zA-Z]+,[a-zA-Z]"); //checks for comma
             if (regex.IsMatch(names) == false)
             {
-                ErrorLabel.Text =  " Please Enter in correct format (LastName,FirstName) (No Spaces)";
+                ErrorLabel.Text = " Please Enter in correct format (LastName,FirstName) (No Spaces)";
                 return false;
             }
+
             return true;
         }
         private bool ValidatePhoneInput(string phone)
@@ -76,47 +77,66 @@ namespace CoffeePointOfSale.Forms
             {
                 return true;
             }
-            ErrorLabel.Text =  " Phone Number is Invalid";
+            ErrorLabel.Text = " Phone Number is Invalid";
             return false;
         }
 
-        private void AddCustomer(string nameTextBoxInput)
+        private void AddCustomer(string nameTextBoxInput, string phoneTextBoxInput)
         {
-            try
+            bool isPhoneValid = true;
+
+            var custlist = _customerService.Customers.List;
+            string inputPhoneNumber = phoneTextBoxInput;
+            foreach (var phonenumber in custlist)
             {
-                string[] customerName = nameTextBoxInput.Split(',');
-                string lastName = customerName[0];
-                string firstName = customerName[1];
-                Customer tempCust = new Customer();
-                tempCust.FirstName = firstName;
-                tempCust.LastName = lastName;
-                tempCust.Phone = PhoneNumberTextBox.Text;
-                tempCust.CustomerId = "new";
-                // add the customer to the dictionary
-                Customers customers = new Customers();
-                if (customers.Add(tempCust))
+                if (phonenumber.Equals(inputPhoneNumber)) { }
                 {
-                    StorageService storageService = new StorageService();
-                    CustomerService customerService = new CustomerService(storageService);
-
-                    // create temp order
-                    tempCust.Orders = new List<Order>();
-                    Order tempOrder = new Order();
-                    tempOrder.OrderedItems = new List<OrderedItem>();
-
-
-                    tempCust.Orders.Add(tempOrder);
-                    customerService.CreateCustomer(tempCust);
-                    _customerService.SelectedCustomer = tempCust;
-                    Close(); //closes this form
-                    FormFactory.Get<FormOrder>().Show();
+                    ErrorLabel.Text = "Phone Number has already been used.";
+                    isPhoneValid = false;
                 }
-              
+
             }
-            catch (Exception) { ErrorLabel.Text = " Name field is Invalid. "; }
+            if (isPhoneValid == true)
+            {
+                try
+                {
+                    string[] customerName = nameTextBoxInput.Split(',');
+                    string lastName = customerName[0];
+                    string firstName = customerName[1];
+                    Customer tempCust = new Customer();
+                    tempCust.FirstName = firstName;
+                    tempCust.LastName = lastName;
+
+                    if (isPhoneValid == true)
+                    {
+                        tempCust.CustomerId = "new";
+                        // add the customer to the dictionary
+                        Customers customers = new Customers();
+                        if (customers.Add(tempCust))
+                        {
+                            StorageService storageService = new StorageService();
+                            CustomerService customerService = new CustomerService(storageService);
+
+                            // create temp order
+                            tempCust.Orders = new List<Order>();
+                            Order tempOrder = new Order();
+                            tempOrder.OrderedItems = new List<OrderedItem>();
+
+
+                            tempCust.Orders.Add(tempOrder);
+                            customerService.CreateCustomer(tempCust);
+                            _customerService.SelectedCustomer = tempCust;
+                            Close(); //closes this form
+                            FormFactory.Get<FormOrder>().Show();
+                        }
+
+                    }
+
+                }
+                catch (Exception) { ErrorLabel.Text = " Name field is Invalid. "; }
+            }
         }
-   
     }
-}   
+}
 
 
