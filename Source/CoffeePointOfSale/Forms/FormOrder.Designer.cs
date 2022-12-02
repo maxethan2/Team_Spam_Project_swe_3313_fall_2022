@@ -36,47 +36,42 @@
             this.CoffeeButton = new System.Windows.Forms.Button();
             this.WaterButton = new System.Windows.Forms.Button();
             this.EspressoButton = new System.Windows.Forms.Button();
-            this.AddDrinkButton = new System.Windows.Forms.Button();
             this.AddCustomizationButton = new System.Windows.Forms.Button();
-            this.TestLabel = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
-            this.radioButton13 = new System.Windows.Forms.RadioButton();
-            this.radioButton14 = new System.Windows.Forms.RadioButton();
-            this.radioButton15 = new System.Windows.Forms.RadioButton();
-            this.radioButton16 = new System.Windows.Forms.RadioButton();
-            this.radioButton17 = new System.Windows.Forms.RadioButton();
-            this.radioButton18 = new System.Windows.Forms.RadioButton();
-            this.radioButton19 = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioButton20 = new System.Windows.Forms.RadioButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.radioButton21 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.OrderedItemDisplayGrid = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.SizeLargeButton = new System.Windows.Forms.RadioButton();
+            this.SizeMegaButton = new System.Windows.Forms.RadioButton();
+            this.AlmondMilkButton = new System.Windows.Forms.RadioButton();
+            this.WholeMilkButton = new System.Windows.Forms.RadioButton();
+            this.OatMilkButton = new System.Windows.Forms.RadioButton();
+            this.SoyMilkButton = new System.Windows.Forms.RadioButton();
+            this.RoomCreamButton = new System.Windows.Forms.RadioButton();
+            this.DecaffeinatedButton = new System.Windows.Forms.RadioButton();
+            this.ExtraMatchaButton = new System.Windows.Forms.RadioButton();
+            this.ExtraEspresso = new System.Windows.Forms.RadioButton();
+            this.SizeSmallButton = new System.Windows.Forms.RadioButton();
+            this.SweetNLowButton = new System.Windows.Forms.RadioButton();
+            this.SteviaButton = new System.Windows.Forms.RadioButton();
+            this.SugarButton = new System.Windows.Forms.RadioButton();
+            this.LessHotButton = new System.Windows.Forms.RadioButton();
+            this.NoIceButton = new System.Windows.Forms.RadioButton();
+            this.ExtraIceButton = new System.Windows.Forms.RadioButton();
+            this.VeryHotButton = new System.Windows.Forms.RadioButton();
+            this.NonFatMilkButton = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.LotsFoamButton = new System.Windows.Forms.RadioButton();
+            this.NoFoamButton = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderedItemDisplayGrid)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // CancelButton
@@ -91,7 +86,7 @@
             this.CancelButton.TabIndex = 2;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = false;
-            this.CancelButton.Click += new System.EventHandler(this.button1_Click);
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // CheckoutButton
             // 
@@ -106,10 +101,10 @@
             // 
             // LatteButton
             // 
-            this.LatteButton.Location = new System.Drawing.Point(14, 67);
+            this.LatteButton.Location = new System.Drawing.Point(11, 67);
             this.LatteButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.LatteButton.Name = "LatteButton";
-            this.LatteButton.Size = new System.Drawing.Size(167, 160);
+            this.LatteButton.Size = new System.Drawing.Size(142, 106);
             this.LatteButton.TabIndex = 4;
             this.LatteButton.Text = "Latte";
             this.LatteButton.UseVisualStyleBackColor = true;
@@ -117,10 +112,10 @@
             // 
             // IcedLatteButton
             // 
-            this.IcedLatteButton.Location = new System.Drawing.Point(196, 67);
+            this.IcedLatteButton.Location = new System.Drawing.Point(163, 67);
             this.IcedLatteButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.IcedLatteButton.Name = "IcedLatteButton";
-            this.IcedLatteButton.Size = new System.Drawing.Size(167, 160);
+            this.IcedLatteButton.Size = new System.Drawing.Size(142, 106);
             this.IcedLatteButton.TabIndex = 5;
             this.IcedLatteButton.Text = "Iced Latte";
             this.IcedLatteButton.UseVisualStyleBackColor = true;
@@ -128,10 +123,10 @@
             // 
             // MatchaButton
             // 
-            this.MatchaButton.Location = new System.Drawing.Point(373, 67);
+            this.MatchaButton.Location = new System.Drawing.Point(315, 67);
             this.MatchaButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.MatchaButton.Name = "MatchaButton";
-            this.MatchaButton.Size = new System.Drawing.Size(167, 160);
+            this.MatchaButton.Size = new System.Drawing.Size(142, 106);
             this.MatchaButton.TabIndex = 6;
             this.MatchaButton.Text = "Iced Matcha Green Tea Latte";
             this.MatchaButton.UseVisualStyleBackColor = true;
@@ -139,10 +134,10 @@
             // 
             // CoffeeButton
             // 
-            this.CoffeeButton.Location = new System.Drawing.Point(550, 67);
+            this.CoffeeButton.Location = new System.Drawing.Point(467, 67);
             this.CoffeeButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.CoffeeButton.Name = "CoffeeButton";
-            this.CoffeeButton.Size = new System.Drawing.Size(167, 160);
+            this.CoffeeButton.Size = new System.Drawing.Size(142, 106);
             this.CoffeeButton.TabIndex = 7;
             this.CoffeeButton.Text = "Coffee";
             this.CoffeeButton.UseVisualStyleBackColor = true;
@@ -150,10 +145,10 @@
             // 
             // WaterButton
             // 
-            this.WaterButton.Location = new System.Drawing.Point(725, 67);
+            this.WaterButton.Location = new System.Drawing.Point(619, 67);
             this.WaterButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.WaterButton.Name = "WaterButton";
-            this.WaterButton.Size = new System.Drawing.Size(167, 160);
+            this.WaterButton.Size = new System.Drawing.Size(142, 106);
             this.WaterButton.TabIndex = 8;
             this.WaterButton.Text = "Iced Water";
             this.WaterButton.UseVisualStyleBackColor = true;
@@ -161,25 +156,14 @@
             // 
             // EspressoButton
             // 
-            this.EspressoButton.Location = new System.Drawing.Point(902, 67);
+            this.EspressoButton.Location = new System.Drawing.Point(771, 67);
             this.EspressoButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.EspressoButton.Name = "EspressoButton";
-            this.EspressoButton.Size = new System.Drawing.Size(167, 160);
+            this.EspressoButton.Size = new System.Drawing.Size(142, 106);
             this.EspressoButton.TabIndex = 9;
             this.EspressoButton.Text = "Espresso";
             this.EspressoButton.UseVisualStyleBackColor = true;
             this.EspressoButton.Click += new System.EventHandler(this.EspressoButton_Click);
-            // 
-            // AddDrinkButton
-            // 
-            this.AddDrinkButton.Location = new System.Drawing.Point(889, 801);
-            this.AddDrinkButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.AddDrinkButton.Name = "AddDrinkButton";
-            this.AddDrinkButton.Size = new System.Drawing.Size(179, 79);
-            this.AddDrinkButton.TabIndex = 12;
-            this.AddDrinkButton.Text = "Add Drink";
-            this.AddDrinkButton.UseVisualStyleBackColor = true;
-            this.AddDrinkButton.Click += new System.EventHandler(this.AddDrinkButton_Click);
             // 
             // AddCustomizationButton
             // 
@@ -190,332 +174,293 @@
             this.AddCustomizationButton.Text = "Add Customization";
             this.AddCustomizationButton.UseVisualStyleBackColor = true;
             // 
-            // TestLabel
+            // OrderedItemDisplayGrid
             // 
-            this.TestLabel.AutoSize = true;
-            this.TestLabel.ForeColor = System.Drawing.Color.Snow;
-            this.TestLabel.Location = new System.Drawing.Point(600, 605);
-            this.TestLabel.Name = "TestLabel";
-            this.TestLabel.Size = new System.Drawing.Size(116, 15);
-            this.TestLabel.TabIndex = 14;
-            this.TestLabel.Text = "TEST LABEL REMOVE";
-            this.TestLabel.Click += new System.EventHandler(this.TestLabel_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.OrderedItemDisplayGrid.AllowUserToAddRows = false;
+            this.OrderedItemDisplayGrid.AllowUserToDeleteRows = false;
+            this.OrderedItemDisplayGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.OrderedItemDisplayGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
-            this.dataGridView1.Location = new System.Drawing.Point(1123, 67);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(218, 479);
-            this.dataGridView1.TabIndex = 34;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.OrderedItemDisplayGrid.Location = new System.Drawing.Point(921, 67);
+            this.OrderedItemDisplayGrid.Name = "OrderedItemDisplayGrid";
+            this.OrderedItemDisplayGrid.ReadOnly = true;
+            this.OrderedItemDisplayGrid.RowTemplate.Height = 25;
+            this.OrderedItemDisplayGrid.Size = new System.Drawing.Size(420, 479);
+            this.OrderedItemDisplayGrid.TabIndex = 34;
+            this.OrderedItemDisplayGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrderDisplayGrid_CellContentClick);
             // 
-            // radioButton2
+            // Column1
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton2.Location = new System.Drawing.Point(75, 17);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(54, 19);
-            this.radioButton2.TabIndex = 36;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Large";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // radioButton3
+            // SizeLargeButton
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton3.Location = new System.Drawing.Point(135, 17);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(55, 19);
-            this.radioButton3.TabIndex = 37;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Mega";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.SizeLargeButton.AutoSize = true;
+            this.SizeLargeButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SizeLargeButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SizeLargeButton.Location = new System.Drawing.Point(27, 87);
+            this.SizeLargeButton.Name = "SizeLargeButton";
+            this.SizeLargeButton.Size = new System.Drawing.Size(77, 29);
+            this.SizeLargeButton.TabIndex = 36;
+            this.SizeLargeButton.TabStop = true;
+            this.SizeLargeButton.Text = "Large";
+            this.SizeLargeButton.UseVisualStyleBackColor = true;
+            this.SizeLargeButton.CheckedChanged += new System.EventHandler(this.SizeLargeButton_CheckedChanged);
             // 
-            // radioButton1
+            // SizeMegaButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton1.Location = new System.Drawing.Point(271, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(94, 19);
-            this.radioButton1.TabIndex = 39;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Almond Milk";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.SizeMegaButton.AutoSize = true;
+            this.SizeMegaButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SizeMegaButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SizeMegaButton.Location = new System.Drawing.Point(27, 38);
+            this.SizeMegaButton.Name = "SizeMegaButton";
+            this.SizeMegaButton.Size = new System.Drawing.Size(78, 29);
+            this.SizeMegaButton.TabIndex = 37;
+            this.SizeMegaButton.TabStop = true;
+            this.SizeMegaButton.Text = "Mega";
+            this.SizeMegaButton.UseVisualStyleBackColor = true;
+            this.SizeMegaButton.CheckedChanged += new System.EventHandler(this.SizeMegaButton_CheckedChanged);
             // 
-            // radioButton5
+            // AlmondMilkButton
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton5.Location = new System.Drawing.Point(104, 3);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(85, 19);
-            this.radioButton5.TabIndex = 40;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Whole Milk";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            this.AlmondMilkButton.AutoSize = true;
+            this.AlmondMilkButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AlmondMilkButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.AlmondMilkButton.Location = new System.Drawing.Point(20, 47);
+            this.AlmondMilkButton.Name = "AlmondMilkButton";
+            this.AlmondMilkButton.Size = new System.Drawing.Size(137, 29);
+            this.AlmondMilkButton.TabIndex = 39;
+            this.AlmondMilkButton.TabStop = true;
+            this.AlmondMilkButton.Text = "Almond Milk";
+            this.AlmondMilkButton.UseVisualStyleBackColor = true;
+            this.AlmondMilkButton.CheckedChanged += new System.EventHandler(this.AlmondMilkButton_CheckedChanged);
             // 
-            // radioButton6
+            // WholeMilkButton
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton6.Location = new System.Drawing.Point(195, 3);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(70, 19);
-            this.radioButton6.TabIndex = 41;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Oat Milk";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            this.WholeMilkButton.AutoSize = true;
+            this.WholeMilkButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WholeMilkButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.WholeMilkButton.Location = new System.Drawing.Point(19, 22);
+            this.WholeMilkButton.Name = "WholeMilkButton";
+            this.WholeMilkButton.Size = new System.Drawing.Size(126, 29);
+            this.WholeMilkButton.TabIndex = 40;
+            this.WholeMilkButton.TabStop = true;
+            this.WholeMilkButton.Text = "Whole Milk";
+            this.WholeMilkButton.UseVisualStyleBackColor = true;
+            this.WholeMilkButton.CheckedChanged += new System.EventHandler(this.WholeMilkButton_CheckedChanged);
             // 
-            // radioButton7
+            // OatMilkButton
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton7.Location = new System.Drawing.Point(371, 3);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(70, 19);
-            this.radioButton7.TabIndex = 42;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Soy Milk";
-            this.radioButton7.UseVisualStyleBackColor = true;
-            this.radioButton7.CheckedChanged += new System.EventHandler(this.radioButton7_CheckedChanged);
+            this.OatMilkButton.AutoSize = true;
+            this.OatMilkButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.OatMilkButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.OatMilkButton.Location = new System.Drawing.Point(158, 47);
+            this.OatMilkButton.Name = "OatMilkButton";
+            this.OatMilkButton.Size = new System.Drawing.Size(101, 29);
+            this.OatMilkButton.TabIndex = 41;
+            this.OatMilkButton.TabStop = true;
+            this.OatMilkButton.Text = "Oat Milk";
+            this.OatMilkButton.UseVisualStyleBackColor = true;
+            this.OatMilkButton.CheckedChanged += new System.EventHandler(this.OatMilkButton_CheckedChanged);
             // 
-            // radioButton8
+            // SoyMilkButton
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton8.Location = new System.Drawing.Point(447, 3);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(113, 19);
-            this.radioButton8.TabIndex = 43;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "Room for Cream";
-            this.radioButton8.UseVisualStyleBackColor = true;
-            this.radioButton8.CheckedChanged += new System.EventHandler(this.radioButton8_CheckedChanged);
+            this.SoyMilkButton.AutoSize = true;
+            this.SoyMilkButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SoyMilkButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SoyMilkButton.Location = new System.Drawing.Point(324, 22);
+            this.SoyMilkButton.Name = "SoyMilkButton";
+            this.SoyMilkButton.Size = new System.Drawing.Size(101, 29);
+            this.SoyMilkButton.TabIndex = 42;
+            this.SoyMilkButton.TabStop = true;
+            this.SoyMilkButton.Text = "Soy Milk";
+            this.SoyMilkButton.UseVisualStyleBackColor = true;
+            this.SoyMilkButton.CheckedChanged += new System.EventHandler(this.SoyMilkButton_CheckedChanged);
             // 
-            // radioButton9
+            // RoomCreamButton
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton9.Location = new System.Drawing.Point(79, 3);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(97, 19);
-            this.radioButton9.TabIndex = 46;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "decaffeinated";
-            this.radioButton9.UseVisualStyleBackColor = true;
-            this.radioButton9.CheckedChanged += new System.EventHandler(this.radioButton9_CheckedChanged);
+            this.RoomCreamButton.AutoSize = true;
+            this.RoomCreamButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RoomCreamButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.RoomCreamButton.Location = new System.Drawing.Point(151, 22);
+            this.RoomCreamButton.Name = "RoomCreamButton";
+            this.RoomCreamButton.Size = new System.Drawing.Size(167, 29);
+            this.RoomCreamButton.TabIndex = 43;
+            this.RoomCreamButton.TabStop = true;
+            this.RoomCreamButton.Text = "Room for Cream";
+            this.RoomCreamButton.UseVisualStyleBackColor = true;
+            this.RoomCreamButton.CheckedChanged += new System.EventHandler(this.RoomCreamButton_CheckedChanged);
             // 
-            // radioButton10
+            // DecaffeinatedButton
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton10.Location = new System.Drawing.Point(182, 3);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(65, 19);
-            this.radioButton10.TabIndex = 45;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "Matcha";
-            this.radioButton10.UseVisualStyleBackColor = true;
-            this.radioButton10.CheckedChanged += new System.EventHandler(this.radioButton10_CheckedChanged);
+            this.DecaffeinatedButton.AutoSize = true;
+            this.DecaffeinatedButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DecaffeinatedButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.DecaffeinatedButton.Location = new System.Drawing.Point(130, 60);
+            this.DecaffeinatedButton.Name = "DecaffeinatedButton";
+            this.DecaffeinatedButton.Size = new System.Drawing.Size(147, 29);
+            this.DecaffeinatedButton.TabIndex = 46;
+            this.DecaffeinatedButton.TabStop = true;
+            this.DecaffeinatedButton.Text = "Decaffeinated";
+            this.DecaffeinatedButton.UseVisualStyleBackColor = true;
+            this.DecaffeinatedButton.CheckedChanged += new System.EventHandler(this.DecaffeinatedButton_CheckedChanged);
             // 
-            // radioButton11
+            // ExtraMatchaButton
             // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton11.Location = new System.Drawing.Point(3, 3);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(70, 19);
-            this.radioButton11.TabIndex = 44;
-            this.radioButton11.TabStop = true;
-            this.radioButton11.Text = "Espresso";
-            this.radioButton11.UseVisualStyleBackColor = true;
-            this.radioButton11.CheckedChanged += new System.EventHandler(this.radioButton11_CheckedChanged);
+            this.ExtraMatchaButton.AutoSize = true;
+            this.ExtraMatchaButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ExtraMatchaButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ExtraMatchaButton.Location = new System.Drawing.Point(285, 60);
+            this.ExtraMatchaButton.Name = "ExtraMatchaButton";
+            this.ExtraMatchaButton.Size = new System.Drawing.Size(93, 29);
+            this.ExtraMatchaButton.TabIndex = 45;
+            this.ExtraMatchaButton.TabStop = true;
+            this.ExtraMatchaButton.Text = "Matcha";
+            this.ExtraMatchaButton.UseVisualStyleBackColor = true;
+            this.ExtraMatchaButton.CheckedChanged += new System.EventHandler(this.ExtraMatchaButton_CheckedChanged);
             // 
-            // radioButton12
+            // ExtraEspresso
             // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton12.Location = new System.Drawing.Point(15, 17);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(54, 19);
-            this.radioButton12.TabIndex = 47;
-            this.radioButton12.TabStop = true;
-            this.radioButton12.Text = "Small";
-            this.radioButton12.UseVisualStyleBackColor = true;
-            this.radioButton12.CheckedChanged += new System.EventHandler(this.radioButton12_CheckedChanged);
+            this.ExtraEspresso.AutoSize = true;
+            this.ExtraEspresso.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ExtraEspresso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ExtraEspresso.Location = new System.Drawing.Point(20, 60);
+            this.ExtraEspresso.Name = "ExtraEspresso";
+            this.ExtraEspresso.Size = new System.Drawing.Size(103, 29);
+            this.ExtraEspresso.TabIndex = 44;
+            this.ExtraEspresso.TabStop = true;
+            this.ExtraEspresso.Text = "Espresso";
+            this.ExtraEspresso.UseVisualStyleBackColor = true;
+            this.ExtraEspresso.CheckedChanged += new System.EventHandler(this.ExtraEspresso_CheckedChanged);
             // 
-            // radioButton13
+            // SizeSmallButton
             // 
-            this.radioButton13.AutoSize = true;
-            this.radioButton13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton13.Location = new System.Drawing.Point(126, 3);
-            this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(93, 19);
-            this.radioButton13.TabIndex = 50;
-            this.radioButton13.TabStop = true;
-            this.radioButton13.Text = "Sweet\'N Low";
-            this.radioButton13.UseVisualStyleBackColor = true;
-            this.radioButton13.CheckedChanged += new System.EventHandler(this.radioButton13_CheckedChanged);
+            this.SizeSmallButton.AutoSize = true;
+            this.SizeSmallButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SizeSmallButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SizeSmallButton.Location = new System.Drawing.Point(27, 133);
+            this.SizeSmallButton.Name = "SizeSmallButton";
+            this.SizeSmallButton.Size = new System.Drawing.Size(76, 29);
+            this.SizeSmallButton.TabIndex = 47;
+            this.SizeSmallButton.TabStop = true;
+            this.SizeSmallButton.Text = "Small";
+            this.SizeSmallButton.UseVisualStyleBackColor = true;
+            this.SizeSmallButton.CheckedChanged += new System.EventHandler(this.SizeSmallButton_CheckedChanged);
             // 
-            // radioButton14
+            // SweetNLowButton
             // 
-            this.radioButton14.AutoSize = true;
-            this.radioButton14.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton14.Location = new System.Drawing.Point(64, 3);
-            this.radioButton14.Name = "radioButton14";
-            this.radioButton14.Size = new System.Drawing.Size(56, 19);
-            this.radioButton14.TabIndex = 49;
-            this.radioButton14.TabStop = true;
-            this.radioButton14.Text = "Stevia";
-            this.radioButton14.UseVisualStyleBackColor = true;
-            this.radioButton14.CheckedChanged += new System.EventHandler(this.radioButton14_CheckedChanged);
+            this.SweetNLowButton.AutoSize = true;
+            this.SweetNLowButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SweetNLowButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SweetNLowButton.Location = new System.Drawing.Point(105, 25);
+            this.SweetNLowButton.Name = "SweetNLowButton";
+            this.SweetNLowButton.Size = new System.Drawing.Size(137, 29);
+            this.SweetNLowButton.TabIndex = 50;
+            this.SweetNLowButton.TabStop = true;
+            this.SweetNLowButton.Text = "Sweet\'N Low";
+            this.SweetNLowButton.UseVisualStyleBackColor = true;
+            this.SweetNLowButton.CheckedChanged += new System.EventHandler(this.SweetNLowButton_CheckedChanged);
             // 
-            // radioButton15
+            // SteviaButton
             // 
-            this.radioButton15.AutoSize = true;
-            this.radioButton15.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton15.Location = new System.Drawing.Point(3, 2);
-            this.radioButton15.Name = "radioButton15";
-            this.radioButton15.Size = new System.Drawing.Size(55, 19);
-            this.radioButton15.TabIndex = 48;
-            this.radioButton15.TabStop = true;
-            this.radioButton15.Text = "Sugar";
-            this.radioButton15.UseVisualStyleBackColor = true;
-            this.radioButton15.CheckedChanged += new System.EventHandler(this.radioButton15_CheckedChanged);
+            this.SteviaButton.AutoSize = true;
+            this.SteviaButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SteviaButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SteviaButton.Location = new System.Drawing.Point(248, 25);
+            this.SteviaButton.Name = "SteviaButton";
+            this.SteviaButton.Size = new System.Drawing.Size(79, 29);
+            this.SteviaButton.TabIndex = 49;
+            this.SteviaButton.TabStop = true;
+            this.SteviaButton.Text = "Stevia";
+            this.SteviaButton.UseVisualStyleBackColor = true;
+            this.SteviaButton.CheckedChanged += new System.EventHandler(this.SteviaButton_CheckedChanged);
             // 
-            // radioButton16
+            // SugarButton
             // 
-            this.radioButton16.AutoSize = true;
-            this.radioButton16.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton16.Location = new System.Drawing.Point(135, 3);
-            this.radioButton16.Name = "radioButton16";
-            this.radioButton16.Size = new System.Drawing.Size(70, 19);
-            this.radioButton16.TabIndex = 53;
-            this.radioButton16.TabStop = true;
-            this.radioButton16.Text = "Less Hot";
-            this.radioButton16.UseVisualStyleBackColor = true;
-            this.radioButton16.CheckedChanged += new System.EventHandler(this.radioButton16_CheckedChanged);
+            this.SugarButton.AutoSize = true;
+            this.SugarButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SugarButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.SugarButton.Location = new System.Drawing.Point(20, 25);
+            this.SugarButton.Name = "SugarButton";
+            this.SugarButton.Size = new System.Drawing.Size(79, 29);
+            this.SugarButton.TabIndex = 48;
+            this.SugarButton.TabStop = true;
+            this.SugarButton.Text = "Sugar";
+            this.SugarButton.UseVisualStyleBackColor = true;
+            this.SugarButton.CheckedChanged += new System.EventHandler(this.SugarButton_CheckedChanged);
             // 
-            // radioButton17
+            // LessHotButton
             // 
-            this.radioButton17.AutoSize = true;
-            this.radioButton17.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton17.Location = new System.Drawing.Point(75, 3);
-            this.radioButton17.Name = "radioButton17";
-            this.radioButton17.Size = new System.Drawing.Size(59, 19);
-            this.radioButton17.TabIndex = 52;
-            this.radioButton17.TabStop = true;
-            this.radioButton17.Text = "No Ice";
-            this.radioButton17.UseVisualStyleBackColor = true;
-            this.radioButton17.CheckedChanged += new System.EventHandler(this.radioButton17_CheckedChanged);
+            this.LessHotButton.AutoSize = true;
+            this.LessHotButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LessHotButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.LessHotButton.Location = new System.Drawing.Point(140, 64);
+            this.LessHotButton.Name = "LessHotButton";
+            this.LessHotButton.Size = new System.Drawing.Size(100, 29);
+            this.LessHotButton.TabIndex = 53;
+            this.LessHotButton.TabStop = true;
+            this.LessHotButton.Text = "Less Hot";
+            this.LessHotButton.UseVisualStyleBackColor = true;
+            this.LessHotButton.CheckedChanged += new System.EventHandler(this.LessHotButton_CheckedChanged);
             // 
-            // radioButton18
+            // NoIceButton
             // 
-            this.radioButton18.AutoSize = true;
-            this.radioButton18.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton18.Location = new System.Drawing.Point(3, 3);
-            this.radioButton18.Name = "radioButton18";
-            this.radioButton18.Size = new System.Drawing.Size(69, 19);
-            this.radioButton18.TabIndex = 51;
-            this.radioButton18.TabStop = true;
-            this.radioButton18.Text = "Extra Ice";
-            this.radioButton18.UseVisualStyleBackColor = true;
-            this.radioButton18.CheckedChanged += new System.EventHandler(this.radioButton18_CheckedChanged);
+            this.NoIceButton.AutoSize = true;
+            this.NoIceButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NoIceButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.NoIceButton.Location = new System.Drawing.Point(140, 29);
+            this.NoIceButton.Name = "NoIceButton";
+            this.NoIceButton.Size = new System.Drawing.Size(84, 29);
+            this.NoIceButton.TabIndex = 52;
+            this.NoIceButton.TabStop = true;
+            this.NoIceButton.Text = "No Ice";
+            this.NoIceButton.UseVisualStyleBackColor = true;
+            this.NoIceButton.CheckedChanged += new System.EventHandler(this.NoIceButton_CheckedChanged);
             // 
-            // radioButton19
+            // ExtraIceButton
             // 
-            this.radioButton19.AutoSize = true;
-            this.radioButton19.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton19.Location = new System.Drawing.Point(205, 3);
-            this.radioButton19.Name = "radioButton19";
-            this.radioButton19.Size = new System.Drawing.Size(70, 19);
-            this.radioButton19.TabIndex = 54;
-            this.radioButton19.TabStop = true;
-            this.radioButton19.Text = "Very Hot";
-            this.radioButton19.UseVisualStyleBackColor = true;
-            this.radioButton19.CheckedChanged += new System.EventHandler(this.radioButton19_CheckedChanged);
+            this.ExtraIceButton.AutoSize = true;
+            this.ExtraIceButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ExtraIceButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ExtraIceButton.Location = new System.Drawing.Point(26, 29);
+            this.ExtraIceButton.Name = "ExtraIceButton";
+            this.ExtraIceButton.Size = new System.Drawing.Size(101, 29);
+            this.ExtraIceButton.TabIndex = 51;
+            this.ExtraIceButton.TabStop = true;
+            this.ExtraIceButton.Text = "Extra Ice";
+            this.ExtraIceButton.UseVisualStyleBackColor = true;
+            this.ExtraIceButton.CheckedChanged += new System.EventHandler(this.ExtraIceButton_CheckedChanged);
             // 
-            // panel1
+            // VeryHotButton
             // 
-            this.panel1.Controls.Add(this.radioButton12);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton3);
-            this.panel1.Location = new System.Drawing.Point(11, 237);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(254, 50);
-            this.panel1.TabIndex = 55;
+            this.VeryHotButton.AutoSize = true;
+            this.VeryHotButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.VeryHotButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.VeryHotButton.Location = new System.Drawing.Point(26, 64);
+            this.VeryHotButton.Name = "VeryHotButton";
+            this.VeryHotButton.Size = new System.Drawing.Size(102, 29);
+            this.VeryHotButton.TabIndex = 54;
+            this.VeryHotButton.TabStop = true;
+            this.VeryHotButton.Text = "Very Hot";
+            this.VeryHotButton.UseVisualStyleBackColor = true;
+            this.VeryHotButton.CheckedChanged += new System.EventHandler(this.VeryHotButton_CheckedChanged);
             // 
-            // flowLayoutPanel1
+            // NonFatMilkButton
             // 
-            this.flowLayoutPanel1.Controls.Add(this.radioButton20);
-            this.flowLayoutPanel1.Controls.Add(this.radioButton5);
-            this.flowLayoutPanel1.Controls.Add(this.radioButton6);
-            this.flowLayoutPanel1.Controls.Add(this.radioButton1);
-            this.flowLayoutPanel1.Controls.Add(this.radioButton7);
-            this.flowLayoutPanel1.Controls.Add(this.radioButton8);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 293);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(568, 28);
-            this.flowLayoutPanel1.TabIndex = 56;
-            // 
-            // radioButton20
-            // 
-            this.radioButton20.AutoSize = true;
-            this.radioButton20.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton20.Location = new System.Drawing.Point(3, 3);
-            this.radioButton20.Name = "radioButton20";
-            this.radioButton20.Size = new System.Drawing.Size(95, 19);
-            this.radioButton20.TabIndex = 57;
-            this.radioButton20.TabStop = true;
-            this.radioButton20.Text = "Non-Fat Milk";
-            this.radioButton20.UseVisualStyleBackColor = true;
-            this.radioButton20.CheckedChanged += new System.EventHandler(this.radioButton20_CheckedChanged);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.radioButton11);
-            this.panel2.Controls.Add(this.radioButton10);
-            this.panel2.Controls.Add(this.radioButton9);
-            this.panel2.Location = new System.Drawing.Point(11, 327);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(254, 30);
-            this.panel2.TabIndex = 57;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.radioButton15);
-            this.panel3.Controls.Add(this.radioButton14);
-            this.panel3.Controls.Add(this.radioButton13);
-            this.panel3.Location = new System.Drawing.Point(11, 363);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(233, 31);
-            this.panel3.TabIndex = 58;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.radioButton18);
-            this.panel4.Controls.Add(this.radioButton17);
-            this.panel4.Controls.Add(this.radioButton16);
-            this.panel4.Controls.Add(this.radioButton19);
-            this.panel4.Location = new System.Drawing.Point(11, 400);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(303, 38);
-            this.panel4.TabIndex = 59;
+            this.NonFatMilkButton.AutoSize = true;
+            this.NonFatMilkButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NonFatMilkButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.NonFatMilkButton.Location = new System.Drawing.Point(265, 47);
+            this.NonFatMilkButton.Name = "NonFatMilkButton";
+            this.NonFatMilkButton.Size = new System.Drawing.Size(139, 29);
+            this.NonFatMilkButton.TabIndex = 57;
+            this.NonFatMilkButton.TabStop = true;
+            this.NonFatMilkButton.Text = "Non-Fat Milk";
+            this.NonFatMilkButton.UseVisualStyleBackColor = true;
+            this.NonFatMilkButton.CheckedChanged += new System.EventHandler(this.NonFatMilkButton_CheckedChanged);
             // 
             // button1
             // 
@@ -525,60 +470,106 @@
             this.button1.TabIndex = 60;
             this.button1.Text = "Add to Order";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.AddDrinkButton_Click_1);
             // 
-            // label1
+            // LotsFoamButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(600, 531);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 15);
-            this.label1.TabIndex = 61;
-            this.label1.Text = "Click to see customizations";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.LotsFoamButton.AutoSize = true;
+            this.LotsFoamButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LotsFoamButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.LotsFoamButton.Location = new System.Drawing.Point(3, 57);
+            this.LotsFoamButton.Name = "LotsFoamButton";
+            this.LotsFoamButton.Size = new System.Drawing.Size(137, 29);
+            this.LotsFoamButton.TabIndex = 1;
+            this.LotsFoamButton.TabStop = true;
+            this.LotsFoamButton.Text = "Lots of Foam";
+            this.LotsFoamButton.UseVisualStyleBackColor = true;
+            this.LotsFoamButton.CheckedChanged += new System.EventHandler(this.LotsFoamButton_CheckedChanged);
             // 
-            // panel5
+            // NoFoamButton
             // 
-            this.panel5.Controls.Add(this.radioButton21);
-            this.panel5.Controls.Add(this.radioButton4);
-            this.panel5.Location = new System.Drawing.Point(11, 446);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(190, 30);
-            this.panel5.TabIndex = 62;
+            this.NoFoamButton.AutoSize = true;
+            this.NoFoamButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NoFoamButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.NoFoamButton.Location = new System.Drawing.Point(6, 22);
+            this.NoFoamButton.Name = "NoFoamButton";
+            this.NoFoamButton.Size = new System.Drawing.Size(106, 29);
+            this.NoFoamButton.TabIndex = 0;
+            this.NoFoamButton.TabStop = true;
+            this.NoFoamButton.Text = "No Foam";
+            this.NoFoamButton.UseVisualStyleBackColor = true;
+            this.NoFoamButton.CheckedChanged += new System.EventHandler(this.NoFoamButton_CheckedChanged);
             // 
-            // radioButton21
+            // groupBox1
             // 
-            this.radioButton21.AutoSize = true;
-            this.radioButton21.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton21.Location = new System.Drawing.Point(84, 3);
-            this.radioButton21.Name = "radioButton21";
-            this.radioButton21.Size = new System.Drawing.Size(94, 19);
-            this.radioButton21.TabIndex = 1;
-            this.radioButton21.TabStop = true;
-            this.radioButton21.Text = "Lots of Foam";
-            this.radioButton21.UseVisualStyleBackColor = true;
-            this.radioButton21.CheckedChanged += new System.EventHandler(this.radioButton21_CheckedChanged);
+            this.groupBox1.Controls.Add(this.LessHotButton);
+            this.groupBox1.Controls.Add(this.VeryHotButton);
+            this.groupBox1.Controls.Add(this.NoIceButton);
+            this.groupBox1.Controls.Add(this.ExtraIceButton);
+            this.groupBox1.ForeColor = System.Drawing.Color.Snow;
+            this.groupBox1.Location = new System.Drawing.Point(289, 431);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(283, 115);
+            this.groupBox1.TabIndex = 61;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Temperature";
             // 
-            // radioButton4
+            // groupBox2
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton4.Location = new System.Drawing.Point(4, 3);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(74, 19);
-            this.radioButton4.TabIndex = 0;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "No Foam";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            this.groupBox2.Controls.Add(this.NoFoamButton);
+            this.groupBox2.Controls.Add(this.LotsFoamButton);
+            this.groupBox2.ForeColor = System.Drawing.Color.Snow;
+            this.groupBox2.Location = new System.Drawing.Point(51, 431);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(232, 115);
+            this.groupBox2.TabIndex = 62;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Foams";
             // 
-            // Column1
+            // groupBox3
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.groupBox3.Controls.Add(this.ExtraMatchaButton);
+            this.groupBox3.Controls.Add(this.SweetNLowButton);
+            this.groupBox3.Controls.Add(this.SteviaButton);
+            this.groupBox3.Controls.Add(this.DecaffeinatedButton);
+            this.groupBox3.Controls.Add(this.SugarButton);
+            this.groupBox3.Controls.Add(this.ExtraEspresso);
+            this.groupBox3.ForeColor = System.Drawing.Color.Snow;
+            this.groupBox3.Location = new System.Drawing.Point(11, 198);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(434, 116);
+            this.groupBox3.TabIndex = 63;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Sweeteners";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.SoyMilkButton);
+            this.groupBox4.Controls.Add(this.RoomCreamButton);
+            this.groupBox4.Controls.Add(this.AlmondMilkButton);
+            this.groupBox4.Controls.Add(this.WholeMilkButton);
+            this.groupBox4.Controls.Add(this.OatMilkButton);
+            this.groupBox4.Controls.Add(this.NonFatMilkButton);
+            this.groupBox4.ForeColor = System.Drawing.Color.Snow;
+            this.groupBox4.Location = new System.Drawing.Point(11, 320);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(434, 100);
+            this.groupBox4.TabIndex = 64;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Creamers";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.SizeMegaButton);
+            this.groupBox5.Controls.Add(this.SizeLargeButton);
+            this.groupBox5.Controls.Add(this.SizeSmallButton);
+            this.groupBox5.ForeColor = System.Drawing.Color.Snow;
+            this.groupBox5.Location = new System.Drawing.Point(467, 198);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(163, 222);
+            this.groupBox5.TabIndex = 65;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Sizes";
             // 
             // FormOrder
             // 
@@ -586,18 +577,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1348, 721);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.TestLabel);
+            this.Controls.Add(this.OrderedItemDisplayGrid);
             this.Controls.Add(this.AddCustomizationButton);
-            this.Controls.Add(this.AddDrinkButton);
             this.Controls.Add(this.EspressoButton);
             this.Controls.Add(this.WaterButton);
             this.Controls.Add(this.CoffeeButton);
@@ -609,21 +596,18 @@
             this.Name = "FormOrder";
             this.Text = "FormOrder";
             this.Load += new System.EventHandler(this.FormOrder_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderedItemDisplayGrid)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -637,39 +621,35 @@
         private Button CoffeeButton;
         private Button WaterButton;
         private Button EspressoButton;
-        private Button AddDrinkButton;
         private Button AddCustomizationButton;
-        private Label TestLabel;
-        private DataGridView dataGridView1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton3;
-        private RadioButton radioButton1;
-        private RadioButton radioButton5;
-        private RadioButton radioButton6;
-        private RadioButton radioButton7;
-        private RadioButton radioButton8;
-        private RadioButton radioButton9;
-        private RadioButton radioButton10;
-        private RadioButton radioButton11;
-        private RadioButton radioButton12;
-        private RadioButton radioButton13;
-        private RadioButton radioButton14;
-        private RadioButton radioButton15;
-        private RadioButton radioButton16;
-        private RadioButton radioButton17;
-        private RadioButton radioButton18;
-        private RadioButton radioButton19;
-        private Panel panel1;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private RadioButton radioButton20;
-        private Panel panel2;
-        private Panel panel3;
-        private Panel panel4;
+        private DataGridView OrderedItemDisplayGrid;
+        private RadioButton SizeLargeButton;
+        private RadioButton SizeMegaButton;
+        private RadioButton AlmondMilkButton;
+        private RadioButton WholeMilkButton;
+        private RadioButton OatMilkButton;
+        private RadioButton SoyMilkButton;
+        private RadioButton RoomCreamButton;
+        private RadioButton DecaffeinatedButton;
+        private RadioButton ExtraMatchaButton;
+        private RadioButton ExtraEspresso;
+        private RadioButton SizeSmallButton;
+        private RadioButton SweetNLowButton;
+        private RadioButton SteviaButton;
+        private RadioButton SugarButton;
+        private RadioButton LessHotButton;
+        private RadioButton NoIceButton ;
+        private RadioButton ExtraIceButton;
+        private RadioButton VeryHotButton;
+        private RadioButton NonFatMilkButton;
         private Button button1;
-        private Label label1;
-        private Panel panel5;
-        private RadioButton radioButton21;
-        private RadioButton radioButton4;
+        private RadioButton LotsFoamButton;
+        private RadioButton NoFoamButton;
         private DataGridViewTextBoxColumn Column1;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private GroupBox groupBox3;
+        private GroupBox groupBox4;
+        private GroupBox groupBox5;
     }
 }
