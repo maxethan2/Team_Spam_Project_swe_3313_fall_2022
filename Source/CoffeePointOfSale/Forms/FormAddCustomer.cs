@@ -87,12 +87,13 @@ namespace CoffeePointOfSale.Forms
 
             var custlist = _customerService.Customers.List;
             string inputPhoneNumber = phoneTextBoxInput;
-            foreach (var phonenumber in custlist)
+            foreach (var Customer in custlist)
             {
-                if (phonenumber.Equals(inputPhoneNumber)) { }
+                if (Customer.Phone.Equals(inputPhoneNumber))
                 {
                     ErrorLabel.Text = "Phone Number has already been used.";
                     isPhoneValid = false;
+                    break;
                 }
 
             }

@@ -34,7 +34,7 @@ public partial class FormMain : FormBase
     }
     private void ManagementButton_Click(object sender, EventArgs e)
     {
-        Hide(); //closes this form
+        Hide(); //closes this form D:
         FormFactory.Get<FormManagement>().Show(); 
     }
 }

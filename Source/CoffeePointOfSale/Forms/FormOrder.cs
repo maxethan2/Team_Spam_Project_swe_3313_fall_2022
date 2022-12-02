@@ -99,7 +99,7 @@ namespace CoffeePointOfSale.Forms
         {
             if (_currentOrder.OrderedItems.Count > 0)
             {
-                _currentOrder.Date = DateTime.Now.ToString("yyyy - MM - dd - HH - mm - s");
+                _currentOrder.Date = DateTime.Now.ToString("MM/dd/yyyy");
                 _currentOrder.CustomerId = _customerService.SelectedCustomer.CustomerId;
                 _customerService.SelectedCustomer.Orders.Add(_currentOrder);
                 _customerService.CollectedOrder = _currentOrder;

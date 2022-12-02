@@ -57,7 +57,7 @@ namespace CoffeePointOfSale.Forms.Base
 
         private void OrderListLabel_Click(object sender, EventArgs e)
         {
-
+            //useless
         }
 
 
@@ -94,7 +94,6 @@ namespace CoffeePointOfSale.Forms.Base
 
             var OrderIndex = customer.Orders.Count - 1;
             var Order = customer.Orders[OrderIndex];
-            //var Order = customer.Orders[0];
 
             var details = $"Total: {Order.Total.ToString("C2", CultureInfo.CurrentCulture)}\nSubTotal: {Order.Subtotal.ToString("C2", CultureInfo.CurrentCulture)}\nTax: {Order.Tax.ToString("C2", CultureInfo.CurrentCulture)}";
             CostDetailsLabel.Text = details;
@@ -111,9 +110,9 @@ namespace CoffeePointOfSale.Forms.Base
             var details = "";
             if (Order.PaymentMethod.Equals("Credit"))
             {
-                details += $"Paid in credit card ending in {CreditcardLastFour}";
+                details += $"Paid with credit card ending in {CreditcardLastFour}";
             }
-            else
+            else // big time
             {
                 details += $"Paid with {Math.Ceiling(_customerService.SelectedCustomer.Orders[OrderIndex].Total)} rewards points";
             }
@@ -122,12 +121,12 @@ namespace CoffeePointOfSale.Forms.Base
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            //useless
         }
 
         private void CostDetailsLabel_Click(object sender, EventArgs e)
         {
-
+            //garbage go away
         }
     }
 }

@@ -27,10 +27,6 @@ public partial class FormManagement : FormNoCloseBase
         Close(); //closes this form
         FormFactory.Get<FormMain>().Show(); //re-opens the main form
     }
-
-    /// <summary>
-    /// Remove this from your project... here to show you how to get the customer list
-    /// </summary>
     private void ExtractCsv()
     {
         // creates a flat list of orders and order details
@@ -53,7 +49,7 @@ public partial class FormManagement : FormNoCloseBase
                 flatEntry.OrderTotal = order.Total;
                 flatEntry.OrderSubtotal = order.Subtotal;
                 flatEntry.OrderTax = order.Tax;
-
+                
                 var details = "";
                 foreach (var drink in order.OrderedItems)
                 {
