@@ -95,79 +95,100 @@
             // 
             // CheckoutButton
             // 
-            this.CheckoutButton.Location = new System.Drawing.Point(900, 658);
+            this.CheckoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.CheckoutButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CheckoutButton.ForeColor = System.Drawing.Color.Snow;
+            this.CheckoutButton.Location = new System.Drawing.Point(886, 647);
             this.CheckoutButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.CheckoutButton.Name = "CheckoutButton";
             this.CheckoutButton.Size = new System.Drawing.Size(218, 67);
             this.CheckoutButton.TabIndex = 3;
             this.CheckoutButton.Text = "Continue to Checkout";
-            this.CheckoutButton.UseVisualStyleBackColor = true;
+            this.CheckoutButton.UseVisualStyleBackColor = false;
             this.CheckoutButton.Click += new System.EventHandler(this.CheckoutButton_Click_1);
             // 
             // LatteButton
             // 
+            this.LatteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.LatteButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LatteButton.ForeColor = System.Drawing.Color.Snow;
             this.LatteButton.Location = new System.Drawing.Point(11, 67);
             this.LatteButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.LatteButton.Name = "LatteButton";
             this.LatteButton.Size = new System.Drawing.Size(142, 106);
             this.LatteButton.TabIndex = 4;
             this.LatteButton.Text = "Latte";
-            this.LatteButton.UseVisualStyleBackColor = true;
+            this.LatteButton.UseVisualStyleBackColor = false;
             this.LatteButton.Click += new System.EventHandler(this.LatteButton_Click);
             // 
             // IcedLatteButton
             // 
+            this.IcedLatteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.IcedLatteButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.IcedLatteButton.ForeColor = System.Drawing.Color.Snow;
             this.IcedLatteButton.Location = new System.Drawing.Point(163, 67);
             this.IcedLatteButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.IcedLatteButton.Name = "IcedLatteButton";
             this.IcedLatteButton.Size = new System.Drawing.Size(142, 106);
             this.IcedLatteButton.TabIndex = 5;
             this.IcedLatteButton.Text = "Iced Latte";
-            this.IcedLatteButton.UseVisualStyleBackColor = true;
+            this.IcedLatteButton.UseVisualStyleBackColor = false;
             this.IcedLatteButton.Click += new System.EventHandler(this.IcedLatteButton_Click);
             // 
             // MatchaButton
             // 
+            this.MatchaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.MatchaButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MatchaButton.ForeColor = System.Drawing.Color.Snow;
             this.MatchaButton.Location = new System.Drawing.Point(315, 67);
             this.MatchaButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.MatchaButton.Name = "MatchaButton";
             this.MatchaButton.Size = new System.Drawing.Size(142, 106);
             this.MatchaButton.TabIndex = 6;
             this.MatchaButton.Text = "Iced Matcha Green Tea Latte";
-            this.MatchaButton.UseVisualStyleBackColor = true;
+            this.MatchaButton.UseVisualStyleBackColor = false;
             this.MatchaButton.Click += new System.EventHandler(this.MatchaButton_Click);
             // 
             // CoffeeButton
             // 
+            this.CoffeeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.CoffeeButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CoffeeButton.ForeColor = System.Drawing.Color.Snow;
             this.CoffeeButton.Location = new System.Drawing.Point(467, 67);
             this.CoffeeButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.CoffeeButton.Name = "CoffeeButton";
             this.CoffeeButton.Size = new System.Drawing.Size(142, 106);
             this.CoffeeButton.TabIndex = 7;
             this.CoffeeButton.Text = "Coffee";
-            this.CoffeeButton.UseVisualStyleBackColor = true;
+            this.CoffeeButton.UseVisualStyleBackColor = false;
             this.CoffeeButton.Click += new System.EventHandler(this.CoffeeButton_Click);
             // 
             // WaterButton
             // 
+            this.WaterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.WaterButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.WaterButton.ForeColor = System.Drawing.Color.Snow;
             this.WaterButton.Location = new System.Drawing.Point(619, 67);
             this.WaterButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.WaterButton.Name = "WaterButton";
             this.WaterButton.Size = new System.Drawing.Size(142, 106);
             this.WaterButton.TabIndex = 8;
             this.WaterButton.Text = "Iced Water";
-            this.WaterButton.UseVisualStyleBackColor = true;
+            this.WaterButton.UseVisualStyleBackColor = false;
             this.WaterButton.Click += new System.EventHandler(this.WaterButton_Click);
             // 
             // EspressoButton
             // 
+            this.EspressoButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.EspressoButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EspressoButton.ForeColor = System.Drawing.Color.Snow;
             this.EspressoButton.Location = new System.Drawing.Point(771, 67);
             this.EspressoButton.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.EspressoButton.Name = "EspressoButton";
             this.EspressoButton.Size = new System.Drawing.Size(142, 106);
             this.EspressoButton.TabIndex = 9;
             this.EspressoButton.Text = "Espresso";
-            this.EspressoButton.UseVisualStyleBackColor = true;
+            this.EspressoButton.UseVisualStyleBackColor = false;
             this.EspressoButton.Click += new System.EventHandler(this.EspressoButton_Click);
             // 
             // AddCustomizationButton
@@ -476,12 +497,15 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(14, 658);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.Snow;
+            this.button1.Location = new System.Drawing.Point(12, 647);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(167, 67);
             this.button1.TabIndex = 60;
             this.button1.Text = "Add to Order";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.AddDrinkButton_Click_1);
             // 
             // LotsFoamButton

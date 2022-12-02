@@ -98,6 +98,8 @@ namespace CoffeePointOfSale.Forms
         {
             AllCustomizationEnabled();
             LatteCustomizationOnly();
+            ButtonColorReset();
+            LatteButton.BackColor = Color.Black; LatteButton.ForeColor = Color.Snow;
             _currentOrderedItem.DrinkName = "Latte";
             basePrice = 4;
             iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetener = ""; creamer = ""; size = "";
@@ -108,6 +110,8 @@ namespace CoffeePointOfSale.Forms
         {
             AllCustomizationEnabled();
             CoffeeCustomizationOnly();
+                ButtonColorReset();
+                CoffeeButton.BackColor = Color.Black; CoffeeButton.ForeColor = Color.Snow;
             basePrice = 2.5M;
             _currentOrderedItem.DrinkName = "Coffee";
             iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetener = ""; creamer = ""; size = "";
@@ -117,6 +121,8 @@ namespace CoffeePointOfSale.Forms
         {
             AllCustomizationEnabled();
             IcedLatteCustomizationOnly();
+                ButtonColorReset();
+                IcedLatteButton.BackColor = Color.Black; IcedLatteButton.ForeColor = Color.Snow;
             basePrice = 5.25M;
             _currentOrderedItem.DrinkName = "Iced Latte";
             iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetener = ""; creamer = ""; size = "";
@@ -126,6 +132,8 @@ namespace CoffeePointOfSale.Forms
         {
             AllCustomizationEnabled();
             MatchaCustomizationOnly();
+                ButtonColorReset();
+                MatchaButton.BackColor = Color.Black; MatchaButton.ForeColor = Color.Snow;
             iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetener = ""; creamer = ""; size = "";
             basePrice = 4;
             _currentOrderedItem.DrinkName = "Matcha";
@@ -135,6 +143,8 @@ namespace CoffeePointOfSale.Forms
         {
             AllCustomizationEnabled();
             AllCustomizationDisabled();
+                ButtonColorReset();
+                WaterButton.BackColor = Color.Black; WaterButton.ForeColor = Color.Snow;
             iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetener = ""; creamer = ""; size = "";
             basePrice = 0;
             _currentOrderedItem.DrinkName = "Water";
@@ -144,6 +154,8 @@ namespace CoffeePointOfSale.Forms
         {
             AllCustomizationEnabled();
             EspressoCustomizationOnly();
+                ButtonColorReset();
+                EspressoButton.BackColor = Color.Black; EspressoButton.ForeColor = Color.Snow;
             iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetener = ""; creamer = ""; size = "";
             basePrice = 2.5M;
 
@@ -360,7 +372,15 @@ namespace CoffeePointOfSale.Forms
                 foam = "Lots of Foam";
             }
         }
-
+        public void ButtonColorReset()
+        {
+            LatteButton.BackColor = Color.FromArgb(71, 82, 94); LatteButton.ForeColor = Color.Snow;
+            CoffeeButton.BackColor = Color.FromArgb(71, 82, 94); LatteButton.ForeColor = Color.Snow;
+            EspressoButton.BackColor = Color.FromArgb(71, 82, 94); LatteButton.ForeColor = Color.Snow;
+            MatchaButton.BackColor = Color.FromArgb(71, 82, 94); LatteButton.ForeColor = Color.Snow;
+            WaterButton.BackColor = Color.FromArgb(71, 82, 94); LatteButton.ForeColor = Color.Snow;
+            IcedLatteButton.BackColor = Color.FromArgb(71, 82, 94); LatteButton.ForeColor = Color.Snow;
+        }
         private void NoFoamButton_CheckedChanged(object sender, EventArgs e)
         {
             if (NoFoamButton.Enabled == true)
