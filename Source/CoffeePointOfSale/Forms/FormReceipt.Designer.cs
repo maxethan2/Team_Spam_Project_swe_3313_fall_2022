@@ -105,10 +105,12 @@
             this.ItemsDetailsLabel.AutoSize = true;
             this.ItemsDetailsLabel.BackColor = System.Drawing.Color.Snow;
             this.ItemsDetailsLabel.Enabled = false;
+            this.ItemsDetailsLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ItemsDetailsLabel.ForeColor = System.Drawing.SystemColors.MenuText;
             this.ItemsDetailsLabel.Location = new System.Drawing.Point(404, 216);
             this.ItemsDetailsLabel.MaximumSize = new System.Drawing.Size(400, 300);
             this.ItemsDetailsLabel.Name = "ItemsDetailsLabel";
-            this.ItemsDetailsLabel.Size = new System.Drawing.Size(164, 15);
+            this.ItemsDetailsLabel.Size = new System.Drawing.Size(272, 28);
             this.ItemsDetailsLabel.TabIndex = 6;
             this.ItemsDetailsLabel.Text = "This will list out items ordered";
             // 
