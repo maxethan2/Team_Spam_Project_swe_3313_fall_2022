@@ -25,7 +25,7 @@ namespace CoffeePointOfSale.Forms.Base
             InitializeComponent();
             CustomerNameLabel.Text = "Order Placed by " + _customerService.Customers.List[selectedCustomer].FirstName + " " + _customerService.Customers.List[selectedCustomer].LastName;
             //printOrder();
-            //printOrderTotal();
+            //printOrderTotal(); 
             //printPaymentDetails();
         }
 

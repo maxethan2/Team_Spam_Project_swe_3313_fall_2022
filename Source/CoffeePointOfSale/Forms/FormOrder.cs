@@ -108,7 +108,7 @@ namespace CoffeePointOfSale.Forms
             LatteButton.BackColor = Color.Black; LatteButton.ForeColor = Color.Snow;
             _currentOrderedItem.DrinkName = "Latte";
             basePrice = 4;
-            iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetener = ""; creamer = ""; size = "";
+            
 
         }
 
@@ -120,7 +120,7 @@ namespace CoffeePointOfSale.Forms
                 CoffeeButton.BackColor = Color.Black; CoffeeButton.ForeColor = Color.Snow;
             basePrice = 2.5M;
             _currentOrderedItem.DrinkName = "Coffee";
-            iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetener = ""; creamer = ""; size = "";
+            ResetOrderCustomizations();
         }
 
         private void IcedLatteButton_Click(object sender, EventArgs e) // Iced Latte Button
@@ -131,7 +131,7 @@ namespace CoffeePointOfSale.Forms
                 IcedLatteButton.BackColor = Color.Black; IcedLatteButton.ForeColor = Color.Snow;
             basePrice = 5.25M;
             _currentOrderedItem.DrinkName = "Iced Latte";
-            iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetener = ""; creamer = ""; size = "";
+            ResetOrderCustomizations();
         }
 
         private void MatchaButton_Click(object sender, EventArgs e) // Iced Matcha green Tea Latte Button
@@ -140,7 +140,7 @@ namespace CoffeePointOfSale.Forms
             MatchaCustomizationOnly();
                 ButtonColorReset();
                 MatchaButton.BackColor = Color.Black; MatchaButton.ForeColor = Color.Snow;
-            iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetener = ""; creamer = ""; size = "";
+            ResetOrderCustomizations();
             basePrice = 4;
             _currentOrderedItem.DrinkName = "Matcha";
         }
@@ -151,7 +151,7 @@ namespace CoffeePointOfSale.Forms
             AllCustomizationDisabled();
                 ButtonColorReset();
                 WaterButton.BackColor = Color.Black; WaterButton.ForeColor = Color.Snow;
-            iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetener = ""; creamer = ""; size = "";
+            ResetOrderCustomizations();
             basePrice = 0;
             _currentOrderedItem.DrinkName = "Water";
         }
@@ -162,7 +162,7 @@ namespace CoffeePointOfSale.Forms
             EspressoCustomizationOnly();
                 ButtonColorReset();
                 EspressoButton.BackColor = Color.Black; EspressoButton.ForeColor = Color.Snow;
-            iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetener = ""; creamer = ""; size = "";
+            ResetOrderCustomizations();
             basePrice = 2.5M;
 
             _currentOrderedItem.DrinkName = "Espresso";
@@ -222,42 +222,47 @@ namespace CoffeePointOfSale.Forms
 
         private void AddDrinkButton_Click_1(object sender, EventArgs e)
         {
+            
             AllCustomizationEnabled();
             DeselectAllButtons();
-            _currentOrderedItem.Customizations.Add(iceOrTemp);
-            _currentOrderedItem.Customizations.Add(espressoOrMatOrDecaf);
-            _currentOrderedItem.Customizations.Add(sweetener);
-            _currentOrderedItem.Customizations.Add(creamer);
-            _currentOrderedItem.Customizations.Add(size);
-            _currentOrder.OrderedItems.Add(_currentOrderedItem);
-            OrderedItemDisplayGrid.Rows.Add(_currentOrderedItem.DrinkName);
-
-
-            if (!iceOrTemp.Equals(""))
-                OrderedItemDisplayGrid.Rows.Add("      " + iceOrTemp);
-
-            if (!espressoOrMatOrDecaf.Equals(""))
-                OrderedItemDisplayGrid.Rows.Add("      " + espressoOrMatOrDecaf);
-
-            if (!sweetener.Equals(""))
-                OrderedItemDisplayGrid.Rows.Add("      " + sweetener);
-
-            if (!creamer.Equals(""))
-                OrderedItemDisplayGrid.Rows.Add("      " + creamer);
-
-            if (!size.Equals(""))
-                OrderedItemDisplayGrid.Rows.Add("      " + size);
             CalculateCostsUpdateOrder();
             UpdateLabels();
+            _currentOrder.OrderedItems.Add(_currentOrderedItem);
+            OrderedItemDisplayGrid.Rows.Add(quantity +"x: " +_currentOrderedItem.DrinkName);
 
-           
-         
-            iceOrTemp = ""; espressoOrMatOrDecaf = ""; sweetener = ""; creamer = ""; size = "";
+
+            if (string.IsNullOrEmpty(iceOrTemp) == false)
+                OrderedItemDisplayGrid.Rows.Add("      " + iceOrTemp);
+
+            if (string.IsNullOrEmpty(espressoOrMatOrDecaf) == false)
+                   OrderedItemDisplayGrid.Rows.Add("      " + espressoOrMatOrDecaf);
+
+            if (string.IsNullOrEmpty(sweetener) == false)
+                OrderedItemDisplayGrid.Rows.Add("      " + sweetener);
+
+            if (string.IsNullOrEmpty(creamer) == false)
+                OrderedItemDisplayGrid.Rows.Add("      " + creamer);
+
+            if (string.IsNullOrEmpty(size) == false)
+                OrderedItemDisplayGrid.Rows.Add("      " + size);
+            iceOrTemp = null; espressoOrMatOrDecaf = null; sweetener = null; creamer = null; size = null;
         }
         private void CalculateCostsUpdateOrder()
         {
+            if (iceOrTemp != null)
+                _currentOrderedItem.Customizations.Add(iceOrTemp); 
+            if (espressoOrMatOrDecaf != null) 
+                _currentOrderedItem.Customizations.Add(espressoOrMatOrDecaf);
+            if (sweetener!= null)
+                _currentOrderedItem.Customizations.Add(sweetener);
+            if (creamer != null) 
+                _currentOrderedItem.Customizations.Add(creamer);
+            if (size != null)
+                _currentOrderedItem.Customizations.Add(size);
+
             //calculate
-            subTotal += basePrice + creamerPrice + sizePrice + espressoOrMatOrDecafPrice;
+            quantity = (int)QuantityChangeButton.Value;
+            subTotal += (basePrice + creamerPrice + sizePrice + espressoOrMatOrDecafPrice) * quantity;
             tax = subTotal * _appSettings.Tax.Rate;
             totalPrice = subTotal + tax;
 
@@ -265,7 +270,9 @@ namespace CoffeePointOfSale.Forms
             _currentOrder.Subtotal += subTotal;
             _currentOrder.Total += totalPrice; 
             _currentOrder.Tax = tax;
+            _currentOrderedItem.Quantity = quantity;
             _currentOrderedItem.Customizations.Add(foam + sweetener + size + espressoOrMatOrDecaf);
+
         }
         private void UpdateLabels()
         {
@@ -540,9 +547,18 @@ namespace CoffeePointOfSale.Forms
             LotsFoamButton.Enabled = false;
         }
 
+        private void ResetOrderCustomizations()
+        {
+            iceOrTemp = null; espressoOrMatOrDecaf = null; sweetener = null; creamer = null; size = null;
+        }
         private void SubTotalLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void QuantityChangeButton_ValueChanged(object sender, EventArgs e)
+        {
+           QuantityChangeButton.Minimum= 1;
         }
     }
 }

@@ -71,12 +71,15 @@
             this.TaxLabel = new System.Windows.Forms.Label();
             this.TotalLabel = new System.Windows.Forms.Label();
             this.DecorativeLabel = new System.Windows.Forms.Label();
+            this.QuantityChangeButton = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.OrderedItemDisplayGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.QuantityChangeButton)).BeginInit();
             this.SuspendLayout();
             // 
             // CancelButton
@@ -652,12 +655,41 @@
             this.DecorativeLabel.TabIndex = 69;
             this.DecorativeLabel.Text = "______________________________________";
             // 
+            // QuantityChangeButton
+            // 
+            this.QuantityChangeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.QuantityChangeButton.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.QuantityChangeButton.ForeColor = System.Drawing.Color.Snow;
+            this.QuantityChangeButton.Location = new System.Drawing.Point(698, 293);
+            this.QuantityChangeButton.Name = "QuantityChangeButton";
+            this.QuantityChangeButton.Size = new System.Drawing.Size(79, 31);
+            this.QuantityChangeButton.TabIndex = 70;
+            this.QuantityChangeButton.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.QuantityChangeButton.ValueChanged += new System.EventHandler(this.QuantityChangeButton_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Snow;
+            this.label1.Location = new System.Drawing.Point(689, 258);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 25);
+            this.label1.TabIndex = 71;
+            this.label1.Text = "Quantity:";
+            // 
             // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.QuantityChangeButton);
             this.Controls.Add(this.DecorativeLabel);
             this.Controls.Add(this.TotalLabel);
             this.Controls.Add(this.TaxLabel);
@@ -692,6 +724,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.QuantityChangeButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -741,5 +774,7 @@
         private Label TaxLabel;
         private Label TotalLabel;
         private Label DecorativeLabel;
+        private NumericUpDown QuantityChangeButton;
+        private Label label1;
     }
 }

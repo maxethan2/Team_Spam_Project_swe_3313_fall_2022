@@ -65,7 +65,7 @@ namespace CoffeePointOfSale.Forms
             Regex regex = new Regex(@"[a-zA-Z]+,[a-zA-Z]"); //checks for comma
             if (regex.IsMatch(names) == false)
             {
-                ErrorLabel.Text =  " Please Enter in correct format (LastName, FirstName)";
+                ErrorLabel.Text =  " Please Enter in correct format (LastName,FirstName) (No Spaces)";
                 return false;
             }
             return true;
