@@ -74,6 +74,10 @@ namespace CoffeePointOfSale.Forms
                 {
                     //flow to complete purchase 
 
+                    //get last four digits of credit card number
+                    CreditcardLastFour = maskedTextBox1.Text.Substring(14);
+
+
                     //set payment method to credit
                     var OrderIndex = _customerService.SelectedCustomer.Orders.Count - 1;
                     _customerService.SelectedCustomer.Orders[OrderIndex].PaymentMethod = "Credit";

@@ -25,18 +25,10 @@ namespace CoffeePointOfSale.Forms.Base
             _customerService = customerService;
             _appSettings = appSettings;
             InitializeComponent();
-<<<<<<< Updated upstream
-            CustomerNameLabel.Text = "Order Placed by " + _customerService.Customers.List[selectedCustomer].FirstName + " " + _customerService.Customers.List[selectedCustomer].LastName;
-            //printOrder();
-            //printOrderTotal(); 
-            //printPaymentDetails();
-=======
             CustomerNameLabel.Text = "Order Placed by " + _customerService.SelectedCustomer.FirstName + " " + _customerService.SelectedCustomer.LastName;
             printOrder();
             printOrderTotal();
             printPaymentDetails();
-
->>>>>>> Stashed changes
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -69,7 +61,7 @@ namespace CoffeePointOfSale.Forms.Base
             // drink in OrderList
             foreach (var Drink in OrderList)
             {
-                OrderedItems += Drink.DrinkName + " " + Drink.Quantity + ": ";
+                OrderedItems += Drink.DrinkName + " x" + Drink.Quantity + ": ";
                 // Custimization in each drink
                 foreach (var custimization in Drink.Customizations)
                 {
@@ -106,7 +98,7 @@ namespace CoffeePointOfSale.Forms.Base
             var details = "";
             if (Order.PaymentMethod.Equals("Credit"))
             {
-                details += "Payed in credit card ending in ******";
+                details += $"Payed in credit card ending in {CreditcardLastFour}";
             }
             else
             {

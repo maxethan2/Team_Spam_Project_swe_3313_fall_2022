@@ -7,6 +7,9 @@ public class FormNoCloseBase : FormBase
     //https://stackoverflow.com/a/7301828
     private const int CP_NOCLOSE_BUTTON = 0x200;
     public static int selectedCustomer = 0; // tracks customer 
+
+    public static string CreditcardLastFour = "";
+
     public FormNoCloseBase()
     {
         //this constructor is ONLY for design time layout. Do NOT put anything else here.
