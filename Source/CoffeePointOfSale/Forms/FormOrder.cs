@@ -233,8 +233,8 @@ namespace CoffeePointOfSale.Forms
             totalPrice = subTotal + tax;
 
             //order changes
-            _currentOrder.Subtotal += subTotal;
-            _currentOrder.Total += totalPrice; 
+            _currentOrder.Subtotal = subTotal;
+            _currentOrder.Total = totalPrice; 
             _currentOrder.Tax = tax;
             _currentOrderedItem.Quantity = quantity;
      
