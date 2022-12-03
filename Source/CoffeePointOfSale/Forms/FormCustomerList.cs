@@ -13,6 +13,7 @@ using CoffeePointOfSale.Configuration;
 using CoffeePointOfSale.Forms.Base;
 using CoffeePointOfSale.Services.Customer;
 using CoffeePointOfSale.Services.FormFactory;
+using CoffeePointOfSale.Services.Storage;
 
 namespace CoffeePointOfSale.Forms
 {
@@ -25,9 +26,12 @@ namespace CoffeePointOfSale.Forms
         {
             _customerService = customerService;
             _appSettings = appSettings;
+
             InitializeComponent();
             DemonstrateGettingCustomerList();
         }
+
+
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
@@ -41,8 +45,8 @@ namespace CoffeePointOfSale.Forms
             FormFactory.Get<FormAddCustomer>().Show(); //re-opens the main form
         }
         private void DemonstrateGettingCustomerList()
-        {            
-           for (var customerIdx = 0; customerIdx < _customerService.Customers.List.Count; customerIdx++)
+        {
+            for (var customerIdx = 0; customerIdx < _customerService.Customers.List.Count; customerIdx++)
             {
                var customers = _customerService.Customers.List[customerIdx];   
                CustomerListTable.Rows.Add(customers);

@@ -43,6 +43,7 @@ namespace CoffeePointOfSale.Forms.Base
                 customerService1.CreateCustomer(_customerService.SelectedCustomer);
             }
 
+            
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -117,6 +118,8 @@ namespace CoffeePointOfSale.Forms.Base
                 details += $"Paid with {Math.Ceiling(_customerService.SelectedCustomer.Orders[OrderIndex].Total)} rewards points";
             }
             PaymentDetailsLabel.Text = details;
+
+            _customerService.Customers.Add(customer);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
